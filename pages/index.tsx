@@ -10,67 +10,47 @@ interface IPropsHome {
 
 export default function Home({title, description}: IPropsHome) {
     return (
-        <div className={styles.container}>
-            <Head>
-                <title>Create {title}</title>
-                <meta name="description" content={description}/>
-                <link rel="icon" href="/favicon.ico"/>
-            </Head>
+        <>
+            <header className="header">
+                <div className="header-content">
+                    <div className="profile-picture-block">
+                        <div className="my-photo">
+                            <Image className="img-fluid" src={'http://via.placeholder.com/80x80'} alt={'image'}
+                                   layout={'fill'}/>
+                        </div>
+                    </div>
+                    <div className="site-title-block">
+                        <div className="site-title">Carlos Tolentino</div>
+                        <div className="type-wrap">
+                            <br/>
+                            <div className="typed-strings">
+                                <span>Mobile Developer</span>
+                                <span>Fullstack Web Developer</span>
+                            </div>
+                            <span className="typed"></span>
+                        </div>
+                    </div>
 
-            <main className={styles.main}>
-                <h1 className={styles.title}>
-                    Welcome to <a href="https://nextjs.org">{title}!</a>
-                </h1>
 
-                <p className={styles.description}>
-                    Get started by editing{' '}
-                    <code className={styles.code}>pages/index.tsx</code>
-                </p>
+                    <div className="site-nav">
 
-                <div className={styles.grid}>
-                    <a href="https://nextjs.org/docs" className={styles.card}>
-                        <h2>Documentation &rarr;</h2>
-                        <p>Find in-depth information about Next.js features and API.</p>
-                    </a>
+                        <ul className="header-main-menu" id="header-main-menu">
+                            <li><a className="active" href="#home"><i className="fas fa-home"></i> Home</a></li>
+                            <li><a href="#about-me"><i className="fas fa-user-tie"></i> About Me</a></li>
+                            <li><a href="#resume"><i className="fas fa-award"></i> Resume</a></li>
+                            <li><a href="#portfolio"><i className="fas fa-business-time"></i> Portfolio</a></li>
+                            <li><a href="#blog"><i className="fas fa-book-reader"></i> Blog</a></li>
+                            <li><a href="#contact"><i className="fas fa-paper-plane"></i> Contact</a></li>
+                            <li><a href="#appointments"><i className="fas fa-calendar-check"></i> Appointments</a></li>
+                        </ul>
 
-                    <a href="https://nextjs.org/learn" className={styles.card}>
-                        <h2>Learn &rarr;</h2>
-                        <p>Learn about Next.js in an interactive course with quizzes!</p>
-                    </a>
+                        <div className="copyrights">©{new Date().getFullYear()} All rights reserved.</div>
 
-                    <a
-                        href="https://github.com/vercel/next.js/tree/canary/examples"
-                        className={styles.card}
-                    >
-                        <h2>Examples &rarr;</h2>
-                        <p>Discover and deploy boilerplate example Next.js projects.</p>
-                    </a>
+                    </div>
 
-                    <a
-                        href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-                        className={styles.card}
-                    >
-                        <h2>Deploy &rarr;</h2>
-                        <p>
-                            Instantly deploy your Next.js site to a public URL with Vercel.
-                        </p>
-                    </a>
                 </div>
-            </main>
-
-            <footer className={styles.footer}>
-                <a
-                    href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Powered by{' '}
-                    <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16}/>
-          </span>
-                </a>
-            </footer>
-        </div>
+            </header>
+        </>
     )
 }
 
