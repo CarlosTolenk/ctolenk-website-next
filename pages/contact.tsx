@@ -1,17 +1,17 @@
 import React from "react";
 import MainLayout from "../src/components/templates/MainLayout";
 
-interface IPropsHome {
+interface IPropsContact {
     title: string;
     description: string
 }
 
-export default function Home({title, description}: IPropsHome) {
+export default function Contact({title, description}: IPropsContact) {
     return (
         <>
             <MainLayout title={title} description={description}>
                 <div>
-                    Home
+                    Contact
                 </div>
             </MainLayout>
         </>

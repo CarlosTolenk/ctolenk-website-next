@@ -1,17 +1,17 @@
 import React from "react";
 import MainLayout from "../src/components/templates/MainLayout";
 
-interface IPropsHome {
+interface IPropsResume {
     title: string;
     description: string
 }
 
-export default function Home({title, description}: IPropsHome) {
+export default function Resume({title, description}: IPropsResume) {
     return (
         <>
             <MainLayout title={title} description={description}>
                 <div>
-                    Home
+                    Resume
                 </div>
             </MainLayout>
         </>

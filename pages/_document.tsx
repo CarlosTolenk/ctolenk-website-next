@@ -3,15 +3,16 @@ import React from "react";
 
 class MyDocument extends Document {
     static async getInitialProps(ctx: DocumentContext) {
-        const initialProps = await Document.getInitialProps(ctx)
-
-        return initialProps
+        return await Document.getInitialProps(ctx)
     }
 
     render() {
         return (
             <Html>
-                <Head/>
+                <Head>
+                    <link rel="icon" type="image/png" href="/favicon.png"/>
+                    <meta name="theme-color" content="#3c1742"/>
+                </Head>
                 <body className="dark">
                 <Main/>
                 <NextScript/>

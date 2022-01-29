@@ -11,15 +11,21 @@
     "test": "jest"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.17",
     "next": "12.0.8",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-particles-js": "^3.6.0",
+    "react-typing-effect": "^2.0.5"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@types/node": "17.0.10",
     "@types/react": "17.0.38",
+    "@types/react-typing-effect": "^2.0.3",
     "eslint": "8.7.0",
     "eslint-config-next": "12.0.8",
     "jest": "^27.4.7",

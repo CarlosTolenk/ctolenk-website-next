@@ -1,0 +1,24 @@
+.containerNavItem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    width: 100%;
+}
+
+.containerNavItemIcon {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: var(--primary-color);
+    width: 30px;
+    height: 30px;
+    margin-right: 0.75rem;
+    margin-left: 2rem;
+    border-radius: 100%;
+}
+
+.NavItemText {
+    margin-top: 1rem;;
+}
