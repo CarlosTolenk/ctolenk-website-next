@@ -4203,7 +4203,7 @@ blockquote {
 
 .list-appointments li.available i {
     background: linear-gradient(
-            135deg, #11d6f0, #6ceeff, #11d6f0, #ccc, #6ceeff);
+            135deg, var(--primary-color-light), var(--primary-color), var(--primary-color-dark), #ccc, #6ceeff);
 }
 
 .list-appointments li.not-available span {

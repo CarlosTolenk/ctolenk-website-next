@@ -26,7 +26,7 @@ export default function Home({title, description, messageTyping}: IPropsHome) {
     return (
         <>
             <MainLayout title={title} description={description}>
-                <section className="sub-page start-page">
+                <section className="sub-page start-page animate__animated animate__fadeIn">
                     <div className="sub-page-inner">
                         <div className="row">
                             <div className="col-sm-12 col-md-12 col-lg-12">

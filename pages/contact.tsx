@@ -17,7 +17,7 @@ export default function Contact({title, description}: IPropsContact) {
     return (
         <>
             <MainLayout title={title} description={description}>
-                <section className="sub-page start-page">
+                <section className="sub-page start-page animate__animated animate__slideInLeft">
                     <div className="sub-page-inner">
                         <div className="section-title">
                             <div className="main-title">
