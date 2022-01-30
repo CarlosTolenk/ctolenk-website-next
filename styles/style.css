@@ -2928,14 +2928,16 @@ textarea {
     width: 25% !important;
 }
 
-.contact-icon i {
-    font-size: 28px;
-    width: 60px;
+.contact-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 45px;
+    width: 75px;
     text-align: center;
-    height: 60px;
-    line-height: 60px;
+    height: 75px;
     color: #fff;
-    background: #11d6f0;
+    background: var(--primary-color);
     border-radius: 100%;
     box-shadow: 2px 2px 20px rgba(0, 0, 0, .05);
     -webkit-transition: all 0.2s ease-in-out;
@@ -2999,7 +3001,7 @@ textarea {
 }
 
 .social-media-block::after {
-    border-color: rgba(0, 0, 0, 0) #11d6f0 #11d6f0 rgba(0, 0, 0, 0);
+    border-color: rgba(0, 0, 0, 0) var(--primary-color) var(--primary-color) rgba(0, 0, 0, 0);
     bottom: 0;
     right: 0;
 }

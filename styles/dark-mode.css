@@ -6,7 +6,7 @@
 .dark .profile-picture-block, .dark .main-timeline .timeline-icon:before, .dark .label-portfolio,
 .dark .blog-grid-flex .blog-article, .dark .btn.btn-prev, .dark .social-media-block,
 .dark .profile-picture-block:before, .dark .profile-picture-block:after, .dark .widget, .dark .blog-post, .dark .about-author,
-.dark .comment-by a.reply, .dark .add-review-box, .dark .error-content .form-error-search input{ 
+.dark .comment-by a.reply, .dark .add-review-box, .dark .error-content .form-error-search input{
     background-color: #191919;
 }
 .dark .progress, .dark .blog-grid-flex .article-link a, .dark .social-media-block a,
@@ -28,7 +28,7 @@
     border-left: 1px solid rgba(238, 238, 238, 0.3);
 }
 .dark .owl-dot.active span {
-    background: #11d6f0;
+    background: var(--primary-color);
 }
 .dark .overlay, .dark .blog-grid-flex .blog-item-quote .article-img::after {
     background: rgba(0, 0, 0, 0.7);
