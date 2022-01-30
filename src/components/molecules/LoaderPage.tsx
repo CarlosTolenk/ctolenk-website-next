@@ -1,9 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {NextRouter, useRouter} from "next/router";
-
-export function isRouterReady(router: NextRouter) {
-    return router.asPath === router.route;
-}
+import {useRouter} from "next/router";
 
 const LoaderPage = () => {
     const [loading, setLoading] = useState(true)

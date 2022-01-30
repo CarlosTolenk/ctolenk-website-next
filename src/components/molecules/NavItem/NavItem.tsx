@@ -16,7 +16,7 @@ interface IPropsNavItem {
 }
 
 const NavItem = ({href, iconSource, text}: IPropsNavItem) => {
-    const {asPath} = useRouter()
+    const {asPath} = useRouter();
 
     return (
         <>

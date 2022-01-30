@@ -1,3 +1,11 @@
 :root {
-    --primary-color: #ff0000;
+    --primary-color: #d32e2e;
+    --primary-color-light: #e22d3c;
+    --primary-color-dark: #bd1d2f;
+    --secondary-color: #bcbec0;
+    --secondary-color-dark: #9f9b9b;
+    --background-current-mode: #191919;
+    --background-current-mode-minus: #585d65;
+    --font-title-current-color: #fff;
+    --font-text-current-color: #fff;
 }

@@ -1,6 +1,6 @@
 import {PropsWithChildren} from "react";
 import Head from "next/head";
-import Header from "../organisms/Header";
+import Header from "../organisms/Header/Header";
 import LoaderPage from "../molecules/LoaderPage";
 
 interface IPropsMainLayout {

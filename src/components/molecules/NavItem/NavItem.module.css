@@ -21,4 +21,5 @@
 
 .NavItemText {
     margin-top: 1rem;;
+    color: var(--secondary-color-dark);
 }

@@ -791,6 +791,7 @@ img {
     text-decoration: none;
     border-radius: 30px 0 0 30px;
 }
+
 .header-main-menu li a i {
     background-color: #11d6f0;
     color: #fff;
@@ -854,7 +855,7 @@ span.typed {
     }
 
     .site-title {
-        font-size: 24px;
+        font-size: 20px;
     }
 
     .sub-page,
@@ -923,6 +924,7 @@ span.typed {
         top: 0;
         right: 0;
         left: 0;
+        overflow-y: clip;
     }
 
     .header .copyrights {
@@ -933,12 +935,12 @@ span.typed {
     .responsive-header {
         height: 55px;
         position: fixed;
-        background: #fff;
+        background: var(--background-current-mode);
         z-index: 9999;
         width: 100%;
         padding: 12px 15px;
         display: block;
-        color: #11d6f0;
+        color: var(--primary-color);
         box-shadow: 0 3px 6px 3px rgba(0, 0, 0, .06);
     }
 
@@ -947,12 +949,11 @@ span.typed {
         font-weight: 500;
     }
 
-    img.responsive-logo {
-        height: 30px;
-        border-radius: 100%;
-        margin-right: 5px;
-        border: 3px solid rgba(17, 214, 240, 0.30);
-    }
+    /*img.responsive-logo {*/
+    /*    height: 30px;*/
+    /*    border-radius: 100%;*/
+    /*    margin-right: 5px;*/
+    /*}*/
 
     .header {
         display: block;
@@ -1031,6 +1032,12 @@ span.typed {
     font-weight: normal;
     text-align: center;
     font-family: Raleway;
+}
+
+.site-title-block .type-wrap {
+    color: var(--secondary-color);
+    font-size: 15px;
+    margin-top: 1rem;
 }
 
 .home-buttons .bt-submit {
