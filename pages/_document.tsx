@@ -16,14 +16,10 @@ class MyDocument extends Document {
                     <meta name="author" content="CTolenk- Carlos Tolentino"/>
                     <meta name="theme-color" content="#3c1742"/>
 
-                    <link
-                        href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700"
-                        rel="stylesheet"
-                    />
-                    <link
-                        href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700"
-                        rel="stylesheet"
-                    />
+                    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=optional"
+                          rel="stylesheet"/>
+                    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700&display=optional"
+                          rel="stylesheet"/>
                 </Head>
                 <body className="dark">
                 <Main/>

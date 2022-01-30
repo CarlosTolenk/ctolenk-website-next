@@ -10,6 +10,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import styles from './Header.module.css';
 
 
+// eslint-disable-next-line react/display-name
 const Header = React.memo(() => {
     const [classNameToggleMenu, setClassNameToggleMenu] = useState('')
     const [isActiveMenu, setIsActiveMenu] = useState(false)

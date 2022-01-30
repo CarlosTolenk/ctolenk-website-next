@@ -6,10 +6,13 @@ const LoaderPage = () => {
     const router = useRouter()
 
     useEffect(() => {
-        console.log(router)
-        setTimeout(() => {
-            setLoading(false);
-        }, 750)
+        function waitingSecond() {
+            setTimeout(() => {
+                setLoading(false);
+            }, 750)
+        }
+
+        waitingSecond()
     }, [router.basePath])
 
     return (

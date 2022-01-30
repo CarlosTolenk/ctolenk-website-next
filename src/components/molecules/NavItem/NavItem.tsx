@@ -20,7 +20,7 @@ const NavItem = ({href, iconSource, text}: IPropsNavItem) => {
 
     return (
         <>
-            <Link href={href}>
+            <Link href={href} passHref>
                 <li>
                     <a className={asPath === href ? 'active' : ''}>
                         <div className={styles.containerNavItem}>
