@@ -4043,8 +4043,14 @@ blockquote {
 ============================================================================= */
 
 .error-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    padding: 50px 0
+    height: 80vh;
+    padding: 10rem 0;
+    margin: auto;
 }
 
 .error-content .error-message {
@@ -4053,7 +4059,7 @@ blockquote {
 }
 
 .error-content .error-message h2 {
-    color: #11d6f0;
+    color: var(--primary-color);
     font-size: 200px;
     position: relative;
     margin: 0;
@@ -4104,7 +4110,7 @@ blockquote {
     padding: 0;
     border-radius: 0 30px 30px 0;
     color: #fff;
-    background-color: #11d6f0;
+    background-color: var(--primary-color);
 }
 
 .error-content .description {
@@ -4113,7 +4119,7 @@ blockquote {
 }
 
 .error-content .description a {
-    color: #11d6f0
+    color: var(--primary-color);
 }
 
 @media (max-width: 768px) {
