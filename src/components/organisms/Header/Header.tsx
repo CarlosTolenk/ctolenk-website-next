@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import Image from "next/image";
 
 import Nav from "../../molecules/Nav";
@@ -10,7 +10,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import styles from './Header.module.css';
 
 
-const Header = () => {
+const Header = React.memo(() => {
     const [classNameToggleMenu, setClassNameToggleMenu] = useState('')
     const [isActiveMenu, setIsActiveMenu] = useState(false)
     const messages = ['Front-end Developer', 'Back-end Developer', 'Mobile Developer', 'Full Stack Developer'];
@@ -57,7 +57,7 @@ const Header = () => {
             </div>
         </>
     )
-}
+});
 
 
 export default Header;

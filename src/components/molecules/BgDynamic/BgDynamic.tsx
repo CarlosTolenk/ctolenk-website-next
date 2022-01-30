@@ -23,7 +23,7 @@ const BgDynamic = () => {
                             value: "rgba(14,14,14,0.24)",
                         },
                     },
-                    fpsLimit: 30,
+                    fpsLimit: 60,
                     interactivity: {
                         events: {
                             onClick: {

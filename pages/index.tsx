@@ -1,4 +1,6 @@
-import React from "react";
+import React, {EventHandler, MouseEventHandler} from "react";
+import {useRouter} from "next/router";
+
 import MainLayout from "../src/components/templates/MainLayout";
 import BgDynamic from "../src/components/molecules/BgDynamic/BgDynamic";
 import Button from "../src/components/atoms/Button/Button";
@@ -14,9 +16,11 @@ interface IPropsHome {
 }
 
 export default function Home({title, description, messageTyping}: IPropsHome) {
+    const router = useRouter()
 
-    const onHandleClick = () => {
-        console.log('onHandleClick')
+    const onHandleClick = (event: React.MouseEvent<any>) => {
+        event.preventDefault()
+        router.push('/contact')
     }
 
     return (

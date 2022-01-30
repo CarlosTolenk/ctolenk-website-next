@@ -5,7 +5,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 interface IPropsButton {
     text: string;
     iconSource: IconDefinition;
-    onHandlerClick: MouseEventHandler<HTMLAnchorElement>;
+    onHandlerClick: MouseEventHandler<any>;
 }
 
 const Button = ({text, iconSource, onHandlerClick}: IPropsButton) => {
