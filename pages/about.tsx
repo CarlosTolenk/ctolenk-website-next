@@ -289,7 +289,10 @@ export default function AboutMe({title, description}: IPropsAbout) {
                                         </div>
                                         <div className="testimonial-footer">
                                             <div className="testimonial-avatar">
-                                                <img src="http://via.placeholder.com/80x80" alt="Gary Johnson"/>
+
+                                                <Image src={'http://via.placeholder.com/80x80'} alt={'Gary Johnson'}
+                                                       height={80} width={90}/>
+
                                             </div>
                                             <div className="testimonial-owner-content">
                                                 <p className="testimonial-owner">Johny Melion</p>
@@ -325,7 +328,8 @@ export default function AboutMe({title, description}: IPropsAbout) {
                                         </div>
                                         <div className="testimonial-footer">
                                             <div className="testimonial-avatar">
-                                                <img src="http://via.placeholder.com/80x80" alt="Gary Johnson"/>
+                                                <Image src={'http://via.placeholder.com/80x80'} alt={'Gary Johnson'}
+                                                       height={80} width={90}/>
                                             </div>
                                             <div className="testimonial-owner-content">
                                                 <p className="testimonial-owner">Johny Melion</p>

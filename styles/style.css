@@ -1885,7 +1885,7 @@ button.owl-dot.active, button.owl-dot:focus {
     content: "";
     width: 3px;
     height: 80%;
-    background: #f4f5f9;
+    background: var(--secondary-color-dark);
     position: absolute;
     top: 0;
     left: 50%;
@@ -1973,7 +1973,7 @@ button.owl-dot.active, button.owl-dot:focus {
 }
 
 .timeline.currecnt .timeline-icon:after, .main-timeline .timeline:hover .timeline-icon:after {
-    background: #11d6f0;
+    background: var(--primary-color);
 }
 
 .main-timeline .timeline:nth-child(2n) .timeline-icon:after {
@@ -2065,7 +2065,7 @@ button.owl-dot.active, button.owl-dot:focus {
 }
 
 .main-timeline .timeline:hover .title {
-    color: #11d6f0;
+    color: var(--primary-color);
 }
 
 .main-timeline .description {
