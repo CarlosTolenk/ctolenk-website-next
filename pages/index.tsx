@@ -1,4 +1,4 @@
-import React, {EventHandler, MouseEventHandler} from "react";
+import React, {MouseEvent, MouseEventHandler} from "react";
 import {useRouter} from "next/router";
 
 import MainLayout from "../src/components/templates/MainLayout";
@@ -18,7 +18,7 @@ interface IPropsHome {
 export default function Home({title, description, messageTyping}: IPropsHome) {
     const router = useRouter()
 
-    const onHandleClick = (event: React.MouseEvent<any>) => {
+    const onHandleClick = (event: MouseEvent<any>) => {
         event.preventDefault()
         router.push('/contact')
     }
