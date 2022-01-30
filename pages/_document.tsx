@@ -11,6 +11,9 @@ class MyDocument extends Document {
             <Html>
                 <Head>
                     <link rel="icon" type="image/png" href="/favicon.png"/>
+                    <meta name="keywords"
+                          content="JavaScript,Angular,Ionic,Reactjs,React Native,WordPress,Nodejs,C#, .Net Core,Web Developer,Mobile Developer CRM,CMS,ERP,UI/UX"/>
+                    <meta name="author" content="CTolenk"/>
                     <meta name="theme-color" content="#3c1742"/>
                 </Head>
                 <body className="dark">
