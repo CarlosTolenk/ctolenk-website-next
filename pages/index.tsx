@@ -54,7 +54,7 @@ export const getStaticProps = () => {
         props: {
             title: 'CTolenk - Software Engineer',
             description: 'Que tenemos',
-            messageTyping: ['Front-end Developer', 'Back-end Developer', 'Mobile Developer', 'Full Stack Developer']
+            messageTyping: ['Full Stack Developer', 'Front-end Developer', 'Back-end Developer', 'Mobile Developer']
         }
     }
 }

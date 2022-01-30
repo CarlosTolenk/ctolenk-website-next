@@ -8,21 +8,27 @@ import {faBars} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 import styles from './Header.module.css';
+import {useRouter} from "next/router";
 
 
 // eslint-disable-next-line react/display-name
 const Header = React.memo(() => {
     const [classNameToggleMenu, setClassNameToggleMenu] = useState('')
     const [isActiveMenu, setIsActiveMenu] = useState(false)
-    const messages = ['Front-end Developer', 'Back-end Developer', 'Mobile Developer', 'Full Stack Developer'];
+    const messages = ['Full Stack Developer', 'Front-end Developer', 'Back-end Developer', 'Mobile Developer'];
     const name = 'Carlos Tolentino';
     const currentYear = new Date().getFullYear();
     const copy = `${currentYear} All rights reserved.`
+    const router = useRouter()
 
     const onHandleClick = () => {
         const currentClassName = isActiveMenu ? styles.headerInactiveMobile : styles.headerActiveMobile;
         setClassNameToggleMenu(currentClassName);
         setIsActiveMenu(!isActiveMenu);
+    }
+
+    const onHandlerClickNavigation = () => {
+        router.push('/')
     }
 
     return (
@@ -31,7 +37,8 @@ const Header = React.memo(() => {
                 <div className="header-content">
                     <div className="profile-picture-block">
                         <div className="my-photo">
-                            <Image className="img-fluid" src={'/images/me-circle.jpeg'} alt={'carlos-tolentino'}
+                            <Image className="img-fluid"
+                                   src={'/images/me-circle.jpeg'} alt={'carlos-tolentino'}
                                    layout={'fill'}/>
                         </div>
                     </div>
@@ -48,7 +55,7 @@ const Header = React.memo(() => {
                 </div>
             </header>
             <div className="responsive-header">
-                <div className="responsive-header-name">
+                <div onClick={onHandlerClickNavigation} className="responsive-header-name">
                     <Image className="responsive-logo" src={'/images/ctolenk-color.png'} alt={'ctolenk-c'}
                            width={90} height={30}/>
                 </div>

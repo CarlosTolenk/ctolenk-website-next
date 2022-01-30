@@ -9,10 +9,10 @@ const TypingMessage = React.memo(({className, message}: any) => {
             <ReactTypingEffect
                 className={className}
                 text={message}
-                speed={75}
+                speed={85}
                 eraseSpeed={75}
-                eraseDelay={900}
-                typingDelay={85}
+                eraseDelay={650}
+                typingDelay={75}
             />
         </>
     )
