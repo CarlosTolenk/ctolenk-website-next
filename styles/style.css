@@ -1652,7 +1652,10 @@ span.typed {
 /* 8.5 Testimonials */
 
 .testimonials {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     padding-bottom: 60px;
+    width: 100%;
 }
 
 .testimonial-item {

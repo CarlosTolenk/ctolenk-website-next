@@ -2,6 +2,8 @@ import React from "react";
 import MainLayout from "../src/components/templates/MainLayout";
 import Image from "next/image";
 
+import Carousel from "../src/components/organisms/Carousel/Carousel";
+
 import {
     faBriefcase,
     faMapMarkerAlt,
@@ -274,7 +276,8 @@ export default function AboutMe({title, description}: IPropsAbout) {
                                         Client Say
                                     </h4>
                                 </div>
-                                <div className="testimonials owl-carousel">
+
+                                <div className="testimonials">
                                     <div className="testimonial-item">
                                         <div className="testimonial-content">
                                             <div className="testimonial-review">
@@ -311,56 +314,38 @@ export default function AboutMe({title, description}: IPropsAbout) {
                                             </div>
                                         </div>
                                     </div>
-
                                     <div className="testimonial-item">
                                         <div className="testimonial-content">
                                             <div className="testimonial-review">
-                                                <p>I like this group more and more each day. It makes my life a lot
-                                                    easier. Its really wonderful to be able to get support from like
-                                                    minded entrepreneurs. And Anna is always available to advise us.
-                                                    Thank you so much!</p>
+                                                <p>Wow what great experience, I love it! Its exactly what Ive been
+                                                    looking for. Annas group was the best investment I ever made. I
+                                                    dont know if I would have ever made it without her guidance and
+                                                    support!</p>
                                             </div>
                                         </div>
                                         <div className="testimonial-footer">
                                             <div className="testimonial-avatar">
-                                                <img src="http://via.placeholder.com/80x80" alt="Daniel Pringle"/>
+                                                <img src="http://via.placeholder.com/80x80" alt="Gary Johnson"/>
                                             </div>
                                             <div className="testimonial-owner-content">
-                                                <p className="testimonial-owner">Marita Swingy</p>
-                                                <p className="testimonial-position">Project Manager</p>
+                                                <p className="testimonial-owner">Johny Melion</p>
+                                                <p className="testimonial-position">General Manager</p>
                                                 <ul className="testimonial-rating">
-                                                    <li><i className="fa fa-star"></i></li>
-                                                    <li><i className="fa fa-star"></i></li>
-                                                    <li><i className="fa fa-star"></i></li>
-                                                    <li><i className="fa fa-star"></i></li>
-                                                    <li><i className="fa fa-star-half-alt"></i></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className="testimonial-item">
-                                        <div className="testimonial-content">
-                                            <div className="testimonial-review">
-                                                <p>I like this group more and more each day. It makes my life a lot
-                                                    easier. Its really wonderful to be able to get support from like
-                                                    minded entrepreneurs. And Anna is always available to advise us.
-                                                    Thank you so much!</p>
-                                            </div>
-                                        </div>
-                                        <div className="testimonial-footer">
-                                            <div className="testimonial-avatar">
-                                                <img src="http://via.placeholder.com/80x80" alt="Billy Adams"/>
-                                            </div>
-                                            <div className="testimonial-owner-content">
-                                                <p className="testimonial-owner">Flyn Jumary</p>
-                                                <p className="testimonial-position">Sales Manager</p>
-                                                <ul className="testimonial-rating">
-                                                    <li><i className="fa fa-star"></i></li>
-                                                    <li><i className="fa fa-star"></i></li>
-                                                    <li><i className="fa fa-star"></i></li>
-                                                    <li><i className="fa fa-star"></i></li>
-                                                    <li><i className="fa fa-star"></i></li>
+                                                    <li><i className="fa fa-star">
+                                                        <FontAwesomeIcon size={"xs"} icon={faStar}/>
+                                                    </i></li>
+                                                    <li><i className="fa fa-star">
+                                                        <FontAwesomeIcon size={"xs"} icon={faStar}/>
+                                                    </i></li>
+                                                    <li><i className="fa fa-star">
+                                                        <FontAwesomeIcon size={"xs"} icon={faStar}/>
+                                                    </i></li>
+                                                    <li><i className="fa fa-star">
+                                                        <FontAwesomeIcon size={"xs"} icon={faStar}/>
+                                                    </i></li>
+                                                    <li><i className="fa fa-star">
+                                                        <FontAwesomeIcon size={"xs"} icon={faStarHalf}/>
+                                                    </i></li>
                                                 </ul>
                                             </div>
                                         </div>
