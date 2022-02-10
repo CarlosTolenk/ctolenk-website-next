@@ -1,3 +1,7 @@
+.listNav {
+    cursor: pointer;
+}
+
 .containerNavItem {
     display: flex;
     flex-direction: row;
