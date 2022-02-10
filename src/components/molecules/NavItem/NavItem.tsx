@@ -21,7 +21,7 @@ const NavItem = ({href, iconSource, text}: IPropsNavItem) => {
     return (
         <>
             <Link href={href} passHref>
-                <li>
+                <li className={styles.listNav}>
                     <a className={asPath === href ? 'active' : ''}>
                         <div className={styles.containerNavItem}>
                             <div className={styles.containerNavItemIcon}>

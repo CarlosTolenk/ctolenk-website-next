@@ -45,7 +45,7 @@ export default function Resume({title, description}: IPropsResume) {
                                         <div className="main-timeline">
                                             <div className="timeline">
                                                 <div className="timeline-icon">
-                                                    <Image src={'http://via.placeholder.com/80x80'} alt={''}
+                                                    <Image src={'https://via.placeholder.com/80x80'} alt={''}
                                                            height={80} width={80}/>
                                                 </div>
                                                 <div className="timeline-content">
@@ -62,7 +62,7 @@ export default function Resume({title, description}: IPropsResume) {
 
                                             <div className="timeline">
                                                 <div className="timeline-icon">
-                                                    <Image src={'http://via.placeholder.com/80x80'} alt={'Gary Johnson'}
+                                                    <Image src={'https://via.placeholder.com/80x80'} alt={'Gary Johnson'}
                                                            height={80} width={80}/>
                                                 </div>
                                                 <div className="timeline-content">
@@ -79,7 +79,7 @@ export default function Resume({title, description}: IPropsResume) {
 
                                             <div className="timeline">
                                                 <div className="timeline-icon">
-                                                    <Image src={'http://via.placeholder.com/80x80'}
+                                                    <Image src={'https://via.placeholder.com/80x80'}
                                                            alt={'Gary Johnson'}
                                                            height={80} width={80}/>
                                                 </div>
@@ -170,19 +170,25 @@ export default function Resume({title, description}: IPropsResume) {
                                                                     <FontAwesomeIcon className="mr-1" size={"1x"}
                                                                                      icon={faStar}/>
                                                                 </i></li>
-                                                                <li><i className="fa fa-star"></i>
+                                                                <li><i className="fa fa-star">
                                                                     <FontAwesomeIcon className="mr-1" size={"1x"}
-                                                                                     icon={faStar}/></li>
-                                                                <li><i className="fa fa-star"></i>
+                                                                                     icon={faStar}/>
+                                                                </i>
+                                                                </li>
+                                                                <li><i className="fa fa-star">
                                                                     <FontAwesomeIcon className="mr-1" size={"1x"}
-                                                                                     icon={faStar}/></li>
-                                                                <li><i className="fa fa-star"></i>
+                                                                                     icon={faStar}/>
+                                                                </i>
+                                                                </li>
+                                                                <li><i className="fa fa-star">
                                                                     <FontAwesomeIcon className="mr-1" size={"1x"}
-                                                                                     icon={faStar}/></li>
+                                                                                     icon={faStar}/>
+                                                                </i>
+                                                                </li>
                                                             </ul>
                                                         </div>
                                                         <div className="language-skill row">
-                                                            <h4 className="col-md-6 text-left">Arabic <span>Native</span>
+                                                            <h4 className="col-md-6 text-left">Spanish <span>Native</span>
                                                             </h4>
                                                             <ul className="col-md-6 text-right rating">
                                                                 <li><i className="fa fa-star">
@@ -224,7 +230,7 @@ export default function Resume({title, description}: IPropsResume) {
                                         <div className="main-timeline">
                                             <div className="timeline currecnt">
                                                 <div className="timeline-icon">
-                                                    <Image src={'http://via.placeholder.com/100x100'}
+                                                    <Image src={'https://via.placeholder.com/100x100'}
                                                            alt={'Gary Johnson'}
                                                            height={100} width={100}/>
                                                 </div>
@@ -242,7 +248,7 @@ export default function Resume({title, description}: IPropsResume) {
 
                                             <div className="timeline">
                                                 <div className="timeline-icon">
-                                                    <Image src={'http://via.placeholder.com/100x100'}
+                                                    <Image src={'https://via.placeholder.com/100x100'}
                                                            alt={'Gary Johnson'}
                                                            height={100} width={100}/>
                                                 </div>
@@ -260,7 +266,7 @@ export default function Resume({title, description}: IPropsResume) {
 
                                             <div className="timeline">
                                                 <div className="timeline-icon">
-                                                    <Image src={'http://via.placeholder.com/100x100'}
+                                                    <Image src={'https://via.placeholder.com/100x100'}
                                                            alt={'Gary Johnson'}
                                                            height={100} width={100}/>
                                                 </div>

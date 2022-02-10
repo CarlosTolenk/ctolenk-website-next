@@ -31,7 +31,7 @@ export default function Contact({title, description}: IPropsContact) {
                         <div className="row contact-form pb-30">
                             <div className="col-sm-12 col-md-5 col-lg-5 left-background">
                                 <Image
-                                    src={'http://via.placeholder.com/600x597'} alt={'client'}
+                                    src={'https://via.placeholder.com/600x597'} alt={'client'}
                                     height={500} width={600}/>
                             </div>
                             <div className="col-sm-12 col-md-7 col-lg-7">

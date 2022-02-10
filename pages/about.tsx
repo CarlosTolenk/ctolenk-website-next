@@ -94,7 +94,7 @@ export default function AboutMe({title, description}: IPropsAbout) {
                                 <div className="col-xs-6 col-sm-12 col-md-6 col-lg-6">
                                     <div className="box-img">
                                         <Image className="img-fluid"
-                                               src={'http://via.placeholder.com/700x524'} alt={'client'}
+                                               src={'https://via.placeholder.com/700x524'} alt={'client'}
                                                height={524} width={700}/>
                                     </div>
                                 </div>
@@ -290,7 +290,7 @@ export default function AboutMe({title, description}: IPropsAbout) {
                                         <div className="testimonial-footer">
                                             <div className="testimonial-avatar">
 
-                                                <Image src={'http://via.placeholder.com/80x80'} alt={'Gary Johnson'}
+                                                <Image src={'https://via.placeholder.com/80x80'} alt={'Gary Johnson'}
                                                        height={80} width={90}/>
 
                                             </div>
@@ -328,7 +328,7 @@ export default function AboutMe({title, description}: IPropsAbout) {
                                         </div>
                                         <div className="testimonial-footer">
                                             <div className="testimonial-avatar">
-                                                <Image src={'http://via.placeholder.com/80x80'} alt={'Gary Johnson'}
+                                                <Image src={'https://via.placeholder.com/80x80'} alt={'Gary Johnson'}
                                                        height={80} width={90}/>
                                             </div>
                                             <div className="testimonial-owner-content">

@@ -55,8 +55,9 @@ const Header = React.memo(() => {
                 </div>
             </header>
             <div className="responsive-header">
-                <div onClick={onHandlerClickNavigation} className="responsive-header-name">
-                    <Image className="responsive-logo" src={'/images/ctolenk-color.png'} alt={'ctolenk-c'}
+                <div className="responsive-header-name">
+                    <Image onClick={onHandlerClickNavigation} className="responsive-logo"
+                           src={'/images/ctolenk-color.png'} alt={'ctolenk-c'}
                            width={100} height={30}/>
                 </div>
                 <span onClick={onHandleClick} className="responsive-icon">
