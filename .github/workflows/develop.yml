@@ -50,6 +50,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: ${{ env.NAME_ARTEFACT }}
+          path: out/to/prod
 
       - name: 📂 Sync files
         uses: Penguibird/FTP-Deploy-Action@4.2.0
@@ -59,3 +60,4 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD  }}
           protocol: ftps
           dry-run: true
+          local-dir: out/to/prod/
