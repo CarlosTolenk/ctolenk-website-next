@@ -53,11 +53,11 @@ jobs:
           path: out/to/prod
 
       - name: 📂 Sync files
-        uses: Penguibird/FTP-Deploy-Action@4.2.0
+        uses: SamKirkland/FTP-Deploy-Action@4.2.0
         with:
           server: ${{ secrets.FTP_SERVER_NAME  }}
           username: ${{ secrets.FTP_USERNAME  }}
           password: ${{ secrets.FTP_PASSWORD  }}
           protocol: ftps
           dry-run: true
-          local-dir: out/to/prod/
+          server-dir: out/to/prod/
