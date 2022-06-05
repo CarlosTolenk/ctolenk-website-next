@@ -11,7 +11,7 @@ on:
 env:
   NODE_VERSION: '12.x'                                                       # set this to the node version to use
   NAME_ARTEFACT: next-ssg
-  WEBAPP_PACKAGE_PATH: './out'
+  WEBAPP_PACKAGE_PATH: './out/'
 
 jobs:
   ci:
