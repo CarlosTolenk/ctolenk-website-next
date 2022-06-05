@@ -58,4 +58,4 @@ jobs:
           username: ${{ secrets.FTP_USERNAME  }}
           password: ${{ secrets.FTP_PASSWORD  }}
           protocol: ftps
-          local-dir: ${{ env.WEBAPP_PACKAGE_PATH  }}
+          local-dir: ./next-ssg/
