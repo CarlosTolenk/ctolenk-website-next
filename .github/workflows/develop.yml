@@ -57,3 +57,5 @@ jobs:
           server: ${{ secrets.FTP_SERVER_NAME  }}
           username: ${{ secrets.FTP_USERNAME  }}
           password: ${{ secrets.FTP_PASSWORD  }}
+          protocol: ftps
+          local-dir: ${{ WEBAPP_PACKAGE_PATH }}
