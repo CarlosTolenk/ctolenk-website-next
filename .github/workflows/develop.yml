@@ -50,7 +50,6 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: ${{ env.NAME_ARTEFACT }}
-          path: ${{ env.WEBAPP_PACKAGE_PATH  }}
 
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.2.0
