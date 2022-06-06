@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    basePath: '/cv-online.ctolenk.com',
+    basePath: '/',
     trailingSlash: true,
     reactStrictMode: true,
     images: {
