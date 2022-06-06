@@ -60,4 +60,4 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD  }}
           protocol: ftps
           dry-run: true
-          server-dir: ${{ env.WEBAPP_PACKAGE_PATH  }}
+          local-dir: ${{ env.WEBAPP_PACKAGE_PATH  }}/
