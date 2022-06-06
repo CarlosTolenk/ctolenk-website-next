@@ -50,7 +50,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: ${{ env.NAME_ARTEFACT }}
-          path: out/to/prod
+          path: dist/
 
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.2.0
@@ -60,4 +60,4 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD  }}
           protocol: ftps
           dry-run: true
-          server-dir: out/to/prod/
+          server-dir: dist/
