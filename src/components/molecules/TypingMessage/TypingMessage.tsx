@@ -1,9 +1,7 @@
-import React from "react";
+import {memo} from "react";
 import ReactTypingEffect from "react-typing-effect";
 
-// eslint-disable-next-line react/display-name
-const TypingMessage = React.memo(({className, message}: any) => {
-
+const TypingMessage = ({className, message}: any) => {
     return (
         <>
             <ReactTypingEffect
@@ -15,8 +13,7 @@ const TypingMessage = React.memo(({className, message}: any) => {
                 typingDelay={75}
             />
         </>
-    )
+    );
+}
 
-})
-
-export default TypingMessage
+export default memo(TypingMessage);

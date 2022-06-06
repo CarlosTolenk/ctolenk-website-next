@@ -1,4 +1,4 @@
-import React from "react";
+import React, {memo} from "react";
 import Particles from "react-tsparticles";
 
 const BgDynamic = () => {
@@ -100,4 +100,4 @@ const BgDynamic = () => {
 
 }
 
-export default BgDynamic;
+export default memo(BgDynamic);
