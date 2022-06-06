@@ -58,5 +58,3 @@ jobs:
           server: ${{ secrets.FTP_SERVER_NAME  }}
           username: ${{ secrets.FTP_USERNAME  }}
           password: ${{ secrets.FTP_PASSWORD  }}
-          dry-run: true
-          local-dir: ${{ env.WEBAPP_PACKAGE_PATH  }}/
