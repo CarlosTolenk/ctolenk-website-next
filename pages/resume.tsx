@@ -5,7 +5,6 @@ import Image from 'next/image'
 import {
   faCloudDownloadAlt,
   faStar,
-  faStarHalfAlt,
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
