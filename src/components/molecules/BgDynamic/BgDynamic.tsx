@@ -11,90 +11,88 @@ const BgDynamic = () => {
   }
 
   return (
-    <>
-      <Particles
-        id="tsparticles"
-        init={particlesInit}
-        loaded={particlesLoaded}
-        options={{
-          background: {
-            color: {
-              value: 'rgba(14,14,14,0.24)',
-            },
+    <Particles
+      id="tsparticles"
+      init={particlesInit}
+      loaded={particlesLoaded}
+      options={{
+        background: {
+          color: {
+            value: 'rgba(14,14,14,0.24)',
           },
-          fpsLimit: 60,
-          interactivity: {
-            events: {
-              onClick: {
-                enable: true,
-                mode: 'repulse',
-              },
-              onHover: {
-                enable: true,
-                mode: 'repulse',
-              },
-              resize: true,
-            },
-            modes: {
-              bubble: {
-                distance: 400,
-                duration: 2,
-                opacity: 0.7,
-                size: 40,
-              },
-              push: {
-                quantity: 4,
-              },
-              repulse: {
-                distance: 200,
-                duration: 0.4,
-              },
-            },
-          },
-          particles: {
-            color: {
-              value: '#d32e2e',
-            },
-            links: {
-              color: 'rgba(255,255,255,0.04)',
-              distance: 150,
+        },
+        fpsLimit: 60,
+        interactivity: {
+          events: {
+            onClick: {
               enable: true,
-              opacity: 0.5,
-              width: 1,
+              mode: 'repulse',
             },
-            collisions: {
-              enable: false,
-            },
-            move: {
-              direction: 'none',
+            onHover: {
               enable: true,
-              outMode: 'bounce',
-              random: false,
-              speed: 3,
-              straight: false,
+              mode: 'repulse',
             },
-            number: {
-              density: {
-                enable: true,
-                area: 700,
-              },
-              value: 80,
+            resize: true,
+          },
+          modes: {
+            bubble: {
+              distance: 400,
+              duration: 2,
+              opacity: 0.7,
+              size: 40,
             },
-            opacity: {
-              value: 0.5,
+            push: {
+              quantity: 4,
             },
-            shape: {
-              type: 'circle',
-            },
-            size: {
-              random: true,
-              value: 5,
+            repulse: {
+              distance: 200,
+              duration: 0.4,
             },
           },
-          detectRetina: false,
-        }}
-      />
-    </>
+        },
+        particles: {
+          color: {
+            value: '#d32e2e',
+          },
+          links: {
+            color: 'rgba(255,255,255,0.04)',
+            distance: 150,
+            enable: true,
+            opacity: 0.5,
+            width: 1,
+          },
+          collisions: {
+            enable: false,
+          },
+          move: {
+            direction: 'none',
+            enable: true,
+            outMode: 'bounce',
+            random: false,
+            speed: 3,
+            straight: false,
+          },
+          number: {
+            density: {
+              enable: true,
+              area: 700,
+            },
+            value: 80,
+          },
+          opacity: {
+            value: 0.5,
+          },
+          shape: {
+            type: 'circle',
+          },
+          size: {
+            random: true,
+            value: 5,
+          },
+        },
+        detectRetina: false,
+      }}
+    />
   )
 }
 

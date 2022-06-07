@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 
-import Nav from '../../molecules/Nav'
+import Nav from '../../molecules/Nav/Nav'
 import TypingMessage from '../../molecules/TypingMessage/TypingMessage'
 
 import { faBars } from '@fortawesome/free-solid-svg-icons'
@@ -62,7 +62,7 @@ const Header = React.memo(() => {
           </div>
         </div>
       </header>
-      <div className="responsive-header">
+      <header className="responsive-header">
         <div className="responsive-header-name">
           <Image
             onClick={onHandlerClickNavigation}
@@ -76,7 +76,7 @@ const Header = React.memo(() => {
         <span onClick={onHandleClick} className="responsive-icon">
           <FontAwesomeIcon size={'xs'} icon={faBars} />
         </span>
-      </div>
+      </header>
     </>
   )
 })

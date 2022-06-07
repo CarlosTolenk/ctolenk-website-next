@@ -17,20 +17,18 @@ const NavItem = ({ href, iconSource, text }: IPropsNavItem) => {
   const { asPath } = useRouter()
 
   return (
-    <>
-      <Link href={href} passHref>
-        <li className={styles.listNav}>
-          <a className={asPath === href ? 'active' : ''}>
-            <div className={styles.containerNavItem}>
-              <div className={styles.containerNavItemIcon}>
-                <FontAwesomeIcon size={'1x'} icon={iconSource} />
-              </div>
-              <p className={styles.NavItemText}>{text}</p>
+    <Link href={href} passHref>
+      <li className={styles.listNav}>
+        <a className={asPath === href ? 'active' : ''}>
+          <div className={styles.containerNavItem}>
+            <div className={styles.containerNavItemIcon}>
+              <FontAwesomeIcon size={'1x'} icon={iconSource} />
             </div>
-          </a>
-        </li>
-      </Link>
-    </>
+            <p className={styles.NavItemText}>{text}</p>
+          </div>
+        </a>
+      </li>
+    </Link>
   )
 }
 

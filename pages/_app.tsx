@@ -7,7 +7,7 @@ import '../styles/dark-mode.css'
 import '../styles/root.css'
 
 import type { AppProps } from 'next/app'
-import LoaderPage from '../src/components/molecules/LoaderPage'
+import LoaderPage from '../src/components/molecules/LoaderPage/LoaderPage'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

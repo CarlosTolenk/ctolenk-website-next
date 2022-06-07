@@ -12,7 +12,7 @@ const LoaderPage = () => {
       }, 750)
     }
 
-    waitingSecond()
+    return waitingSecond()
   }, [router.basePath])
 
   return (
@@ -20,8 +20,8 @@ const LoaderPage = () => {
       {loading ? (
         <div id="preloader">
           <div id="preloader-circle">
-            <span></span>
-            <span></span>
+            <span />
+            <span />
           </div>
         </div>
       ) : null}
