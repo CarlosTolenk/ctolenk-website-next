@@ -1,8 +1,8 @@
-import {IPropMeta} from "./IPropMeta";
+import { IPropMeta } from './IPropMeta'
 
-export interface IPropPageBase extends IPropMeta{
-    page: {
-        title: string;
-        slogan: string;
-    }
+export interface IPropPageBase extends IPropMeta {
+  page: {
+    title: string
+    slogan: string
+  }
 }

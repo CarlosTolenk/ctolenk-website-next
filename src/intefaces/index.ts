@@ -1,2 +1,2 @@
-export * from './IPropPageBase';
-export * from './IPropMeta';
+export * from './IPropPageBase'
+export * from './IPropMeta'

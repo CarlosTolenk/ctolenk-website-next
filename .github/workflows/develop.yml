@@ -9,7 +9,7 @@ on:
       - main
 
 env:
-  NODE_VERSION: '12.x'                                                       # set this to the node version to use
+  NODE_VERSION: '12.x' # set this to the node version to use
   NAME_ARTEFACT: next-ssg
   WEBAPP_PACKAGE_PATH: './out/'
 

@@ -1,35 +1,33 @@
 @media only screen and (max-width: 991px) {
-    .headerActiveMobile {
-        animation-duration: 0.5s;
-        animation-name: openMenu;
-        animation-fill-mode: forwards;
-    }
+  .headerActiveMobile {
+    animation-duration: 0.5s;
+    animation-name: openMenu;
+    animation-fill-mode: forwards;
+  }
 
-    .headerInactiveMobile {
-        animation-duration: 0.5s;
-        animation-name: closeMenu;
-        animation-fill-mode: forwards;
-    }
+  .headerInactiveMobile {
+    animation-duration: 0.5s;
+    animation-name: closeMenu;
+    animation-fill-mode: forwards;
+  }
 }
-
 
 @keyframes openMenu {
-    from {
-        left: -285px;
-    }
+  from {
+    left: -285px;
+  }
 
-    to {
-        left: 0;
-    }
+  to {
+    left: 0;
+  }
 }
 
-
 @keyframes closeMenu {
-    from {
-        left: 0;
-    }
+  from {
+    left: 0;
+  }
 
-    to {
-        left: -285px;
-    }
+  to {
+    left: -285px;
+  }
 }
