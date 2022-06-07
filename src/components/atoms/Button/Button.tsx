@@ -10,12 +10,10 @@ interface IPropsButton {
 
 const Button = ({text, iconSource, onHandlerClick}: IPropsButton) => {
     return (
-        <>
             <a onClick={onHandlerClick} className="bt-submit">
                 <FontAwesomeIcon className='icon-button' size={"1x"} icon={iconSource}/>
                 {text}
             </a>
-        </>
     )
 
 }

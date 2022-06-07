@@ -1,4 +1,4 @@
-import React, {memo} from "react";
+import React, {memo, useCallback} from "react";
 import Particles from "react-tsparticles";
 
 const BgDynamic = () => {
@@ -28,7 +28,7 @@ const BgDynamic = () => {
                         events: {
                             onClick: {
                                 enable: true,
-                                mode: "push",
+                                mode: "repulse",
                             },
                             onHover: {
                                 enable: true,
@@ -64,7 +64,7 @@ const BgDynamic = () => {
                             width: 1,
                         },
                         collisions: {
-                            enable: true,
+                            enable: false,
                         },
                         move: {
                             direction: "none",
@@ -92,7 +92,7 @@ const BgDynamic = () => {
                             value: 5,
                         },
                     },
-                    detectRetina: true,
+                    detectRetina: false,
                 }}
             />
         </>
