@@ -12,7 +12,7 @@ import LoaderPage from '../src/components/molecules/LoaderPage'
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      <LoaderPage />
+          <LoaderPage />
       <Component {...pageProps} />
     </>
   )
