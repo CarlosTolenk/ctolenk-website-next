@@ -25,7 +25,7 @@ export default function NotFound404({ title, description }: IPropsNotFound404) {
                   <span>
                     Or Goto
                     <Link href={'/'} passHref>
-                      <a> Homepage</a>
+                      <a> Home </a>
                     </Link>
                   </span>
                 </div>
