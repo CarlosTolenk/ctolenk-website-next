@@ -4,7 +4,7 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     loader: 'akamai',
-    path: 'https://cv-online.ctolenk.com',
+    path: '',
   },
 }
 
