@@ -1,4 +1,4 @@
-import { memo, PropsWithChildren } from 'react'
+import React, { PropsWithChildren } from 'react'
 import Head from 'next/head'
 import Header from '../organisms/Header/Header'
 
@@ -25,4 +25,4 @@ const MainLayout = ({ title, description, children }: IPropsMainLayout) => {
   )
 }
 
-export default memo(MainLayout)
+export default MainLayout
