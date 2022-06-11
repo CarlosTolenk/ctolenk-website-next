@@ -297,7 +297,7 @@ img {
   body::-webkit-scrollbar-thumb,
   .sub-page::-webkit-scrollbar-thumb,
   .header::-webkit-scrollbar-thumb {
-    background-color: rgba(17, 214, 240, 0.3);
+    background-color: var(--primary-color);
   }
 }
 
