@@ -21,15 +21,15 @@ export default async function handler(
     port: 465,
     host: 'smtp.gmail.com',
     auth: {
-      user: process.env.emailFrom,
-      pass: process.env.password,
+      user: process.env.EMAIL_FROM,
+      pass: process.env.PASSWORD,
     },
     secure: true,
   })
 
   const mailData = {
     from: 'carlos.tolentinoe@gmail.com',
-    to: process.env.emailFrom,
+    to: process.env.EMAIL_FROM,
     subject: `Me ha enviado un correo desde el website ${name}`,
     text: message + ' | Sent from: ' + email,
     html: `<div>${message}</div><p>Sent from:
