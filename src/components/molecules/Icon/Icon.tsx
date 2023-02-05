@@ -1,7 +1,7 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
-  faBriefcase,
+  faBriefcase, faCode, faDesktop,
   faHandshake,
   faLayerGroup,
   faMapMarkerAlt,
@@ -14,6 +14,8 @@ const availableIcons = {
   faLayerGroup: faLayerGroup,
   faHandshake: faHandshake,
   faMapMarkerAlt: faMapMarkerAlt,
+  faCode: faCode,
+  faDesktop: faDesktop
 }
 
 interface IPropIcon {

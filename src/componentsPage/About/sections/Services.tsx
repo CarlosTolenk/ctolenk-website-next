@@ -1,13 +1,17 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faCamera,
-  faCode,
-  faDesktop,
-  faMicrophoneAlt,
-} from '@fortawesome/free-solid-svg-icons'
 import React from 'react'
 
-const Services = () => {
+import { Services } from '../../../intefaces'
+
+import ListServices from '../components/ListServices'
+
+interface IPropListServices {
+  list: Services[]
+}
+
+const Services = ({ list }: IPropListServices) => {
+  const list1: Services[] = list?.splice(0, 2)
+  const list2: Services[] = list?.splice(2, 4)
+
   return (
     <div className="special-block-bg">
       <div className="section-head">
@@ -18,75 +22,11 @@ const Services = () => {
       </div>
       <div className="row">
         <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-          <div className="services-list">
-            <div className="service-block">
-              <div className="service-icon">
-                <i className="lnr lnr-code">
-                  <FontAwesomeIcon size={'1x'} icon={faCode} />
-                </i>
-              </div>
-              <div className="service-text">
-                <h4>Web Development</h4>
-                <p>
-                  Pellentesque pellentesque, ipsum sit amet auctor accumsan,
-                  odio tortor bibendum massa, sit amet ultricies ex lectus
-                  scelerisque nibh. Ut non sodales odio.
-                </p>
-              </div>
-            </div>
-
-            <div className="service-block">
-              <div className="service-icon">
-                <i className="lnr lnr-laptop-phone">
-                  <FontAwesomeIcon size={'sm'} icon={faDesktop} />
-                </i>
-              </div>
-              <div className="service-text">
-                <h4>Web Design</h4>
-                <p>
-                  Pellentesque pellentesque, ipsum sit amet auctor accumsan,
-                  odio tortor bibendum massa, sit amet ultricies ex lectus
-                  scelerisque nibh. Ut non sodales odio.
-                </p>
-              </div>
-            </div>
-          </div>
+          <ListServices list={list1} />
         </div>
 
         <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-          <div className="services-list">
-            <div className="service-block">
-              <div className="service-icon">
-                <i className="lnr lnr-mic">
-                  <FontAwesomeIcon size={'sm'} icon={faMicrophoneAlt} />
-                </i>
-              </div>
-              <div className="service-text">
-                <h4>Voice Recorder</h4>
-                <p>
-                  Pellentesque pellentesque, ipsum sit amet auctor accumsan,
-                  odio tortor bibendum massa, sit amet ultricies ex lectus
-                  scelerisque nibh. Ut non sodales odio.
-                </p>
-              </div>
-            </div>
-
-            <div className="service-block">
-              <div className="service-icon">
-                <i className="lnr lnr-camera">
-                  <FontAwesomeIcon size={'sm'} icon={faCamera} />
-                </i>
-              </div>
-              <div className="service-text">
-                <h4>Photography</h4>
-                <p>
-                  Pellentesque pellentesque, ipsum sit amet auctor accumsan,
-                  odio tortor bibendum massa, sit amet ultricies ex lectus
-                  scelerisque nibh. Ut non sodales odio.
-                </p>
-              </div>
-            </div>
-          </div>
+          <ListServices list={list2} />
         </div>
       </div>
     </div>

@@ -1,7 +1,4 @@
-import { SourceIcon } from '../types'
+import {IPropDataBase} from "./bases/IPropDataBase";
 
-export interface Features {
-  title: string
-  description: string
-  icon: SourceIcon
+export interface Features extends IPropDataBase{
 }

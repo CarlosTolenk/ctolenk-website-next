@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, memo } from 'react'
 import Image from 'next/image'
 
 import Nav from '../../molecules/Nav/Nav'
@@ -10,8 +10,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import styles from './Header.module.css'
 import { useRouter } from 'next/router'
 
-// eslint-disable-next-line react/display-name
-const Header = React.memo(() => {
+const Header = () => {
   const [classNameToggleMenu, setClassNameToggleMenu] = useState('')
   const [isActiveMenu, setIsActiveMenu] = useState(false)
   const messages = [
@@ -79,6 +78,6 @@ const Header = React.memo(() => {
       </header>
     </>
   )
-})
+}
 
-export default Header
+export default memo(Header)
