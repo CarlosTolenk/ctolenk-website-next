@@ -28,8 +28,8 @@ export default async function handler(
   })
 
   const mailData = {
-    from: 'carlos.tolentinoe@gmail.com',
-    to: process.env.EMAIL_FROM,
+    from: process.env.EMAIL_FROM,
+    to: process.env.EMAIL_TO,
     subject: `Me ha enviado un correo desde el website ${name}`,
     text: message + ' | Sent from: ' + email,
     html: `<div>${message}</div><p>Sent from:
