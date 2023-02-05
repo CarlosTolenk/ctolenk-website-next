@@ -17,7 +17,6 @@ const Nav = () => {
       <NavItem href="/" iconSource={faHome} text="Home" />
       <NavItem href="/about" iconSource={faUserTie} text="About Me" />
       <NavItem href="/resume" iconSource={faAward} text="Resume" />
-      <NavItem href="/portfolio" iconSource={faBusinessTime} text="Portfolio" />
       <NavItem href="/contact" iconSource={faPaperPlane} text="Contact" />
       <NavItem
         href="/appointments"
