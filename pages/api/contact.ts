@@ -1,4 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
+import * as dotenv from 'dotenv'
 import { createTransport } from 'nodemailer'
 
 type Data = {
@@ -9,6 +10,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>,
 ) {
+  dotenv.config()
   const { name, email, message } = req.body
 
   if (!name && !email && !message) {
@@ -19,22 +21,21 @@ export default async function handler(
     port: 465,
     host: 'smtp.gmail.com',
     auth: {
-      user: 'carlos.tolentinoe@gmail.com',
-      pass: 'ljxdzcqmdyxttgvl',
+      user: process.env.emailFrom,
+      pass: process.env.password,
     },
     secure: true,
   })
 
   const mailData = {
     from: 'carlos.tolentinoe@gmail.com',
-    to: 'carlos.tolentinoe@gmail.com',
+    to: process.env.emailFrom,
     subject: `Me ha enviado un correo desde el website ${name}`,
     text: message + ' | Sent from: ' + email,
     html: `<div>${message}</div><p>Sent from:
     ${email}</p>`,
   }
   await transporter.sendMail(mailData)
-  console.log(' Se envio el correo')
 
   return res.status(200).json({ status: 'OK' })
 }
