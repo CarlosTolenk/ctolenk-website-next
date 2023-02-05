@@ -1,8 +1,8 @@
 import React from 'react'
 import Icon from '../../../components/molecules/Icon/Icon'
-import { Features } from '../../../intefaces'
+import { IFeatures } from '../../../intefaces'
 
-const ItemFeature = ({ title, description, icon }: Features) => {
+const ItemFeature = ({ title, description, icon }: IFeatures) => {
   return (
     <li className="col-xs-12 col-sm-12 col-md-4 col-lg-4">
       <div className="icon-info">
@@ -19,7 +19,7 @@ const ItemFeature = ({ title, description, icon }: Features) => {
 }
 
 interface IPropList {
-  list: Features[]
+  list: IFeatures[]
 }
 
 const ListFeatures = ({ list }: IPropList) => {

@@ -6,7 +6,6 @@ import {
   faHome,
   faUserTie,
   faAward,
-  faBusinessTime,
   faPaperPlane,
   faCalendarCheck,
 } from '@fortawesome/free-solid-svg-icons'

@@ -6,3 +6,5 @@ export type SourceIcon =
   | 'faMapMarkerAlt'
   | 'faCode'
   | 'faDesktop'
+  | 'faMobile'
+  | 'faPeopleArrows'

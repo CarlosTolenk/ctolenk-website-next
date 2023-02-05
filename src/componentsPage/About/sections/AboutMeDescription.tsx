@@ -1,14 +1,14 @@
 import React from 'react'
 import Image from 'next/image'
 
-import { Features, Paragraph } from '../../../intefaces'
+import { IFeatures, IParagraph } from '../../../intefaces'
 
 import ListFeatures from '../components/ListFeatures'
 import Icon from '../../../components/molecules/Icon/Icon'
 
 interface IPropsAboutMe {
-  about: Paragraph[]
-  features: Features[]
+  about: IParagraph[]
+  features: IFeatures[]
 }
 
 const AboutMeDescription = ({ about, features }: IPropsAboutMe) => {

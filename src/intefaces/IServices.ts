@@ -1,3 +1,3 @@
 import { IPropDataBase } from './bases/IPropDataBase'
 
-export interface Services extends IPropDataBase {}
+export interface IServices extends IPropDataBase {}

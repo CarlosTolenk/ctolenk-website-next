@@ -24,21 +24,45 @@ export const AboutMeta: IPropsAbout = {
     ],
     features: [
       {
-        title: '5 Years+ Job',
+        title: '6 Years+ Software Development',
         description: 'Experience',
         icon: 'faBriefcase',
       },
       {
-        title: '16+ Projects',
+        title: '10+ Projects for Freelance',
         description: 'Completed',
         icon: 'faLayerGroup',
       },
       {
-        title: '105+ Meetings',
-        description: 'Successful',
+        title: 'Several Migrated Projects',
+        description: 'Completed',
         icon: 'faHandshake',
       },
     ],
-    services: [],
+    services: [
+      {
+        title: 'Web Development',
+        description: 'Develop software in the cloud through web technologies',
+        icon: 'faCode',
+      },
+      {
+        title: 'Software Consulting',
+        description:
+          'Analyze and implement correct practices in software development',
+        icon: 'faBriefcase',
+      },
+      {
+        title: 'Mobile Development',
+        description:
+          'Develop mobile applications with a business or service objective',
+        icon: 'faMobile',
+      },
+      {
+        title: 'Technical leader',
+        description:
+          'Being able to lead software development teams in order to meet objectives efficiently',
+        icon: 'faPeopleArrows',
+      },
+    ],
   },
 }

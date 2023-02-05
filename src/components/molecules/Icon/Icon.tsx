@@ -1,10 +1,14 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
-  faBriefcase, faCode, faDesktop,
+  faBriefcase,
+  faCode,
+  faDesktop,
   faHandshake,
   faLayerGroup,
   faMapMarkerAlt,
+  faMobile,
+  faPeopleArrows,
 } from '@fortawesome/free-solid-svg-icons'
 
 import { SizeIcon, SourceIcon } from '../../../types'
@@ -15,7 +19,9 @@ const availableIcons = {
   faHandshake: faHandshake,
   faMapMarkerAlt: faMapMarkerAlt,
   faCode: faCode,
-  faDesktop: faDesktop
+  faDesktop: faDesktop,
+  faMobile: faMobile,
+  faPeopleArrows: faPeopleArrows,
 }
 
 interface IPropIcon {
