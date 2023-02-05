@@ -6,7 +6,7 @@ const TypingMessage = ({ className, message }: any) => {
     <ReactTypingEffect
       className={className}
       text={message}
-      speed={85}
+      speed={95}
       eraseSpeed={75}
       eraseDelay={650}
       typingDelay={75}

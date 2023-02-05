@@ -9,7 +9,7 @@ const LoaderPage = () => {
     function waitingSecond() {
       setTimeout(() => {
         setLoading(false)
-      }, 750)
+      }, 250)
     }
 
     return waitingSecond()
