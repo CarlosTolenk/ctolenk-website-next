@@ -5,8 +5,8 @@ import Image from 'next/image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faEnvelope,
-  faPhone,
   faMapMarkerAlt,
+  faUsers,
 } from '@fortawesome/free-solid-svg-icons'
 import {
   faFacebookF,
@@ -30,10 +30,13 @@ export default function Contact({ metadata, page }: IPropsContact) {
           <div className="row contact-form pb-30">
             <div className="col-sm-12 col-md-5 col-lg-5 left-background">
               <Image
-                src={'https://via.placeholder.com/600x597'}
+                src={
+                  'https://www.wgu.edu/content/dam/web-sites/blog-newsroom/blog/images/national/2019/june/changing-roles-of-software-developers.jpg'
+                }
                 alt={'client'}
                 height={500}
                 width={600}
+                objectFit={'cover'}
               />
             </div>
             <div className="col-sm-12 col-md-7 col-lg-7">
@@ -85,13 +88,12 @@ export default function Contact({ metadata, page }: IPropsContact) {
               <div className="contact-info d-flex col-md-4">
                 <div className="w-25">
                   <div className="contact-icon">
-                    <FontAwesomeIcon size={'sm'} icon={faPhone} />
+                    <FontAwesomeIcon size={'sm'} icon={faUsers} />
                   </div>
                 </div>
                 <div className="contact-text w-75">
-                  <h2>Phone</h2>
-                  <p>(+881) 111 222 333</p>
-                  <p>(+881) 111 222 333</p>
+                  <h2>Google Meet</h2>
+                  <p>carlos.tolentinoe@gmail.com</p>
                 </div>
               </div>
               <div className="contact-info d-flex col-md-4">
@@ -102,8 +104,7 @@ export default function Contact({ metadata, page }: IPropsContact) {
                 </div>
                 <div className="contact-text w-75">
                   <h2>Email</h2>
-                  <p>info@domain.com</p>
-                  <p>name@domain.com</p>
+                  <p>carlos.tolentinoe@ctolenk.com</p>
                 </div>
               </div>
               <div className="contact-info d-flex col-md-4">
@@ -113,9 +114,9 @@ export default function Contact({ metadata, page }: IPropsContact) {
                   </div>
                 </div>
                 <div className="contact-text w-75">
-                  <h2>Address</h2>
+                  <h2>Country</h2>
                   <p>
-                    123 New Yourk D Block 1100, <small> Street 2011 USA </small>
+                    Dominican Republic, <small> La Romana </small>
                   </p>
                 </div>
               </div>
@@ -126,35 +127,44 @@ export default function Contact({ metadata, page }: IPropsContact) {
                 <h4>Follow Me: </h4>
                 <ul className="social-media-links">
                   <li>
-                    <a href="#">
-                      <i className="fab fa-facebook-f">
-                        <FontAwesomeIcon size={'sm'} icon={faFacebookF} />
-                      </i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
+                    <a
+                      href="https://twitter.com/CarlosTolenk"
+                      target={'_blank'}
+                      rel="noreferrer"
+                    >
                       <i className="fab fa-twitter">
                         <FontAwesomeIcon size={'sm'} icon={faTwitter} />
                       </i>
                     </a>
                   </li>
                   <li>
-                    <a href="#">
+                    <a
+                      href="https://www.linkedin.com/in/ctolenk/"
+                      target={'_blank'}
+                      rel="noreferrer"
+                    >
                       <i className="fab fa-linkedin-in">
                         <FontAwesomeIcon size={'sm'} icon={faLinkedinIn} />
                       </i>
                     </a>
                   </li>
                   <li>
-                    <a href="#">
+                    <a
+                      href="https://www.youtube.com/@CarlosTolenk23"
+                      target={'_blank'}
+                      rel="noreferrer"
+                    >
                       <i className="fab fa-youtube">
                         <FontAwesomeIcon size={'sm'} icon={faYoutube} />
                       </i>
                     </a>
                   </li>
                   <li>
-                    <a href="#">
+                    <a
+                      href="https://www.instagram.com/ctolenk/"
+                      target={'_blank'}
+                      rel="noreferrer"
+                    >
                       <i className="fab fa-instagram">
                         <FontAwesomeIcon size={'sm'} icon={faInstagram} />
                       </i>

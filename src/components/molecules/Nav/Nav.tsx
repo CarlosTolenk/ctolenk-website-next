@@ -7,7 +7,6 @@ import {
   faUserTie,
   faAward,
   faPaperPlane,
-  faCalendarCheck,
 } from '@fortawesome/free-solid-svg-icons'
 
 const Nav = () => {
@@ -17,11 +16,6 @@ const Nav = () => {
       <NavItem href="/about" iconSource={faUserTie} text="About Me" />
       <NavItem href="/resume" iconSource={faAward} text="Resume" />
       <NavItem href="/contact" iconSource={faPaperPlane} text="Contact" />
-      <NavItem
-        href="/appointments"
-        iconSource={faCalendarCheck}
-        text="Appointments"
-      />
     </ul>
   )
 }

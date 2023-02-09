@@ -12,7 +12,6 @@ import Services from '../src/componentsPage/About/sections/Services'
 
 export default function AboutMe({ metadata, page, content }: IPropsAbout) {
   const { about, features, services } = content
-  console.log(content)
   return (
     <MainLayout title={metadata.title} description={metadata.description}>
       <section className="sub-page start-page animate__animated animate__fadeIn">

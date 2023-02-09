@@ -1,7 +1,7 @@
 import React, { MouseEvent, MouseEventHandler } from 'react'
 import { useRouter } from 'next/router'
 
-import { faEnvelope, faBriefcase } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope, faUserAlt } from '@fortawesome/free-solid-svg-icons'
 
 import { IPropMeta } from '../src/intefaces'
 
@@ -17,9 +17,14 @@ interface IPropsHome extends IPropMeta {
 export default function Home({ metadata, messageTyping }: IPropsHome) {
   const router = useRouter()
 
-  const onHandleClick = (event: MouseEvent<any>) => {
+  const onNavigationContactMe = (event: MouseEvent<any>) => {
     event.preventDefault()
     router.push('/contact')
+  }
+
+  const onNavigationAboutMe = (event: MouseEvent<any>) => {
+    event.preventDefault()
+    router.push('/about')
   }
 
   return (
@@ -34,14 +39,14 @@ export default function Home({ metadata, messageTyping }: IPropsHome) {
                 <TypingMessage message={messageTyping} className="type-wrap" />
                 <div className="home-buttons">
                   <Button
-                    text="Contact Me"
-                    iconSource={faEnvelope}
-                    onHandlerClick={onHandleClick}
+                    text="About Me"
+                    iconSource={faUserAlt}
+                    onHandlerClick={onNavigationAboutMe}
                   />
                   <Button
-                    text="Hire Me"
-                    iconSource={faBriefcase}
-                    onHandlerClick={onHandleClick}
+                    text="Contact Me"
+                    iconSource={faEnvelope}
+                    onHandlerClick={onNavigationContactMe}
                   />
                 </div>
               </div>
