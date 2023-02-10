@@ -11,6 +11,16 @@ export default async function handler(
   res: NextApiResponse<Data>,
 ) {
   dotenv.config()
+  const { authorization } = req.headers
+
+  if (!authorization) {
+    return res.status(401).json({ status: 'Not Authorization' })
+  }
+
+  if (authorization !== process.env.TOKEN_AUTHORIZATION) {
+    return res.status(401).json({ status: 'Not Authorization' })
+  }
+
   const { name, email, message } = req.body
 
   if (!name && !email && !message) {

@@ -9,7 +9,6 @@ import {
   faUsers,
 } from '@fortawesome/free-solid-svg-icons'
 import {
-  faFacebookF,
   faTwitter,
   faLinkedinIn,
   faYoutube,
@@ -18,10 +17,64 @@ import {
 import { IPropPageBase } from '../src/intefaces'
 import Title from '../src/components/molecules/Title'
 
-interface IPropsContact extends IPropPageBase {}
+interface FormElements extends HTMLFormControlsCollection {
+  nameInput: HTMLInputElement
+  emailInput: HTMLInputElement
+  messageInput: HTMLInputElement
+}
 
-export default function Contact({ metadata, page }: IPropsContact) {
+interface UsernameFormElement extends HTMLFormElement {
+  readonly elements: FormElements
+}
+
+interface IPayload {
+  name: string
+  email: string
+  message: string
+}
+
+interface IPropsContact extends IPropPageBase {
+  content: {
+    token: string
+  }
+}
+
+export default function Contact({ metadata, page, content }: IPropsContact) {
   const { title, slogan } = page
+
+  const sendMessage = async (payload: IPayload) => {
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      body: JSON.stringify(payload),
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: content.token,
+      },
+    })
+    return response.json()
+  }
+
+  const generatePayload = (event: React.FormEvent<UsernameFormElement>) => {
+    const { elements } = event.currentTarget
+    const mapped = new Map()
+    mapped.set(elements.nameInput.name, elements.nameInput.value)
+    mapped.set(elements.emailInput.name, elements.emailInput.value)
+    mapped.set(elements.messageInput.name, elements.messageInput.value)
+    return Object.fromEntries(mapped)
+  }
+
+  const onSubmit = (event: React.FormEvent<UsernameFormElement>) => {
+    event.preventDefault()
+    const payload = generatePayload(event)
+    sendMessage(payload)
+      .then((data) => {
+        console.log(data)
+      })
+      .catch((error) => {
+        console.error(error)
+      })
+  }
+
   return (
     <MainLayout title={metadata.title} description={metadata.description}>
       <section className="sub-page start-page animate__animated animate__slideInLeft">
@@ -42,10 +95,10 @@ export default function Contact({ metadata, page }: IPropsContact) {
             <div className="col-sm-12 col-md-7 col-lg-7">
               <div className="form-contact-me">
                 <div id="show_contact_msg" />
-                <form method="post" id="contact-form">
+                <form onSubmit={onSubmit} id="contact-form">
                   <input
                     name="name"
-                    id="name"
+                    id="nameInput"
                     type="text"
                     placeholder="Name:"
                     required
@@ -53,15 +106,15 @@ export default function Contact({ metadata, page }: IPropsContact) {
                   />
                   <input
                     name="email"
-                    id="email"
+                    id="emailInput"
                     type="email"
                     placeholder="Email:"
                     required
                     autoComplete="off"
                   />
                   <textarea
-                    name="comment"
-                    id="comment"
+                    name="message"
+                    id="messageInput"
                     placeholder="Message:"
                     required
                     rows={6}
@@ -190,6 +243,9 @@ export const getStaticProps = () => {
       page: {
         title: 'Contact',
         slogan: 'Need some help?',
+      },
+      content: {
+        token: process.env.TOKEN_AUTHORIZATION,
       },
     },
   }
