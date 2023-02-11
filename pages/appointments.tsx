@@ -210,7 +210,8 @@ export const getStaticProps = () => {
     props: {
       metadata: {
         title: 'CTolenk - Software Engineer',
-        description: 'Que tenemos',
+        description:
+          'Personal information of Carlos Tolentino to promote his services and his experience in software development.',
       },
       page: {
         title: 'APPOINTMENTS',

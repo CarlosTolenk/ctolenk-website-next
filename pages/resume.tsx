@@ -2,10 +2,7 @@ import React from 'react'
 import MainLayout from '../src/components/templates/MainLayout'
 import Image from 'next/image'
 
-import {
-  faCloudDownloadAlt,
-  faStar,
-} from '@fortawesome/free-solid-svg-icons'
+import { faCloudDownloadAlt, faStar } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { IPropPageBase } from '../src/intefaces'
@@ -368,7 +365,8 @@ export const getStaticProps = () => {
     props: {
       metadata: {
         title: 'CTolenk - Software Engineer',
-        description: 'Que tenemos',
+        description:
+          'Personal information of Carlos Tolentino to promote his services and his experience in software development.',
       },
       page: {
         title: 'RESUME',

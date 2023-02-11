@@ -3,7 +3,8 @@ import { IPropsAbout } from '../intefaces'
 export const AboutMeta: IPropsAbout = {
   metadata: {
     title: 'CTolenk - Software Engineer',
-    description: 'Que tenemos',
+    description:
+      'Personal information of Carlos Tolentino to promote his services and his experience in software development.',
   },
   page: {
     title: 'About Me',
