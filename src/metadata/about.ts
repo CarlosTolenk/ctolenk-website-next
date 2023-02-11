@@ -1,5 +1,11 @@
 import { IPropsAbout } from '../intefaces'
 
+const getYearExperience = () => {
+  const yearBegin = new Date('2016-01-01')
+  const now = new Date()
+  return now.getFullYear() - yearBegin.getFullYear()
+}
+
 export const AboutMeta: IPropsAbout = {
   metadata: {
     title: 'CTolenk - Software Engineer',
@@ -25,7 +31,7 @@ export const AboutMeta: IPropsAbout = {
     ],
     features: [
       {
-        title: '6 Years+ Software Development',
+        title: `${getYearExperience()} Years+ Software Development`,
         description: 'Experience',
         icon: 'faBriefcase',
       },
