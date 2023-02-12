@@ -17,7 +17,7 @@ import { ResumeMeta } from '../src/metadata/resume'
 
 export default function Resume({ metadata, page, content }: IPropsResume) {
   const { title, slogan } = page
-  const { workHistory, educationHistory } = content
+  const { workHistory, educationHistory, skillSoft, skillLanguages } = content
   return (
     <MainLayout title={metadata.title} description={metadata.description}>
       <section className="sub-page start-page  animate__animated animate__slideInUp">
@@ -49,7 +49,10 @@ export default function Resume({ metadata, page, content }: IPropsResume) {
                 </div>
 
                 <div className="pb-30 pt-30">
-                  <Skills />
+                  <Skills
+                    skillSoft={skillSoft}
+                    skillLanguages={skillLanguages}
+                  />
                 </div>
 
                 <div className="pt-30">

@@ -85,5 +85,39 @@ export const ResumeMeta: IPropsResume = {
       },
     ],
     educationHistory: [],
+    skillSoft: [
+      {
+        name: 'Communication',
+        description: '',
+        ranking: 4,
+      },
+      {
+        name: 'Problem-Solving / Critical Thinking',
+        description: '',
+        ranking: 5,
+      },
+      {
+        name: 'Collaboration / Teamwork',
+        description: '',
+        ranking: 5,
+      },
+      {
+        name: 'Adaptability',
+        description: '',
+        ranking: 5,
+      },
+    ],
+    skillLanguages: [
+      {
+        name: 'Spanish',
+        description: 'Native',
+        ranking: 5,
+      },
+      {
+        name: 'English',
+        description: 'Intermedia B1',
+        ranking: 3,
+      },
+    ],
   },
 }
