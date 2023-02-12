@@ -1,44 +1,16 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faStar } from '@fortawesome/free-solid-svg-icons'
+import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons'
 import React from 'react'
 import TitleSection from '../../../components/molecules/TitleSection/TitleSection'
+import SkillProgressBar from '../../../components/organisms/SkillProgressBar/SkillProgressBar'
 
 const Skills = () => {
   return (
     <div className="row list-skills">
       <div className="col-md-7">
         <div className="special-block-bg">
-          <TitleSection title={'My Professional'} subtitle={'Work Skills'} />
-          <div className="skills-items skills-progressbar">
-            <div className="skill-item">
-              <h4>PHP</h4>
-              <div className="progress">
-                <div className="progress-bar" style={{ width: '95%' }} />
-              </div>
-              <span>95%</span>
-            </div>
-            <div className="skill-item">
-              <h4>Java</h4>
-              <div className="progress">
-                <div className="progress-bar" style={{ width: '75%' }} />
-              </div>
-              <span>85%</span>
-            </div>
-            <div className="skill-item">
-              <h4>C#</h4>
-              <div className="progress">
-                <div className="progress-bar" style={{ width: '85%' }} />
-              </div>
-              <span>85%</span>
-            </div>
-            <div className="skill-item">
-              <h4>C++</h4>
-              <div className="progress">
-                <div className="progress-bar" style={{ width: '70%' }} />
-              </div>
-              <span>70%</span>
-            </div>
-          </div>
+          <TitleSection title={'My Professional'} subtitle={'Hard Skills'} />
+          <SkillProgressBar />
         </div>
       </div>
 
@@ -59,7 +31,7 @@ const Skills = () => {
                     <FontAwesomeIcon
                       className="mr-1"
                       size={'1x'}
-                      icon={faStar}
+                      icon={faStarHalfAlt}
                     />
                   </i>
                 </li>
