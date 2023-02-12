@@ -1902,7 +1902,7 @@ button.owl-dot:focus {
 .main-timeline:before {
   content: '';
   width: 3px;
-  height: 80%;
+  height: 98%;
   background: var(--secondary-color-dark);
   position: absolute;
   top: 0;
@@ -1953,7 +1953,7 @@ button.owl-dot:focus {
   background: #fff;
   position: absolute;
   top: 0px;
-  right: -60px;
+  right: -50px;
   z-index: 1;
   border-radius: 50%;
   background: #fff;
@@ -2079,8 +2079,13 @@ button.owl-dot:focus {
 }
 
 .timeline-icon img {
+  filter: grayscale(50);
   width: 100px;
   border-radius: 100%;
+}
+
+.timeline-icon img:hover {
+  filter: grayscale(0);
 }
 
 .main-timeline .timeline:hover .title {
@@ -2099,7 +2104,7 @@ button.owl-dot:focus {
 
 .main-timeline .timeline:nth-child(2n) .timeline-icon {
   right: 0;
-  left: -65px;
+  left: -50px;
 }
 
 .main-timeline .timeline:nth-child(2n) .timeline-content:before {
