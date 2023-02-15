@@ -62,70 +62,7 @@ export default function Resume({ metadata, page, content }: IPropsResume) {
                       Background History
                     </h4>
                   </div>
-                  <div className="main-timeline">
-                    <div className="timeline">
-                      <div className="timeline-icon">
-                        <Image
-                          src={'https://via.placeholder.com/100x100'}
-                          alt={'Gary Johnson'}
-                          height={100}
-                          width={100}
-                        />
-                      </div>
-                      <div className="timeline-content">
-                        <span className="date">Apr 2015 - Till Now</span>
-                        <h5 className="title">Software Engineer</h5>
-                        <p className="description">
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit. Vestibulum mattis felis vitae risus pulvinar
-                          tincidunt. Nam ac venenatis enim. Aenean hendrerit
-                          justo sed.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="timeline">
-                      <div className="timeline-icon">
-                        <Image
-                          src={'https://via.placeholder.com/100x100'}
-                          alt={'Gary Johnson'}
-                          height={100}
-                          width={100}
-                        />
-                      </div>
-                      <div className="timeline-content">
-                        <span className="date">Apr 2016 - Mar 2017</span>
-                        <h5 className="title">Web Developer</h5>
-                        <p className="description">
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit. Vestibulum mattis felis vitae risus pulvinar
-                          tincidunt. Nam ac venenatis enim. Aenean hendrerit
-                          justo sed.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="timeline">
-                      <div className="timeline-icon">
-                        <Image
-                          src={'https://via.placeholder.com/100x100'}
-                          alt={'Gary Johnson'}
-                          height={100}
-                          width={100}
-                        />
-                      </div>
-                      <div className="timeline-content">
-                        <span className="date">May 2017 - Mar 2018</span>
-                        <h5 className="title">Frontend Developer</h5>
-                        <p className="description">
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit. Vestibulum mattis felis vitae risus pulvinar
-                          tincidunt. Nam ac venenatis enim. Aenean hendrerit
-                          justo sed.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
+                  <MainTimeline timelines={educationHistory} />
                 </div>
               </div>
             </div>

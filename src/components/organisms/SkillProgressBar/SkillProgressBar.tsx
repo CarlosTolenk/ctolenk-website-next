@@ -10,10 +10,10 @@ const SkillProgressBar = () => {
       <SkillProgressBarItem name={'TypeScript'} percent={90} />
       <SkillProgressBarItem name={'PHP'} percent={85} />
       <SkillProgressBarItem name={'Java'} percent={80} />
-      <SkillProgressBarItem name={'C#'} percent={75} />
+      <SkillProgressBarItem name={'C#'} percent={80} />
       <SkillProgressBarItem name={'Go'} percent={60} />
-      <SkillProgressBarItem name={'DevOps'} percent={80} />
-      <SkillProgressBarItem name={'Kubernetes/Docker'} percent={80} />
+      <SkillProgressBarItem name={'DevOps'} percent={75} />
+      <SkillProgressBarItem name={'Kubernetes/Docker'} percent={70} />
     </div>
   )
 }
