@@ -94,8 +94,10 @@ export const ResumeMeta: IPropsResume = {
         description:
           'I focused on learning everything related to clean architectures, refactoring mechanisms and deepening the practice of code testing.',
         subDescription: [
+          'SOLID Principles Applied',
           'Domain Drive Design',
           'Event Driven Architecture',
+          'CQRS: Command-Query Responsibility Segregation',
           'Hexagonal Architecture',
           'Refactoring methodology and Code Smells',
           'Advanced TypeScript',
@@ -146,6 +148,7 @@ export const ResumeMeta: IPropsResume = {
         subDescription: [
           'Web Developer',
           'JavaScript Developer',
+          'Testing: Introduction and good practices',
           'PHP and WordPress',
         ],
       },
