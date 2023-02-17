@@ -89,7 +89,7 @@ export const ResumeMeta: IPropsResume = {
         imageAtl: 'udemy',
         company: 'CodelyTv',
         imageURL: '/images/codelytv.png',
-        title: 'Clean architectures and good practices',
+        title: 'Clean Architectures and good practices',
         timeElapsed: 'Jan 2022 - Till Now',
         description:
           'I focused on learning everything related to clean architectures, refactoring mechanisms and deepening the practice of code testing.',
@@ -110,7 +110,7 @@ export const ResumeMeta: IPropsResume = {
         title: 'Full Stack JavaScript - Mobile',
         timeElapsed: 'Jan 2017 - Till Now',
         description:
-          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+          'I focused on learning the necessary knowledge to be able to develop mobile applications reusing my knowledge of web technologies. Also focused on learning the devOps culture to be able to deploy personal and client projects. In the last stage I use the courses to keep my knowledge updated.',
         subDescription: [
           'Angular Basic and Advanced',
           'Ionic (Angular2)',
@@ -128,7 +128,7 @@ export const ResumeMeta: IPropsResume = {
         title: 'Reinforce knowledge',
         timeElapsed: 'Sep 2017 - Jan 2020',
         description:
-          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+          'I focused on strengthening my knowledge and expanding my skills to be able to work as an independent developer and be able to generate quality projects for my clients.',
         subDescription: [
           'JavaScript Career',
           'Advanced PHP and Laravel',
@@ -144,7 +144,7 @@ export const ResumeMeta: IPropsResume = {
         title: 'Full Stack Developer',
         timeElapsed: 'Dec 2016 - May 2017',
         description:
-          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+          'I focus on understanding and knowing web technology by applying my previous programming knowledge in my previous career. In this way, I can introduce myself professionally in the professional world of software development.',
         subDescription: [
           'Web Developer',
           'JavaScript Developer',
@@ -159,7 +159,7 @@ export const ResumeMeta: IPropsResume = {
         title: 'Term Bachelor Digital Robotic Engineer',
         timeElapsed: 'Jan 2013 - Jun 2016',
         description:
-          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+          'Focus of a degree course to unite my previous knowledge of computer science, mathematics, programming and electronics.',
       },
       {
         imageAtl: 'ITLA',
@@ -168,7 +168,7 @@ export const ResumeMeta: IPropsResume = {
         title: 'Mechatronics Technologist',
         timeElapsed: 'Jan 2012 - Nov 2012',
         description:
-          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+          'This was my first contact with the university and critical subjects such as differential and integral mathematics, as well as discrete mathematics that improves my critical and analytical thinking.',
       },
       {
         imageAtl: 'Centenaria',
@@ -177,7 +177,7 @@ export const ResumeMeta: IPropsResume = {
         title: 'Basic Computer Certificate',
         timeElapsed: 'Jan 2009 - Nov 2010',
         description:
-          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+          'Expand my technical knowledge of electronics, focused on the information world from object-oriented programming to PC repair',
       },
       {
         imageAtl: 'IPISA',
@@ -186,7 +186,7 @@ export const ResumeMeta: IPropsResume = {
         title: 'High School Industrial Electronic Mention',
         timeElapsed: 'Aug 2006 - Jul 2010',
         description:
-          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+          'To attend my high school with technical knowledge in electronics so that I could quickly enter the world of work. Where I had my first contact with programming.',
       },
     ],
     skillSoft: [
@@ -204,6 +204,11 @@ export const ResumeMeta: IPropsResume = {
         name: 'Collaboration / Teamwork',
         description: '',
         ranking: 5,
+      },
+      {
+        name: 'Development Business',
+        description: '',
+        ranking: 4,
       },
       {
         name: 'Adaptability',
