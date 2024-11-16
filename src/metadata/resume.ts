@@ -13,11 +13,37 @@ export const ResumeMeta: IPropsResume = {
   content: {
     workHistory: [
       {
+        imageAtl: 'coderio_logo',
+        company: 'Coderios At Coca-Cola Andina',
+        imageURL: '/images/coderio_logo.jpeg',
+        title: 'Senior Full Stack Software Engineer',
+        timeElapsed: 'Nov 2024 - Till Now',
+        description:
+            'I have been working on developing a B2B mobile application to connect sellers with customers.\n' +
+            '\n' +
+            'I have been collaborating with the development team for new functionalities of the MVP of the application and the launch to new countries to improve the B2B experience, increase sales and give more tools to sellers to give better services to customers.\n' +
+            '\n' +
+            'Together we have been evolving the migrated product with new functionalities to meet the current needs of the business that is constantly growing.',
+      },
+      {
+        imageAtl: 'acercarseltda_logo',
+        company: 'AcercaRSE At Walmart Chile',
+        imageURL: '/images/acercarseltda_logo.jpeg',
+        title: 'Expert Full Stack Software Engineer / Technical Leader',
+        timeElapsed: 'Jun 2023 - Ago 2024',
+        description:
+            'I have been working in the fulfillment domain of Walmart Chile in the assembly application of customer orders in the store.\n' +
+            '\n' +
+            'I have contributed my knowledge and experience in the area to carry out a cloud platform migration, which consisted of deploying the Walmart Chile system to the Walmart International cloud, restructuring a large part of the existing code. Additionally, good security practices had to be implemented to comply with the standards of the new international platform.\n' +
+            '\n' +
+            'In the current stage I have been exercising a role as team leader due to having more seniority in the product as well as my leadership skills. Together we have been evolving the migrated product with new functionalities to meet the current needs of the business that is constantly growing.',
+      },
+      {
         imageAtl: 'the-bridge-social',
         company: 'The Bridge Social At Walmart Chile',
         imageURL: '/images/the-bridge-social.webp',
-        title: 'Expert Full Stack Software Engineer',
-        timeElapsed: 'Mar 2023 - Till Now',
+        title: 'Senior Full Stack Software Engineer',
+        timeElapsed: 'Ago 2021 - Jun 2023',
         description:
           'I have been working in the fulfillment domain of Walmart Chile in the assembly application of customer orders in the store.\n' +
           '\n' +
@@ -30,7 +56,7 @@ export const ResumeMeta: IPropsResume = {
         company: 'Unit SRL',
         imageURL: '/images/unit.svg',
         title: 'Senior Software Engineer',
-        timeElapsed: 'May 2020 - Aug 2021',
+        timeElapsed: 'May 2020 - Oct 2021',
         description:
           'During my stay as a Unit collaborator, I was working as a Senior developer in the Front-end part under the Angular framework, creating exportable UI components that can be used throughout the insurance platform through Angular Element.\n' +
           '\n' +
