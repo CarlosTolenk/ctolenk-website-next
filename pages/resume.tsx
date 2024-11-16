@@ -1,6 +1,5 @@
 import React from 'react'
 import MainLayout from '../src/components/templates/MainLayout'
-import Image from 'next/image'
 
 import { faCloudDownloadAlt, faStar } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -33,14 +32,14 @@ export default function Resume({ metadata, page, content }: IPropsResume) {
                       <span>My Professional</span>
                       Work History
                     </h4>
-                    <a className="bt-submit">
+                    <a className="bt-submit" href="/docs/CV-Carlos-Tolentino.pdf" download>
                       <i className="fas fa-cloud-download-alt">
                         <FontAwesomeIcon
                           className="mr-1"
                           size={'lg'}
                           icon={faCloudDownloadAlt}
                         />
-                      </i>{' '}
+                      </i>
                       Download Resume
                     </a>
                   </div>
