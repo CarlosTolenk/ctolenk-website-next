@@ -1,11 +1,17 @@
 import React from 'react'
+import { GetStaticPropsContext } from 'next'
+import { useRouter } from 'next/router'
 import MainLayout from '../src/components/templates/MainLayout'
 import { IPropPageBase } from '../src/intefaces'
 import Title from '../src/components/molecules/Title'
+import { normalizeLocale } from '../src/i18n'
+import { uiTranslations } from '../src/i18n/translations'
 
 interface IPropsPortfolio extends IPropPageBase {}
 
 export default function Portfolio({ metadata, page }: IPropsPortfolio) {
+  const { locale } = useRouter()
+  const t = uiTranslations[normalizeLocale(locale)]
   const { title, slogan } = page
   return (
     <MainLayout
@@ -18,28 +24,29 @@ export default function Portfolio({ metadata, page }: IPropsPortfolio) {
       <section className="sub-page start-page animate__animated animate__fadeIn">
         <div className="sub-page-inner">
           <Title title={title} slogan={slogan} />
-          <div className="section-content">Projects</div>
+          <div className="section-content">{t.portfolio.projects}</div>
         </div>
       </section>
     </MainLayout>
   )
 }
 
-export const getStaticProps = () => {
+export const getStaticProps = ({ locale }: GetStaticPropsContext) => {
+  const selectedLocale = normalizeLocale(locale)
+  const t = uiTranslations[selectedLocale]
+
   return {
     props: {
       metadata: {
-        title: 'Portfolio | Carlos Tolentino',
-        description:
-          'Selected software projects and product contributions built by Carlos Tolentino.',
+        title: t.portfolio.metaTitle,
+        description: t.portfolio.metaDescription,
         canonicalPath: '/portfolio',
         ogImage: '/images/ctolenk-c.png',
-        keywords:
-          'software portfolio, full stack projects, web applications, mobile applications',
+        keywords: t.portfolio.metaKeywords,
       },
       page: {
-        title: 'Portfolio',
-        slogan: "if you do what you enjoy, it's not a job",
+        title: t.portfolio.pageTitle,
+        slogan: t.portfolio.pageSlogan,
       },
     },
   }

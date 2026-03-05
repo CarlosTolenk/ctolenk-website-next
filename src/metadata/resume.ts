@@ -1,20 +1,8 @@
 import { IPropsResume } from '../intefaces/pages/IPropsResume'
+import { SiteLocale } from '../i18n'
+import { uiTranslations } from '../i18n/translations'
 
-export const ResumeMeta: IPropsResume = {
-  metadata: {
-    title: 'Resume | Carlos Tolentino Software Engineer',
-    description:
-      'Professional work history, education, and technical skills of Carlos Tolentino as a Full Stack Software Engineer.',
-    canonicalPath: '/resume',
-    ogImage: '/images/coderio_logo.jpeg',
-    keywords:
-      'carlos tolentino resume, software engineer cv, full stack experience, technical skills',
-  },
-  page: {
-    title: 'RESUME',
-    slogan: 'Always inspired by knowledge',
-  },
-  content: {
+const resumeContent: IPropsResume['content'] = {
     workHistory: [
       {
         imageAtl: 'coderio_logo',
@@ -258,5 +246,23 @@ export const ResumeMeta: IPropsResume = {
         ranking: 3,
       },
     ],
-  },
+}
+
+export const getResumeMeta = (locale: SiteLocale): IPropsResume => {
+  const t = uiTranslations[locale]
+
+  return {
+    metadata: {
+      title: t.resume.metaTitle,
+      description: t.resume.metaDescription,
+      canonicalPath: '/resume',
+      ogImage: '/images/coderio_logo.jpeg',
+      keywords: t.resume.metaKeywords,
+    },
+    page: {
+      title: t.resume.pageTitle,
+      slogan: t.resume.pageSlogan,
+    },
+    content: resumeContent,
+  }
 }

@@ -1,7 +1,11 @@
 import React from 'react'
+import { GetStaticPropsContext } from 'next'
+import { useRouter } from 'next/router'
 
 import { IPropsAbout } from '../src/intefaces'
-import { AboutMeta } from '../src/metadata/about'
+import { getAboutMeta } from '../src/metadata/about'
+import { normalizeLocale } from '../src/i18n'
+import { uiTranslations } from '../src/i18n/translations'
 
 import MainLayout from '../src/components/templates/MainLayout'
 import Title from '../src/components/molecules/Title'
@@ -11,7 +15,9 @@ import AboutMeDescription from '../src/componentsPage/About/sections/AboutMeDesc
 import Services from '../src/componentsPage/About/sections/Services'
 
 export default function AboutMe({ metadata, page, content }: IPropsAbout) {
+  const { locale } = useRouter()
   const { about, features, services } = content
+  const t = uiTranslations[normalizeLocale(locale)]
   return (
     <MainLayout
       title={metadata.title}
@@ -25,7 +31,11 @@ export default function AboutMe({ metadata, page, content }: IPropsAbout) {
           <Title title={page.title} slogan={page.slogan} />
           <div className="section-content">
             <AboutMeDescription about={about} features={features} />
-            <Services list={services} />
+            <Services
+              list={services}
+              eyebrow={t.about.servicesEyebrow}
+              title={t.about.servicesTitle}
+            />
           </div>
         </div>
       </section>
@@ -33,8 +43,10 @@ export default function AboutMe({ metadata, page, content }: IPropsAbout) {
   )
 }
 
-export const getStaticProps = () => {
+export const getStaticProps = ({ locale }: GetStaticPropsContext) => {
+  const selectedLocale = normalizeLocale(locale)
+
   return {
-    props: AboutMeta,
+    props: getAboutMeta(selectedLocale),
   }
 }

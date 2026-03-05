@@ -6,9 +6,11 @@ import ListServices from '../components/ListServices'
 
 interface IPropListServices {
   list: IServices[]
+  eyebrow: string
+  title: string
 }
 
-const Services = ({ list }: IPropListServices) => {
+const Services = ({ list, eyebrow, title }: IPropListServices) => {
   const listFromLeft: IServices[] = list.length > 0 ? list.slice(0, 2) : []
   const listFromRight: IServices[] = list.length >= 3 ? list.slice(2, 4) : []
 
@@ -16,8 +18,8 @@ const Services = ({ list }: IPropListServices) => {
     <div className="special-block-bg">
       <div className="section-head">
         <h4>
-          <span>What Actually I Do</span>
-          My Services
+          <span>{eyebrow}</span>
+          {title}
         </h4>
       </div>
       <div className="row">

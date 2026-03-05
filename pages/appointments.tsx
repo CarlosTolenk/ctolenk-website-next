@@ -1,4 +1,6 @@
 import React from 'react'
+import { GetStaticPropsContext } from 'next'
+import { useRouter } from 'next/router'
 import MainLayout from '../src/components/templates/MainLayout'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -14,10 +16,14 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import { IPropPageBase } from '../src/intefaces'
 import Title from '../src/components/molecules/Title'
+import { normalizeLocale } from '../src/i18n'
+import { uiTranslations } from '../src/i18n/translations'
 
 interface IPropsAppointments extends IPropPageBase {}
 
 export default function Appointments({ metadata, page }: IPropsAppointments) {
+  const { locale } = useRouter()
+  const t = uiTranslations[normalizeLocale(locale)]
   const { title, slogan } = page
   return (
     <MainLayout
@@ -34,8 +40,8 @@ export default function Appointments({ metadata, page }: IPropsAppointments) {
             <div className="col-sm-12 col-md-6">
               <div className="section-head third-head">
                 <h4>
-                  <span>My Appointments</span>
-                  Before booking an appointment please check my availability
+                  <span>{t.appointments.availabilityEyebrow}</span>
+                  {t.appointments.availabilityTitle}
                 </h4>
               </div>
               <div className="list-appointments">
@@ -102,7 +108,7 @@ export default function Appointments({ metadata, page }: IPropsAppointments) {
                     <input
                       name="subject"
                       type="text"
-                      placeholder="Subject"
+                      placeholder={t.appointments.subject}
                       required
                       autoComplete="off"
                     />
@@ -114,7 +120,7 @@ export default function Appointments({ metadata, page }: IPropsAppointments) {
                     <input
                       name="name"
                       type="text"
-                      placeholder="Name"
+                      placeholder={t.appointments.name}
                       autoComplete="off"
                     />
                   </div>
@@ -127,7 +133,7 @@ export default function Appointments({ metadata, page }: IPropsAppointments) {
                         <input
                           name="email"
                           type="email"
-                          placeholder="Email"
+                          placeholder={t.appointments.email}
                           required
                           autoComplete="off"
                         />
@@ -141,7 +147,7 @@ export default function Appointments({ metadata, page }: IPropsAppointments) {
                         <input
                           name="phone"
                           type="text"
-                          placeholder="Phone"
+                          placeholder={t.appointments.phone}
                           autoComplete="off"
                         />
                       </div>
@@ -164,7 +170,7 @@ export default function Appointments({ metadata, page }: IPropsAppointments) {
                           data-large-default="true"
                           data-min-year="2020"
                           data-max-year="2020"
-                          placeholder="Date"
+                          placeholder={t.appointments.date}
                           required
                           autoComplete="off"
                         />
@@ -179,7 +185,7 @@ export default function Appointments({ metadata, page }: IPropsAppointments) {
                           name="time"
                           id="app_time"
                           type="text"
-                          placeholder="Time"
+                          placeholder={t.appointments.time}
                           required
                           autoComplete="off"
                         />
@@ -192,14 +198,14 @@ export default function Appointments({ metadata, page }: IPropsAppointments) {
                     </i>
                     <textarea
                       name="message"
-                      placeholder="Message"
+                      placeholder={t.appointments.message}
                       rows={4}
                     ></textarea>
                   </div>
                   <input
                     className="bt-submit"
                     type="submit"
-                    value="Booking appointment"
+                    value={t.appointments.booking}
                   />
                 </form>
               </div>
@@ -211,21 +217,22 @@ export default function Appointments({ metadata, page }: IPropsAppointments) {
   )
 }
 
-export const getStaticProps = () => {
+export const getStaticProps = ({ locale }: GetStaticPropsContext) => {
+  const selectedLocale = normalizeLocale(locale)
+  const t = uiTranslations[selectedLocale]
+
   return {
     props: {
       metadata: {
-        title: 'Appointments | Carlos Tolentino',
-        description:
-          'Check my weekly availability and request an appointment for software consulting.',
+        title: t.appointments.metaTitle,
+        description: t.appointments.metaDescription,
         canonicalPath: '/appointments',
         ogImage: '/images/ctolenk-color.png',
-        keywords:
-          'book software consultation, schedule appointment, software engineer availability',
+        keywords: t.appointments.metaKeywords,
       },
       page: {
-        title: 'APPOINTMENTS',
-        slogan: 'CHECK MY AVAILABILITY AND REQUEST AN APPOINTMENT',
+        title: t.appointments.pageTitle,
+        slogan: t.appointments.pageSlogan,
       },
     },
   }

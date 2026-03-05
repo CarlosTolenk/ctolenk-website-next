@@ -9,20 +9,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import styles from './Header.module.css'
 import { useRouter } from 'next/router'
+import { normalizeLocale } from '../../../i18n'
+import { uiTranslations } from '../../../i18n/translations'
 
 const Header = () => {
   const [classNameToggleMenu, setClassNameToggleMenu] = useState('')
   const [isActiveMenu, setIsActiveMenu] = useState(false)
-  const messages = [
-    'Full Stack Developer',
-    'Front-end Developer',
-    'Back-end Developer',
-    'Mobile Developer',
-  ]
   const name = 'Carlos Tolentino'
   const currentYear = new Date().getFullYear()
-  const copy = `${currentYear} All rights reserved.`
   const router = useRouter()
+  const locale = normalizeLocale(router.locale)
+  const t = uiTranslations[locale]
+  const messages = t.header.roles
+  const copy = `${currentYear} ${t.header.rightsReserved}`
 
   const onHandleClick = () => {
     const currentClassName = isActiveMenu
@@ -34,6 +33,10 @@ const Header = () => {
 
   const onHandlerClickNavigation = () => {
     router.push('/')
+  }
+
+  const onChangeLocale = (nextLocale: 'es' | 'en') => {
+    router.push(router.asPath, router.asPath, { locale: nextLocale })
   }
 
   return (
@@ -59,6 +62,22 @@ const Header = () => {
 
           <div className="site-nav">
             <Nav />
+            <div className={styles.languageSwitcher}>
+              <button
+                className={locale === 'es' ? styles.languageActive : ''}
+                type="button"
+                onClick={() => onChangeLocale('es')}
+              >
+                {t.locale.es}
+              </button>
+              <button
+                className={locale === 'en' ? styles.languageActive : ''}
+                type="button"
+                onClick={() => onChangeLocale('en')}
+              >
+                {t.locale.en}
+              </button>
+            </div>
             <div className="copyrights">© {copy}</div>
           </div>
         </div>
@@ -77,6 +96,22 @@ const Header = () => {
         <span onClick={onHandleClick} className="responsive-icon">
           <FontAwesomeIcon size={'xs'} icon={faBars} />
         </span>
+        <div className={styles.languageSwitcherResponsive}>
+          <button
+            className={locale === 'es' ? styles.languageActive : ''}
+            type="button"
+            onClick={() => onChangeLocale('es')}
+          >
+            {t.locale.es}
+          </button>
+          <button
+            className={locale === 'en' ? styles.languageActive : ''}
+            type="button"
+            onClick={() => onChangeLocale('en')}
+          >
+            {t.locale.en}
+          </button>
+        </div>
       </header>
     </>
   )
