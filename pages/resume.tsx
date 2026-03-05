@@ -1,7 +1,7 @@
 import React from 'react'
 import MainLayout from '../src/components/templates/MainLayout'
 
-import { faCloudDownloadAlt, faStar } from '@fortawesome/free-solid-svg-icons'
+import { faCloudDownloadAlt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 // Interfaces
@@ -18,7 +18,13 @@ export default function Resume({ metadata, page, content }: IPropsResume) {
   const { title, slogan } = page
   const { workHistory, educationHistory, skillSoft, skillLanguages } = content
   return (
-    <MainLayout title={metadata.title} description={metadata.description}>
+    <MainLayout
+      title={metadata.title}
+      description={metadata.description}
+      canonicalPath={metadata.canonicalPath}
+      keywords={metadata.keywords}
+      ogImage={metadata.ogImage}
+    >
       <section className="sub-page start-page  animate__animated animate__slideInUp">
         <div className="sub-page-inner">
           <Title title={title} slogan={slogan} />

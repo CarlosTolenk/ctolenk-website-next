@@ -8,7 +8,13 @@ interface IPropsPortfolio extends IPropPageBase {}
 export default function Portfolio({ metadata, page }: IPropsPortfolio) {
   const { title, slogan } = page
   return (
-    <MainLayout title={metadata.title} description={metadata.description}>
+    <MainLayout
+      title={metadata.title}
+      description={metadata.description}
+      canonicalPath={metadata.canonicalPath}
+      keywords={metadata.keywords}
+      ogImage={metadata.ogImage}
+    >
       <section className="sub-page start-page animate__animated animate__fadeIn">
         <div className="sub-page-inner">
           <Title title={title} slogan={slogan} />
@@ -23,8 +29,13 @@ export const getStaticProps = () => {
   return {
     props: {
       metadata: {
-        title: 'CTolenk - Software Engineer',
-        description: 'Personal information of Carlos Tolentino to promote his services and his experience in software development.',
+        title: 'Portfolio | Carlos Tolentino',
+        description:
+          'Selected software projects and product contributions built by Carlos Tolentino.',
+        canonicalPath: '/portfolio',
+        ogImage: '/images/ctolenk-c.png',
+        keywords:
+          'software portfolio, full stack projects, web applications, mobile applications',
       },
       page: {
         title: 'Portfolio',

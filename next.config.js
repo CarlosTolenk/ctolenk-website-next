@@ -2,8 +2,8 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    loader: 'akamai',
-    path: '',
+    domains: ['www.wgu.edu', 'plustatic.com', 'via.placeholder.com'],
+    formats: ['image/avif', 'image/webp'],
   },
 }
 

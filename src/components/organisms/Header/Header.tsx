@@ -47,6 +47,8 @@ const Header = () => {
                 src={'/images/me-circle.jpeg'}
                 alt={'carlos-tolentino'}
                 layout={'fill'}
+                sizes="(max-width: 991px) 0px, 220px"
+                priority={true}
               />
             </div>
           </div>

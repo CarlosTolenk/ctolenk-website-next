@@ -33,13 +33,9 @@ interface IPayload {
   message: string
 }
 
-interface IPropsContact extends IPropPageBase {
-  content: {
-    token: string
-  }
-}
+interface IPropsContact extends IPropPageBase {}
 
-export default function Contact({ metadata, page, content }: IPropsContact) {
+export default function Contact({ metadata, page }: IPropsContact) {
   const { title, slogan } = page
 
   const sendMessage = async (payload: IPayload) => {
@@ -48,7 +44,6 @@ export default function Contact({ metadata, page, content }: IPropsContact) {
       body: JSON.stringify(payload),
       headers: {
         'Content-Type': 'application/json',
-        Authorization: content.token,
       },
     })
     return response.json()
@@ -76,7 +71,13 @@ export default function Contact({ metadata, page, content }: IPropsContact) {
   }
 
   return (
-    <MainLayout title={metadata.title} description={metadata.description}>
+    <MainLayout
+      title={metadata.title}
+      description={metadata.description}
+      canonicalPath={metadata.canonicalPath}
+      keywords={metadata.keywords}
+      ogImage={metadata.ogImage}
+    >
       <section className="sub-page start-page animate__animated animate__slideInLeft">
         <div className="sub-page-inner">
           <Title title={title} slogan={slogan} />
@@ -237,16 +238,17 @@ export const getStaticProps = () => {
   return {
     props: {
       metadata: {
-        title: 'CTolenk - Software Engineer',
+        title: 'Contact | Carlos Tolentino',
         description:
-          'Personal information of Carlos Tolentino to promote his services and his experience in software development.',
+          'Get in touch with Carlos Tolentino for software engineering consulting and development services.',
+        canonicalPath: '/contact',
+        ogImage: '/images/me-circle.jpeg',
+        keywords:
+          'contact software engineer, hire full stack developer, carlos tolentino contact',
       },
       page: {
         title: 'Contact',
         slogan: 'Need some help?',
-      },
-      content: {
-        token: process.env.TOKEN_AUTHORIZATION,
       },
     },
   }

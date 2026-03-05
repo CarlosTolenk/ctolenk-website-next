@@ -1,4 +1,4 @@
-import React, { MouseEvent } from 'react'
+import React from 'react'
 import MainLayout from '../src/components/templates/MainLayout'
 import Link from 'next/link'
 
@@ -9,7 +9,12 @@ interface IPropsNotFound404 {
 
 export default function NotFound404({ title, description }: IPropsNotFound404) {
   return (
-    <MainLayout title={title} description={description}>
+    <MainLayout
+      title={title}
+      description={description}
+      canonicalPath="/404"
+      noIndex={true}
+    >
       <div className="error animate__animated animate__bounce">
         <div className="container">
           <div className="row justify-content-center">
@@ -41,8 +46,8 @@ export default function NotFound404({ title, description }: IPropsNotFound404) {
 export const getStaticProps = () => {
   return {
     props: {
-      title: 'CTolenk - Software Engineer',
-      description: 'Que tenemos',
+      title: 'Page Not Found | Carlos Tolentino',
+      description: 'The page you are looking for does not exist.',
     },
   }
 }
