@@ -1,5 +1,9 @@
 import { memo } from 'react'
-import ReactTypingEffect from 'react-typing-effect'
+import dynamic from 'next/dynamic'
+
+const ReactTypingEffect = dynamic(() => import('react-typing-effect'), {
+  ssr: false,
+})
 
 const TypingMessage = ({ className, message }: any) => {
   return (

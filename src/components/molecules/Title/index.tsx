@@ -10,7 +10,7 @@ const Title = ({ title, slogan }: IPropsTitle) => {
     <div className="section-title">
       <div className="main-title">
         <div className="title-main-page">
-          <h4>{title}</h4>
+          <h1>{title}</h1>
           <p>{slogan}</p>
         </div>
       </div>

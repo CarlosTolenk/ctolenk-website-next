@@ -1,5 +1,9 @@
-import React, { memo, useCallback } from 'react'
-import Particles from 'react-tsparticles'
+import React, { memo } from 'react'
+import dynamic from 'next/dynamic'
+
+const Particles = dynamic(() => import('react-tsparticles'), {
+  ssr: false,
+})
 
 const BgDynamic = () => {
   const particlesInit = (main: any): Promise<void> => {
@@ -25,11 +29,11 @@ const BgDynamic = () => {
         interactivity: {
           events: {
             onClick: {
-              enable: true,
+              enable: false,
               mode: 'repulse',
             },
             onHover: {
-              enable: true,
+              enable: false,
               mode: 'repulse',
             },
             resize: true,
@@ -69,7 +73,7 @@ const BgDynamic = () => {
             enable: true,
             outMode: 'bounce',
             random: false,
-            speed: 3,
+            speed: 1.5,
             straight: false,
           },
           number: {
@@ -77,7 +81,7 @@ const BgDynamic = () => {
               enable: true,
               area: 700,
             },
-            value: 80,
+            value: 40,
           },
           opacity: {
             value: 0.5,

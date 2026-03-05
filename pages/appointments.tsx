@@ -20,7 +20,13 @@ interface IPropsAppointments extends IPropPageBase {}
 export default function Appointments({ metadata, page }: IPropsAppointments) {
   const { title, slogan } = page
   return (
-    <MainLayout title={metadata.title} description={metadata.description}>
+    <MainLayout
+      title={metadata.title}
+      description={metadata.description}
+      canonicalPath={metadata.canonicalPath}
+      keywords={metadata.keywords}
+      ogImage={metadata.ogImage}
+    >
       <section className="sub-page start-page animate__animated animate__fadeIn">
         <div className="sub-page-inner">
           <Title title={title} slogan={slogan} />
@@ -209,9 +215,13 @@ export const getStaticProps = () => {
   return {
     props: {
       metadata: {
-        title: 'CTolenk - Software Engineer',
+        title: 'Appointments | Carlos Tolentino',
         description:
-          'Personal information of Carlos Tolentino to promote his services and his experience in software development.',
+          'Check my weekly availability and request an appointment for software consulting.',
+        canonicalPath: '/appointments',
+        ogImage: '/images/ctolenk-color.png',
+        keywords:
+          'book software consultation, schedule appointment, software engineer availability',
       },
       page: {
         title: 'APPOINTMENTS',

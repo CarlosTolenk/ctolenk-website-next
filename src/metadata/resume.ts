@@ -2,9 +2,13 @@ import { IPropsResume } from '../intefaces/pages/IPropsResume'
 
 export const ResumeMeta: IPropsResume = {
   metadata: {
-    title: 'CTolenk - Software Engineer',
+    title: 'Resume | Carlos Tolentino Software Engineer',
     description:
-      'Personal information of Carlos Tolentino to promote his services and his experience in software development.',
+      'Professional work history, education, and technical skills of Carlos Tolentino as a Full Stack Software Engineer.',
+    canonicalPath: '/resume',
+    ogImage: '/images/coderio_logo.jpeg',
+    keywords:
+      'carlos tolentino resume, software engineer cv, full stack experience, technical skills',
   },
   page: {
     title: 'RESUME',

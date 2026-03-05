@@ -8,9 +8,13 @@ const getYearExperience = () => {
 
 export const AboutMeta: IPropsAbout = {
   metadata: {
-    title: 'CTolenk - Software Engineer',
+    title: 'About Carlos Tolentino | Full Stack Engineer',
     description:
-      'Personal information of Carlos Tolentino to promote his services and his experience in software development.',
+      'Learn about my software engineering journey, professional background, and services across web and mobile development.',
+    canonicalPath: '/about',
+    ogImage: '/images/me-circle.jpeg',
+    keywords:
+      'about carlos tolentino, software engineer profile, web development services, mobile development services',
   },
   page: {
     title: 'About Me',
