@@ -12,6 +12,44 @@
   }
 }
 
+.languageSwitcher {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 8px;
+  margin: 16px auto;
+}
+
+.languageSwitcherResponsive {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.languageSwitcher button,
+.languageSwitcherResponsive button {
+  border: 1px solid #3e3e3e;
+  background: transparent;
+  color: #b9b9b9;
+  padding: 4px 10px;
+  font-size: 11px;
+  border-radius: 16px;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.languageSwitcher button:hover,
+.languageSwitcherResponsive button:hover,
+.languageActive {
+  border-color: #13b4ca;
+  color: #13b4ca;
+}
+
 @keyframes openMenu {
   from {
     left: -285px;

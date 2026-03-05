@@ -14,12 +14,12 @@ interface IPropsNavItem {
 }
 
 const NavItem = ({ href, iconSource, text }: IPropsNavItem) => {
-  const { asPath } = useRouter()
+  const { pathname } = useRouter()
 
   return (
     <li className={styles.listNav}>
       <Link href={href} passHref>
-        <a className={asPath === href ? 'active' : ''}>
+        <a className={pathname === href ? 'active' : ''}>
           <div className={styles.containerNavItem}>
             <div className={styles.containerNavItemIcon}>
               <FontAwesomeIcon size={'1x'} icon={iconSource} />

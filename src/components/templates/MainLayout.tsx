@@ -1,5 +1,6 @@
 import React, { PropsWithChildren } from 'react'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 import Header from '../organisms/Header/Header'
 
 interface IPropsMainLayout {
@@ -21,8 +22,14 @@ const MainLayout = ({
   noIndex = false,
   children,
 }: IPropsMainLayout) => {
+  const router = useRouter()
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '')
-  const canonicalUrl = siteUrl ? `${siteUrl}${canonicalPath}` : ''
+  const localePrefix =
+    router.locale && router.defaultLocale && router.locale !== router.defaultLocale
+      ? `/${router.locale}`
+      : ''
+  const localizedCanonicalPath = `${localePrefix}${canonicalPath}`
+  const canonicalUrl = siteUrl ? `${siteUrl}${localizedCanonicalPath}` : ''
   const ogImageUrl = siteUrl ? `${siteUrl}${ogImage}` : ''
 
   return (
@@ -36,6 +43,17 @@ const MainLayout = ({
           content={noIndex ? 'noindex, nofollow' : 'index, follow'}
         />
         {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+        {siteUrl && (
+          <>
+            <link rel="alternate" hrefLang="es" href={`${siteUrl}${canonicalPath}`} />
+            <link
+              rel="alternate"
+              hrefLang="en"
+              href={`${siteUrl}/en${canonicalPath}`}
+            />
+            <link rel="alternate" hrefLang="x-default" href={`${siteUrl}${canonicalPath}`} />
+          </>
+        )}
         <meta property="og:type" content="website" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />

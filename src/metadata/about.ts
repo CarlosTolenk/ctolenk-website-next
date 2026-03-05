@@ -1,4 +1,6 @@
 import { IPropsAbout } from '../intefaces'
+import { SiteLocale } from '../i18n'
+import { uiTranslations } from '../i18n/translations'
 
 const getYearExperience = () => {
   const yearBegin = new Date('2015-01-01')
@@ -6,21 +8,64 @@ const getYearExperience = () => {
   return now.getFullYear() - yearBegin.getFullYear()
 }
 
-export const AboutMeta: IPropsAbout = {
-  metadata: {
-    title: 'About Carlos Tolentino | Full Stack Engineer',
-    description:
-      'Learn about my software engineering journey, professional background, and services across web and mobile development.',
-    canonicalPath: '/about',
-    ogImage: '/images/me-circle.jpeg',
-    keywords:
-      'about carlos tolentino, software engineer profile, web development services, mobile development services',
+const aboutContentByLocale: Record<SiteLocale, IPropsAbout['content']> = {
+  es: {
+    about: [
+      {
+        key: 1,
+        paragraph:
+          'Desarrollador de aplicaciones web y mobile capaz de cubrir las necesidades de mis clientes para que puedan maximizar sus oportunidades. Ofrezco un servicio de calidad para sus compradores o usuarios potenciales, implementando disenos interactivos, atractivos y enfocados en la experiencia final del consumidor. El mundo de las aplicaciones esta devorando el mundo y debemos evitar que esto afecte negativamente a nuestros negocios.',
+      },
+      {
+        key: 2,
+        paragraph:
+          'Actualizarse es fundamental en este mundo sumergido por la tecnologia para ofrecer mejores servicios y conectar con el mundo. Me apasiona la tecnologia desde adolescente, me gradue de bachiller tecnico en electronica industrial y obtuve certificacion como tecnologo en informatica. Actualmente sigo estudiando multiples certificaciones en desarrollo web.',
+      },
+    ],
+    features: [
+      {
+        title: `${getYearExperience()} Anos+ Desarrollo de Software`,
+        description: 'Experiencia',
+        icon: 'faBriefcase',
+      },
+      {
+        title: '10+ Proyectos Freelance',
+        description: 'Completados',
+        icon: 'faLayerGroup',
+      },
+      {
+        title: 'Varios Proyectos Migrados',
+        description: 'Completados',
+        icon: 'faHandshake',
+      },
+    ],
+    services: [
+      {
+        title: 'Desarrollo Web',
+        description: 'Desarrollo de software cloud con tecnologias web',
+        icon: 'faCode',
+      },
+      {
+        title: 'Consultoria de Software',
+        description:
+          'Analisis e implementacion de buenas practicas de desarrollo de software',
+        icon: 'faBriefcase',
+      },
+      {
+        title: 'Desarrollo Mobile',
+        description:
+          'Desarrollo de aplicaciones mobile orientadas a objetivos de negocio',
+        icon: 'faMobile',
+      },
+      {
+        title: 'Lider Tecnico',
+        description:
+          'Liderazgo de equipos de desarrollo para cumplir objetivos de forma eficiente',
+        icon: 'faPeopleArrows',
+      },
+    ],
   },
-  page: {
-    title: 'About Me',
-    slogan: 'Always inspired by knowledge',
-  },
-  content: {
+  en: {
     about: [
       {
         key: 1,
@@ -76,4 +121,23 @@ export const AboutMeta: IPropsAbout = {
       },
     ],
   },
+}
+
+export const getAboutMeta = (locale: SiteLocale): IPropsAbout => {
+  const t = uiTranslations[locale]
+
+  return {
+    metadata: {
+      title: t.about.metaTitle,
+      description: t.about.metaDescription,
+      canonicalPath: '/about',
+      ogImage: '/images/me-circle.jpeg',
+      keywords: t.about.metaKeywords,
+    },
+    page: {
+      title: t.about.pageTitle,
+      slogan: t.about.pageSlogan,
+    },
+    content: aboutContentByLocale[locale],
+  }
 }

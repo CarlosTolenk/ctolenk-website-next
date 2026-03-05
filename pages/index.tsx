@@ -1,6 +1,7 @@
 import React, { MouseEvent } from 'react'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
+import { GetStaticPropsContext } from 'next'
 
 import { faEnvelope, faUserAlt } from '@fortawesome/free-solid-svg-icons'
 
@@ -10,12 +11,20 @@ import MainLayout from '../src/components/templates/MainLayout'
 import BgDynamic from '../src/components/molecules/BgDynamic/BgDynamic'
 import Button from '../src/components/atoms/Button/Button'
 import TypingMessage from '../src/components/molecules/TypingMessage/TypingMessage'
+import { normalizeLocale } from '../src/i18n'
+import { uiTranslations } from '../src/i18n/translations'
 
 interface IPropsHome extends IPropMeta {
   messageTyping: string[]
+  texts: {
+    greeting: string
+    aboutCta: string
+    contactCta: string
+    jobTitle: string
+  }
 }
 
-export default function Home({ metadata, messageTyping }: IPropsHome) {
+export default function Home({ metadata, messageTyping, texts }: IPropsHome) {
   const router = useRouter()
 
   const onNavigationContactMe = (event: MouseEvent<any>) => {
@@ -44,7 +53,7 @@ export default function Home({ metadata, messageTyping }: IPropsHome) {
               '@context': 'https://schema.org',
               '@type': 'Person',
               name: 'Carlos Tolentino',
-              jobTitle: 'Full Stack Software Engineer',
+              jobTitle: texts.jobTitle,
               url: process.env.NEXT_PUBLIC_SITE_URL || undefined,
               sameAs: [
                 'https://www.linkedin.com/in/ctolenk/',
@@ -62,16 +71,16 @@ export default function Home({ metadata, messageTyping }: IPropsHome) {
             <div className="col-sm-12 col-md-12 col-lg-12">
               <BgDynamic />
               <div className="title-block">
-                <h1>Hello, I am Carlos Tolentino</h1>
+                <h1>{texts.greeting}</h1>
                 <TypingMessage message={messageTyping} className="type-wrap" />
                 <div className="home-buttons">
                   <Button
-                    text="About Me"
+                    text={texts.aboutCta}
                     iconSource={faUserAlt}
                     onHandlerClick={onNavigationAboutMe}
                   />
                   <Button
-                    text="Contact Me"
+                    text={texts.contactCta}
                     iconSource={faEnvelope}
                     onHandlerClick={onNavigationContactMe}
                   />
@@ -85,24 +94,26 @@ export default function Home({ metadata, messageTyping }: IPropsHome) {
   )
 }
 
-export const getStaticProps = () => {
+export const getStaticProps = ({ locale }: GetStaticPropsContext) => {
+  const selectedLocale = normalizeLocale(locale)
+  const t = uiTranslations[selectedLocale]
+
   return {
     props: {
       metadata: {
-        title: 'Carlos Tolentino | Full Stack Software Engineer',
-        description:
-          'Full Stack Software Engineer specializing in web, mobile, and cloud solutions. Explore my services, experience, and contact channels.',
+        title: t.home.metaTitle,
+        description: t.home.metaDescription,
         canonicalPath: '/',
         ogImage: '/images/ctolenk-c.png',
-        keywords:
-          'carlos tolentino, full stack developer, software engineer, react, nextjs, typescript, mobile developer',
+        keywords: t.home.metaKeywords,
       },
-      messageTyping: [
-        'Full Stack Developer',
-        'Front-end Developer',
-        'Back-end Developer',
-        'Mobile Developer',
-      ],
+      messageTyping: t.home.roles,
+      texts: {
+        greeting: t.home.greeting,
+        aboutCta: t.home.aboutCta,
+        contactCta: t.home.contactCta,
+        jobTitle: t.home.jobTitle,
+      },
     },
   }
 }

@@ -1,4 +1,6 @@
 import React from 'react'
+import { GetStaticPropsContext } from 'next'
+import { useRouter } from 'next/router'
 import MainLayout from '../src/components/templates/MainLayout'
 
 import { faCloudDownloadAlt } from '@fortawesome/free-solid-svg-icons'
@@ -12,9 +14,13 @@ import Title from '../src/components/molecules/Title'
 // Sections
 import MainTimeline from '../src/componentsPage/Resumen/sections/MainTimeline'
 import Skills from '../src/componentsPage/Resumen/sections/Skills'
-import { ResumeMeta } from '../src/metadata/resume'
+import { getResumeMeta } from '../src/metadata/resume'
+import { normalizeLocale } from '../src/i18n'
+import { uiTranslations } from '../src/i18n/translations'
 
 export default function Resume({ metadata, page, content }: IPropsResume) {
+  const { locale } = useRouter()
+  const t = uiTranslations[normalizeLocale(locale)]
   const { title, slogan } = page
   const { workHistory, educationHistory, skillSoft, skillLanguages } = content
   return (
@@ -35,8 +41,8 @@ export default function Resume({ metadata, page, content }: IPropsResume) {
                 <div className="pb-300">
                   <div className="section-head col-sm-12">
                     <h4>
-                      <span>My Professional</span>
-                      Work History
+                      <span>{t.resume.workEyebrow}</span>
+                      {t.resume.workTitle}
                     </h4>
                     <a className="bt-submit" href="/docs/CV-Carlos-Tolentino.pdf" download>
                       <i className="fas fa-cloud-download-alt">
@@ -46,7 +52,7 @@ export default function Resume({ metadata, page, content }: IPropsResume) {
                           icon={faCloudDownloadAlt}
                         />
                       </i>
-                      Download Resume
+                      {t.resume.download}
                     </a>
                   </div>
 
@@ -57,14 +63,18 @@ export default function Resume({ metadata, page, content }: IPropsResume) {
                   <Skills
                     skillSoft={skillSoft}
                     skillLanguages={skillLanguages}
+                    eyebrow={t.resume.skillsEyebrow}
+                    hardSkills={t.resume.hardSkills}
+                    languageSkills={t.resume.languageSkills}
+                    softSkills={t.resume.softSkills}
                   />
                 </div>
 
                 <div className="pt-30">
                   <div className="section-head">
                     <h4>
-                      <span>My Education</span>
-                      Background History
+                      <span>{t.resume.educationEyebrow}</span>
+                      {t.resume.educationTitle}
                     </h4>
                   </div>
                   <MainTimeline timelines={educationHistory} />
@@ -78,8 +88,10 @@ export default function Resume({ metadata, page, content }: IPropsResume) {
   )
 }
 
-export const getStaticProps = () => {
+export const getStaticProps = ({ locale }: GetStaticPropsContext) => {
+  const selectedLocale = normalizeLocale(locale)
+
   return {
-    props: ResumeMeta,
+    props: getResumeMeta(selectedLocale),
   }
 }

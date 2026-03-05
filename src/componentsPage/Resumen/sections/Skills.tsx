@@ -13,28 +13,39 @@ import SkillStart from '../../../components/organisms/SkillStar/SkillStart'
 interface IProps {
   skillSoft: ISkillStart[]
   skillLanguages: ISkillStart[]
+  eyebrow: string
+  hardSkills: string
+  languageSkills: string
+  softSkills: string
 }
 
-const Skills = ({ skillSoft = [], skillLanguages = [] }: IProps) => {
+const Skills = ({
+  skillSoft = [],
+  skillLanguages = [],
+  eyebrow,
+  hardSkills,
+  languageSkills,
+  softSkills,
+}: IProps) => {
   return (
     <div className="row list-skills">
       <div className="col-md-7">
         <div className="special-block-bg">
-          <TitleSection title={'My Professional'} subtitle={'Hard Skills'} />
+          <TitleSection title={eyebrow} subtitle={hardSkills} />
           <SkillProgressBar />
         </div>
       </div>
 
       <div className="col-md-5">
         <SkillStart
-          title={'My Professional'}
-          subtitle={'Language Skills'}
+          title={eyebrow}
+          subtitle={languageSkills}
           items={skillLanguages}
           isLasted={false}
         />
         <SkillStart
-          title={'My Professional'}
-          subtitle={'Soft Skills'}
+          title={eyebrow}
+          subtitle={softSkills}
           items={skillSoft}
           isLasted={true}
         />

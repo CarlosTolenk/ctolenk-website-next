@@ -1,4 +1,6 @@
 import React from 'react'
+import { GetStaticPropsContext } from 'next'
+import { useRouter } from 'next/router'
 import MainLayout from '../src/components/templates/MainLayout'
 import Image from 'next/image'
 
@@ -16,6 +18,8 @@ import {
 } from '@fortawesome/free-brands-svg-icons'
 import { IPropPageBase } from '../src/intefaces'
 import Title from '../src/components/molecules/Title'
+import { normalizeLocale } from '../src/i18n'
+import { uiTranslations } from '../src/i18n/translations'
 
 interface FormElements extends HTMLFormControlsCollection {
   nameInput: HTMLInputElement
@@ -36,6 +40,8 @@ interface IPayload {
 interface IPropsContact extends IPropPageBase {}
 
 export default function Contact({ metadata, page }: IPropsContact) {
+  const { locale } = useRouter()
+  const t = uiTranslations[normalizeLocale(locale)]
   const { title, slogan } = page
 
   const sendMessage = async (payload: IPayload) => {
@@ -101,7 +107,7 @@ export default function Contact({ metadata, page }: IPropsContact) {
                     name="name"
                     id="nameInput"
                     type="text"
-                    placeholder="Name:"
+                    placeholder={t.contact.name}
                     required
                     autoComplete="off"
                   />
@@ -109,21 +115,21 @@ export default function Contact({ metadata, page }: IPropsContact) {
                     name="email"
                     id="emailInput"
                     type="email"
-                    placeholder="Email:"
+                    placeholder={t.contact.email}
                     required
                     autoComplete="off"
                   />
                   <textarea
                     name="message"
                     id="messageInput"
-                    placeholder="Message:"
+                    placeholder={t.contact.message}
                     required
                     rows={6}
                   />
                   <input
                     className="bt-submit"
                     type="submit"
-                    value="Send Message"
+                    value={t.contact.sendMessage}
                   />
                 </form>
               </div>
@@ -133,8 +139,8 @@ export default function Contact({ metadata, page }: IPropsContact) {
           <div className="pt-50 pb-30">
             <div className="section-head">
               <h4>
-                <span>Contact Information</span>
-                Find me here
+                <span>{t.contact.infoEyebrow}</span>
+                {t.contact.infoTitle}
               </h4>
             </div>
 
@@ -168,7 +174,7 @@ export default function Contact({ metadata, page }: IPropsContact) {
                   </div>
                 </div>
                 <div className="contact-text w-75">
-                  <h2>Country</h2>
+                  <h2>{t.contact.country}</h2>
                   <p>
                     Dominican Republic, <small> La Romana </small>
                   </p>
@@ -178,7 +184,7 @@ export default function Contact({ metadata, page }: IPropsContact) {
 
             <div className="pt-50">
               <div className="social-media-block">
-                <h4>Follow Me: </h4>
+                <h4>{t.contact.followMe} </h4>
                 <ul className="social-media-links">
                   <li>
                     <a
@@ -234,21 +240,22 @@ export default function Contact({ metadata, page }: IPropsContact) {
   )
 }
 
-export const getStaticProps = () => {
+export const getStaticProps = ({ locale }: GetStaticPropsContext) => {
+  const selectedLocale = normalizeLocale(locale)
+  const t = uiTranslations[selectedLocale]
+
   return {
     props: {
       metadata: {
-        title: 'Contact | Carlos Tolentino',
-        description:
-          'Get in touch with Carlos Tolentino for software engineering consulting and development services.',
+        title: t.contact.metaTitle,
+        description: t.contact.metaDescription,
         canonicalPath: '/contact',
         ogImage: '/images/me-circle.jpeg',
-        keywords:
-          'contact software engineer, hire full stack developer, carlos tolentino contact',
+        keywords: t.contact.metaKeywords,
       },
       page: {
-        title: 'Contact',
-        slogan: 'Need some help?',
+        title: t.contact.pageTitle,
+        slogan: t.contact.pageSlogan,
       },
     },
   }
