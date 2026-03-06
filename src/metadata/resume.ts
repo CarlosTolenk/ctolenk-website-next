@@ -6,7 +6,7 @@ const resumeContent: IPropsResume['content'] = {
     workHistory: [
       {
         imageAtl: 'coderio_logo',
-        company: 'Coderios At Coca-Cola Andina',
+        company: 'Coderio',
         imageURL: '/images/coderio_logo.jpeg',
         title: 'Senior Full Stack Software Engineer',
         timeElapsed: 'Nov 2024 - Till Now',
@@ -15,7 +15,18 @@ const resumeContent: IPropsResume['content'] = {
             '\n' +
             'I have been collaborating with the development team for new functionalities of the MVP of the application and the launch to new countries to improve the B2B experience, increase sales and give more tools to sellers to give better services to customers.\n' +
             '\n' +
-            'Together we have been evolving the migrated product with new functionalities to meet the current needs of the business that is constantly growing.',
+            'Together we have been evolving the migrated product with new functionalities to meet the current needs of the business that is constantly growing, including cloud integrations with AWS services.',
+      },
+      {
+        imageAtl: 'passi',
+        company: 'Passi',
+        imageURL: '/images/ctolenk-c.png',
+        title: 'Part-time Software Architect & Consultant',
+        timeElapsed: '2025 - Till Now',
+        description:
+          'I lead technical hiring and onboarding for new developers, translate business requirements into technical specifications, and design and document new product capabilities.\n' +
+          '\n' +
+          'I am also responsible for deploying cloud artifacts and services on AWS following scalability and architecture best practices.',
       },
       {
         imageAtl: 'acercarseltda_logo',
@@ -103,6 +114,15 @@ const resumeContent: IPropsResume['content'] = {
       },
     ],
     educationHistory: [
+      {
+        imageAtl: 'aws',
+        company: 'Amazon Web Services',
+        imageURL: '/images/aws.svg',
+        title: 'AWS Certified Solutions Architect - Associate',
+        timeElapsed: '2025 - 2028',
+        description:
+          'Professional certification validating cloud architecture skills to design secure, resilient, and cost-optimized solutions on AWS.',
+      },
       {
         imageAtl: 'udemy',
         company: 'CodelyTv',
@@ -242,7 +262,7 @@ const resumeContent: IPropsResume['content'] = {
       },
       {
         name: 'English',
-        description: 'Intermedia B1',
+        description: 'A2/B1 (in progress)',
         ranking: 3,
       },
     ],

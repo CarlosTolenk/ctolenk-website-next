@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+  <title id="title">AWS Badge</title>
+  <desc id="desc">Simple AWS certification placeholder badge.</desc>
+  <rect width="240" height="240" rx="24" fill="#161E2D" />
+  <rect x="18" y="18" width="204" height="204" rx="18" fill="#232F3E" stroke="#FF9900" stroke-width="4" />
+  <text x="120" y="104" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="700" fill="#FFFFFF">
+    AWS
+  </text>
+  <path d="M63 150c22 12 48 18 74 18 22 0 43-4 61-12" fill="none" stroke="#FF9900" stroke-width="8" stroke-linecap="round" />
+</svg>
