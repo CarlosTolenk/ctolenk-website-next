@@ -37,10 +37,8 @@ const AboutMeDescription = ({ about, features }: IPropsAboutMe) => {
         <div className="box-img">
           <img
             className="img-fluid"
-            src={
-              'https://plustatic.com/6133/conversions/diferencias-software-hardware-default.jpg'
-            }
-            alt={'client'}
+            src="/images/software-world.svg"
+            alt={'software world illustration'}
             height={524}
             width={700}
           />

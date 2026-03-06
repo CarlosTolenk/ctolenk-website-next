@@ -19,31 +19,46 @@ export default async function handler(
     message?: string
   }
 
-  if (!name || !email || !message) {
+  const safeName = name?.trim()
+  const safeEmail = email?.trim()
+  const safeMessage = message?.trim()
+
+  if (!safeName || !safeEmail || !safeMessage) {
     return res.status(400).json({ status: 'Bad Request' })
   }
 
-  if (!process.env.EMAIL_FROM || !process.env.PASSWORD || !process.env.EMAIL_TO) {
-    return res.status(500).json({ status: 'Email service not configured' })
+  const smtpHost = process.env.SMTP_HOST || 'smtp.gmail.com'
+  const smtpPort = Number(process.env.SMTP_PORT || 465)
+  const smtpUser = process.env.SMTP_USER || process.env.EMAIL_FROM
+  const smtpPass = process.env.SMTP_PASS || process.env.PASSWORD
+  const emailFrom = process.env.EMAIL_FROM || smtpUser
+  const emailTo = process.env.EMAIL_TO
+
+  if (!smtpUser || !smtpPass || !emailFrom || !emailTo) {
+    return res.status(500).json({
+      status:
+        'Email service not configured. Required: SMTP_USER, SMTP_PASS, EMAIL_FROM, EMAIL_TO',
+    })
   }
 
   try {
     const transporter = createTransport({
-      port: 465,
-      host: 'smtp.gmail.com',
+      port: smtpPort,
+      host: smtpHost,
       auth: {
-        user: process.env.EMAIL_FROM,
-        pass: process.env.PASSWORD,
+        user: smtpUser,
+        pass: smtpPass,
       },
-      secure: true,
+      secure: smtpPort === 465,
     })
 
     const mailData = {
-      from: process.env.EMAIL_FROM,
-      to: process.env.EMAIL_TO,
-      subject: `Me ha enviado un correo desde el website ${name}`,
-      text: message + ' | Sent from: ' + email,
-      html: `<div>${message}</div><p>Sent from: ${email}</p>`,
+      from: emailFrom,
+      to: emailTo,
+      replyTo: safeEmail,
+      subject: `Nuevo contacto desde ctolenk.com - ${safeName}`,
+      text: `${safeMessage}\n\nSent from: ${safeEmail}`,
+      html: `<div>${safeMessage}</div><p>Sent from: ${safeEmail}</p>`,
     }
     await transporter.sendMail(mailData)
   } catch (error) {
