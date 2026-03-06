@@ -1,8 +1,7 @@
-import React from 'react'
+import React, { useMemo, useState } from 'react'
 import { GetStaticPropsContext } from 'next'
 import { useRouter } from 'next/router'
 import MainLayout from '../src/components/templates/MainLayout'
-import Image from 'next/image'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
@@ -41,8 +40,37 @@ interface IPropsContact extends IPropPageBase {}
 
 export default function Contact({ metadata, page }: IPropsContact) {
   const { locale } = useRouter()
-  const t = uiTranslations[normalizeLocale(locale)]
+  const selectedLocale = normalizeLocale(locale)
+  const t = uiTranslations[selectedLocale]
   const { title, slogan } = page
+  const [isSending, setIsSending] = useState(false)
+  const [feedbackOpen, setFeedbackOpen] = useState(false)
+  const [feedbackType, setFeedbackType] = useState<'success' | 'error'>('success')
+  const [feedbackMessage, setFeedbackMessage] = useState('')
+
+  const copy = useMemo(
+    () =>
+      selectedLocale === 'es'
+        ? {
+            sending: 'Enviando...',
+            sent: 'Tu mensaje fue enviado correctamente. Te respondere pronto.',
+            failed:
+              'No fue posible enviar tu mensaje en este momento. Intenta nuevamente o escribe a carlos.tolentinoe@gmail.com.',
+            close: 'Cerrar',
+            successTitle: 'Mensaje enviado',
+            errorTitle: 'No se pudo enviar',
+          }
+        : {
+            sending: 'Sending...',
+            sent: 'Your message was sent successfully. I will get back to you soon.',
+            failed:
+              'Your message could not be sent right now. Please try again or email me at carlos.tolentinoe@gmail.com.',
+            close: 'Close',
+            successTitle: 'Message sent',
+            errorTitle: 'Unable to send',
+          },
+    [selectedLocale],
+  )
 
   const sendMessage = async (payload: IPayload) => {
     const response = await fetch('/api/contact', {
@@ -52,7 +80,11 @@ export default function Contact({ metadata, page }: IPropsContact) {
         'Content-Type': 'application/json',
       },
     })
-    return response.json()
+    const data = await response.json()
+    if (!response.ok) {
+      throw new Error(data?.status || 'Request failed')
+    }
+    return data
   }
 
   const generatePayload = (event: React.FormEvent<UsernameFormElement>) => {
@@ -64,16 +96,25 @@ export default function Contact({ metadata, page }: IPropsContact) {
     return Object.fromEntries(mapped)
   }
 
-  const onSubmit = (event: React.FormEvent<UsernameFormElement>) => {
+  const onSubmit = async (event: React.FormEvent<UsernameFormElement>) => {
     event.preventDefault()
+    const formElement = event.currentTarget
     const payload = generatePayload(event)
-    sendMessage(payload)
-      .then((data) => {
-        console.log(data)
-      })
-      .catch((error) => {
-        console.error(error)
-      })
+
+    setIsSending(true)
+    try {
+      await sendMessage(payload)
+      formElement.reset()
+      setFeedbackType('success')
+      setFeedbackMessage(copy.sent)
+      setFeedbackOpen(true)
+    } catch (error) {
+      setFeedbackType('error')
+      setFeedbackMessage(copy.failed)
+      setFeedbackOpen(true)
+    } finally {
+      setIsSending(false)
+    }
   }
 
   return (
@@ -89,14 +130,14 @@ export default function Contact({ metadata, page }: IPropsContact) {
           <Title title={title} slogan={slogan} />
           <div className="row contact-form pb-30">
             <div className="col-sm-12 col-md-5 col-lg-5 left-background">
-              <Image
+              <img
                 src={
                   'https://www.wgu.edu/content/dam/web-sites/blog-newsroom/blog/images/national/2019/june/changing-roles-of-software-developers.jpg'
                 }
                 alt={'client'}
                 height={500}
                 width={600}
-                objectFit={'cover'}
+                style={{ objectFit: 'cover' }}
               />
             </div>
             <div className="col-sm-12 col-md-7 col-lg-7">
@@ -129,7 +170,13 @@ export default function Contact({ metadata, page }: IPropsContact) {
                   <input
                     className="bt-submit"
                     type="submit"
-                    value={t.contact.sendMessage}
+                    value={isSending ? copy.sending : t.contact.sendMessage}
+                    disabled={isSending}
+                    aria-busy={isSending}
+                    style={{
+                      opacity: isSending ? 0.75 : 1,
+                      cursor: isSending ? 'not-allowed' : 'pointer',
+                    }}
                   />
                 </form>
               </div>
@@ -236,6 +283,49 @@ export default function Contact({ metadata, page }: IPropsContact) {
           </div>
         </div>
       </section>
+      {feedbackOpen && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-live="polite"
+          onClick={() => setFeedbackOpen(false)}
+          style={{
+            position: 'fixed',
+            inset: 0,
+            backgroundColor: 'rgba(15, 23, 42, 0.75)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '20px',
+            zIndex: 9999,
+          }}
+        >
+          <div
+            onClick={(event) => event.stopPropagation()}
+            style={{
+              width: '100%',
+              maxWidth: '520px',
+              background: '#fff',
+              borderRadius: '14px',
+              padding: '24px',
+              borderTop: `4px solid ${feedbackType === 'success' ? '#16a34a' : '#dc2626'}`,
+              boxShadow: '0 20px 45px rgba(2, 6, 23, 0.32)',
+            }}
+          >
+            <h3 style={{ marginTop: 0 }}>
+              {feedbackType === 'success' ? copy.successTitle : copy.errorTitle}
+            </h3>
+            <p style={{ marginBottom: '20px' }}>{feedbackMessage}</p>
+            <button
+              type="button"
+              className="bt-submit"
+              onClick={() => setFeedbackOpen(false)}
+            >
+              {copy.close}
+            </button>
+          </div>
+        </div>
+      )}
     </MainLayout>
   )
 }
