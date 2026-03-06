@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar, faStarHalf } from '@fortawesome/free-solid-svg-icons'
 import React from 'react'
@@ -27,9 +26,9 @@ const Testimonials = () => {
           </div>
           <div className="testimonial-footer">
             <div className="testimonial-avatar">
-              <Image
-                src={'https://via.placeholder.com/80x80'}
-                alt={'Gary Johnson'}
+              <img
+                src="https://via.placeholder.com/80x80"
+                alt="Gary Johnson"
                 height={80}
                 width={90}
               />
@@ -80,9 +79,9 @@ const Testimonials = () => {
           </div>
           <div className="testimonial-footer">
             <div className="testimonial-avatar">
-              <Image
-                src={'https://via.placeholder.com/80x80'}
-                alt={'Gary Johnson'}
+              <img
+                src="https://via.placeholder.com/80x80"
+                alt="Gary Johnson"
                 height={80}
                 width={90}
               />

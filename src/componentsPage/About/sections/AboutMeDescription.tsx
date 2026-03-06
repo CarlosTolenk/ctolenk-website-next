@@ -1,5 +1,4 @@
 import React from 'react'
-import Image from 'next/image'
 
 import { IFeatures, IParagraph } from '../../../intefaces'
 
@@ -36,7 +35,7 @@ const AboutMeDescription = ({ about, features }: IPropsAboutMe) => {
 
       <div className="col-xs-6 col-sm-12 col-md-6 col-lg-6">
         <div className="box-img">
-          <Image
+          <img
             className="img-fluid"
             src={
               'https://plustatic.com/6133/conversions/diferencias-software-hardware-default.jpg'

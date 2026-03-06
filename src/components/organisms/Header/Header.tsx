@@ -1,5 +1,4 @@
 import React, { useState, memo } from 'react'
-import Image from 'next/image'
 
 import Nav from '../../molecules/Nav/Nav'
 import TypingMessage from '../../molecules/TypingMessage/TypingMessage'
@@ -45,13 +44,12 @@ const Header = () => {
         <div className="header-content">
           <div className="profile-picture-block">
             <div className="my-photo">
-              <Image
+              <img
                 className="img-fluid"
-                src={'/images/me-circle.jpeg'}
-                alt={'carlos-tolentino'}
-                layout={'fill'}
-                sizes="(max-width: 991px) 0px, 220px"
-                priority={true}
+                src="/images/me-circle.jpeg"
+                alt="carlos-tolentino"
+                loading="eager"
+                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />
             </div>
           </div>
@@ -84,11 +82,11 @@ const Header = () => {
       </header>
       <header className="responsive-header">
         <div className="responsive-header-name">
-          <Image
+          <img
             onClick={onHandlerClickNavigation}
             className="responsive-logo"
-            src={'/images/ctolenk-color.png'}
-            alt={'ctolenk-c'}
+            src="/images/ctolenk-color.png"
+            alt="ctolenk-c"
             width={100}
             height={30}
           />

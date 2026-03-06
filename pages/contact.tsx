@@ -2,7 +2,6 @@ import React from 'react'
 import { GetStaticPropsContext } from 'next'
 import { useRouter } from 'next/router'
 import MainLayout from '../src/components/templates/MainLayout'
-import Image from 'next/image'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
@@ -89,14 +88,14 @@ export default function Contact({ metadata, page }: IPropsContact) {
           <Title title={title} slogan={slogan} />
           <div className="row contact-form pb-30">
             <div className="col-sm-12 col-md-5 col-lg-5 left-background">
-              <Image
+              <img
                 src={
                   'https://www.wgu.edu/content/dam/web-sites/blog-newsroom/blog/images/national/2019/june/changing-roles-of-software-developers.jpg'
                 }
                 alt={'client'}
                 height={500}
                 width={600}
-                objectFit={'cover'}
+                style={{ objectFit: 'cover' }}
               />
             </div>
             <div className="col-sm-12 col-md-7 col-lg-7">

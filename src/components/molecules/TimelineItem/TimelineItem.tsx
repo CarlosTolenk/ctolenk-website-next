@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import React from 'react'
 import { ITimeline } from '../../../intefaces/ITimelines'
 
@@ -24,7 +23,7 @@ const TimelineItem = ({
   return (
     <div className="timeline">
       <div className="timeline-icon">
-        <Image src={imageURL} alt={imageAtl} height={80} width={80} />
+        <img src={imageURL} alt={imageAtl} height={80} width={80} loading="lazy" />
       </div>
       <div className="timeline-content">
         <span className="date">
