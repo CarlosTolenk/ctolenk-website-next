@@ -6,6 +6,7 @@ const nextConfig = {
     defaultLocale: 'es',
   },
   images: {
+    unoptimized: process.env.NETLIFY === 'true',
     domains: ['www.wgu.edu', 'plustatic.com', 'via.placeholder.com'],
     formats: ['image/avif', 'image/webp'],
   },
