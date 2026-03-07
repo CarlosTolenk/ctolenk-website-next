@@ -108,22 +108,6 @@ const Header = () => {
         <span onClick={onHandleClick} className="responsive-icon">
           <FontAwesomeIcon size={'xs'} icon={faBars} />
         </span>
-        <div className={styles.languageSwitcherResponsive}>
-          <button
-            className={locale === 'es' ? styles.languageActive : ''}
-            type="button"
-            onClick={() => onChangeLocale('es')}
-          >
-            {t.locale.es}
-          </button>
-          <button
-            className={locale === 'en' ? styles.languageActive : ''}
-            type="button"
-            onClick={() => onChangeLocale('en')}
-          >
-            {t.locale.en}
-          </button>
-        </div>
       </header>
     </>
   )

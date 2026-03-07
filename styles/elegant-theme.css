@@ -324,6 +324,35 @@ body {
     margin: 14px auto 0;
     display: block;
   }
+
+  .contact-info.d-flex {
+    align-items: center;
+    gap: 10px;
+  }
+
+  .contact-info .w-25 {
+    width: auto !important;
+  }
+
+  .contact-icon {
+    width: 46px;
+    height: 46px;
+    min-width: 46px;
+    font-size: 20px;
+  }
+
+  .contact-icon svg {
+    font-size: 16px !important;
+  }
+
+  .contact-text h2 {
+    font-size: 16px;
+  }
+
+  .contact-text.w-75 p {
+    font-size: 13px;
+    line-height: 1.4;
+  }
 }
 
 /* Brand contrast fixes for active dark mode */

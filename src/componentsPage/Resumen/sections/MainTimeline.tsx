@@ -24,9 +24,9 @@ const MainTimeline = ({ timelines }: IProsMainTimeline) => {
             company,
             subDescriptionTitle,
             subDescription,
-          }) => (
+          }, index) => (
             <TimelineItem
-              key={timeElapsed}
+              key={`${company}-${title}-${timeElapsed}-${index}`}
               imageAtl={imageAtl}
               imageURL={imageURL}
               title={title}

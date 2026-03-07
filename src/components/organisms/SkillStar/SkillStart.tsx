@@ -27,9 +27,9 @@ const SkillStart = ({
       <TitleSection title={title} subtitle={subtitle} />
       <div className="skills-items">
         {items.length > 0 &&
-          items.map(({ name, description, ranking }) => (
+          items.map(({ name, description, ranking }, index) => (
             <SkillStartItem
-              key={name}
+              key={`${name}-${index}`}
               name={name}
               description={description}
               ranking={ranking}

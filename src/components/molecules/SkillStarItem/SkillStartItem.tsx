@@ -10,8 +10,7 @@ const SkillStartItem = ({
   description = 'subtitle',
   ranking = 0,
 }: ISkillStart) => {
-  const rankingInArray = new Array(ranking)
-  rankingInArray.fill(1, 0, rankingInArray.length)
+  const rankingInArray = Array.from({ length: ranking }, (_, index) => index)
 
   return (
     <div className="language-skill row">
@@ -21,7 +20,7 @@ const SkillStartItem = ({
       <ul className="col-md-6 text-right rating">
         {rankingInArray.length > 0 &&
           rankingInArray.map((item) => (
-            <li key={item}>
+            <li key={`${name}-star-${item}`}>
               <i className="fa fa-star">
                 <FontAwesomeIcon className="mr-1" size={'1x'} icon={faStar} />
               </i>

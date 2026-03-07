@@ -4,8 +4,8 @@ import { ITimeline } from '../../../intefaces/ITimelines'
 const ItemUl = ({ subDescription }: { subDescription: string[] }) => {
   return (
     <ul>
-      {subDescription.map((item) => (
-        <li key={item}>{item}</li>
+      {subDescription.map((item, index) => (
+        <li key={`${item}-${index}`}>{item}</li>
       ))}
     </ul>
   )
