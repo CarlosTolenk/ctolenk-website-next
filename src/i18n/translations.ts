@@ -8,9 +8,11 @@ export const uiTranslations: Record<
     header: { roles: string[]; rightsReserved: string }
     home: {
       greeting: string
+      intro: string
       aboutCta: string
       contactCta: string
       roles: string[]
+      pillars: string[]
       metaTitle: string
       metaDescription: string
       metaKeywords: string
@@ -100,10 +102,12 @@ export const uiTranslations: Record<
         'Desarrollador Back-end',
         'Desarrollador Mobile',
       ],
-      rightsReserved: 'Todos los derechos reservados.',
+      rightsReserved: 'Carlos Tolentino. Todos los derechos reservados.',
     },
     home: {
       greeting: 'Hola, soy Carlos Tolentino',
+      intro:
+        'Diseno y construyo productos digitales con enfoque en arquitectura limpia, rendimiento y resultados de negocio.',
       aboutCta: 'Sobre Mi',
       contactCta: 'Contactame',
       roles: [
@@ -112,6 +116,7 @@ export const uiTranslations: Record<
         'Desarrollador Back-end',
         'Desarrollador Mobile',
       ],
+      pillars: ['Arquitectura limpia', 'Producto escalable', 'Comunicacion clara'],
       metaTitle: 'Carlos Tolentino | Ingeniero de Software Full Stack',
       metaDescription:
         'Ingeniero de Software Full Stack especializado en soluciones web, mobile y cloud. Explora mis servicios, experiencia y vias de contacto.',
@@ -140,8 +145,8 @@ export const uiTranslations: Record<
       pageSlogan: 'Siempre inspirado por el conocimiento',
       workEyebrow: 'Mi Experiencia Profesional',
       workTitle: 'Historial Laboral',
-      educationEyebrow: 'Mi Educacion',
-      educationTitle: 'Historial Academico',
+      educationEyebrow: 'Formacion y Certificaciones',
+      educationTitle: 'Trayectoria Academica',
       download: 'Descargar CV',
       hardSkills: 'Habilidades Tecnicas',
       languageSkills: 'Idiomas',
@@ -212,10 +217,12 @@ export const uiTranslations: Record<
         'Back-end Developer',
         'Mobile Developer',
       ],
-      rightsReserved: 'All rights reserved.',
+      rightsReserved: 'Carlos Tolentino. All rights reserved.',
     },
     home: {
       greeting: 'Hello, I am Carlos Tolentino',
+      intro:
+        'I design and build digital products focused on clean architecture, performance, and business impact.',
       aboutCta: 'About Me',
       contactCta: 'Contact Me',
       roles: [
@@ -224,6 +231,7 @@ export const uiTranslations: Record<
         'Back-end Developer',
         'Mobile Developer',
       ],
+      pillars: ['Clean architecture', 'Scalable product', 'Clear communication'],
       metaTitle: 'Carlos Tolentino | Full Stack Software Engineer',
       metaDescription:
         'Full Stack Software Engineer specializing in web, mobile, and cloud solutions. Explore my services, experience, and contact channels.',
@@ -250,10 +258,10 @@ export const uiTranslations: Record<
         'carlos tolentino resume, software engineer cv, full stack experience, technical skills',
       pageTitle: 'RESUME',
       pageSlogan: 'Always inspired by knowledge',
-      workEyebrow: 'My Professional',
+      workEyebrow: 'Professional Experience',
       workTitle: 'Work History',
-      educationEyebrow: 'My Education',
-      educationTitle: 'Background History',
+      educationEyebrow: 'Education and Certifications',
+      educationTitle: 'Academic Background',
       download: 'Download Resume',
       hardSkills: 'Hard Skills',
       languageSkills: 'Language Skills',

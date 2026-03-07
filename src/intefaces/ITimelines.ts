@@ -3,6 +3,7 @@ export interface ITimeline {
   imageAtl: string
   title: string
   description: string
+  subDescriptionTitle?: string
   subDescription?: string[]
   timeElapsed: string
   company: string

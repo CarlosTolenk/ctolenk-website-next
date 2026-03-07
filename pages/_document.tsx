@@ -20,7 +20,7 @@ class MyDocument extends Document {
         <Head>
           <link rel="icon" type="image/png" href="/favicon.png" />
           <meta name="author" content="CTolenk - Carlos Tolentino" />
-          <meta name="theme-color" content="#3c1742" />
+          <meta name="theme-color" content="#d32e2e" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
             rel="preconnect"
