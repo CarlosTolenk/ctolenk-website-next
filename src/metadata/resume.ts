@@ -2,57 +2,44 @@ import { IPropsResume } from '../intefaces/pages/IPropsResume'
 import { SiteLocale } from '../i18n'
 import { uiTranslations } from '../i18n/translations'
 
-const resumeContent: IPropsResume['content'] = {
+const resumeContentByLocale: Record<SiteLocale, IPropsResume['content']> = {
+  es: {
     workHistory: [
       {
         imageAtl: 'coderio_logo',
         company: 'Coderio',
         imageURL: '/images/coderio_logo.jpeg',
         title: 'Senior Full Stack Software Engineer',
-        timeElapsed: 'Nov 2024 - Till Now',
+        timeElapsed: 'Nov 2024 - Actualidad',
         description:
-            'I have been working on developing a B2B mobile application to connect sellers with customers.\n' +
-            '\n' +
-            'I have been collaborating with the development team for new functionalities of the MVP of the application and the launch to new countries to improve the B2B experience, increase sales and give more tools to sellers to give better services to customers.\n' +
-            '\n' +
-            'Together we have been evolving the migrated product with new functionalities to meet the current needs of the business that is constantly growing, including cloud integrations with AWS services.',
+          'Desarrollo una aplicacion mobile B2B orientada a conectar vendedores con clientes y mejorar la eficiencia comercial. Trabajo en nuevas funcionalidades del MVP y en la expansion a nuevos paises para escalar la experiencia del producto.',
       },
       {
         imageAtl: 'passi',
         company: 'Passi',
         imageURL: '/images/ctolenk-c.png',
-        title: 'Part-time Software Architect & Consultant',
-        timeElapsed: '2025 - Till Now',
+        title: 'Software Architect & Consultant (Part-time)',
+        timeElapsed: '2025 - Actualidad',
         description:
-          'I lead technical hiring and onboarding for new developers, translate business requirements into technical specifications, and design and document new product capabilities.\n' +
-          '\n' +
-          'I am also responsible for deploying cloud artifacts and services on AWS following scalability and architecture best practices.',
+          'Lidero procesos de contratacion tecnica y onboarding, convierto requerimientos de negocio en especificaciones de arquitectura y diseno capacidades de producto. Tambien coordino despliegues cloud en AWS con foco en escalabilidad y buenas practicas.',
       },
       {
         imageAtl: 'acercarseltda_logo',
-        company: 'AcercaRSE At Walmart Chile',
+        company: 'AcercaRSE at Walmart Chile',
         imageURL: '/images/acercarseltda_logo.jpeg',
         title: 'Expert Full Stack Software Engineer / Technical Leader',
         timeElapsed: 'Jun 2023 - Ago 2024',
         description:
-            'I have been working in the fulfillment domain of Walmart Chile in the assembly application of customer orders in the store.\n' +
-            '\n' +
-            'I have contributed my knowledge and experience in the area to carry out a cloud platform migration, which consisted of deploying the Walmart Chile system to the Walmart International cloud, restructuring a large part of the existing code. Additionally, good security practices had to be implemented to comply with the standards of the new international platform.\n' +
-            '\n' +
-            'In the current stage I have been exercising a role as team leader due to having more seniority in the product as well as my leadership skills. Together we have been evolving the migrated product with new functionalities to meet the current needs of the business that is constantly growing.',
+          'Participe en el dominio de fulfillment para la app de preparacion de pedidos en tienda. Contribui a una migracion cloud de alto impacto entre plataformas de Walmart y lidere iniciativas de seguridad, evolucion del producto y coordinacion tecnica del equipo.',
       },
       {
         imageAtl: 'the-bridge-social',
-        company: 'The Bridge Social At Walmart Chile',
+        company: 'The Bridge Social at Walmart Chile',
         imageURL: '/images/the-bridge-social.webp',
         title: 'Senior Full Stack Software Engineer',
         timeElapsed: 'Ago 2021 - Jun 2023',
         description:
-          'I have been working in the fulfillment domain of Walmart Chile in the assembly application of customer orders in the store.\n' +
-          '\n' +
-          'I have contributed my knowledge and experience in the area to carry out a cloud platform migration, which consisted of deploying the Walmart Chile system to the Walmart International cloud, restructuring a large part of the existing code. Additionally, good security practices had to be implemented to comply with the standards of the new international platform.\n' +
-          '\n' +
-          'In the current stage I have been exercising a role as team leader due to having more seniority in the product as well as my leadership skills. Together we have been evolving the migrated product with new functionalities to meet the current needs of the business that is constantly growing.',
+          'Trabaje en producto de fulfillment para operaciones de tienda, participando en migracion cloud, modernizacion tecnica y evolucion continua de funcionalidades alineadas a objetivos de negocio.',
       },
       {
         imageAtl: 'unit',
@@ -61,21 +48,16 @@ const resumeContent: IPropsResume['content'] = {
         title: 'Senior Software Engineer',
         timeElapsed: 'May 2020 - Oct 2021',
         description:
-          'During my stay as a Unit collaborator, I was working as a Senior developer in the Front-end part under the Angular framework, creating exportable UI components that can be used throughout the insurance platform through Angular Element.\n' +
-          '\n' +
-          'In addition, in the creation of different web applications with the same framework to be able to operate in an operating environment in which insurance policies can be managed from issuance, endorsement, claim and cancellation.\n' +
-          '\n' +
-          'During the last period I was working as an advisor and coaching the new Front-end developers to be able to level the team so that they are able to carry out the assignments in the most optimal way.',
+          'Desarrolle soluciones Front-end con Angular y Angular Elements para un ecosistema de seguros. Colabore en multiples aplicaciones de negocio y mentoree developers para elevar el nivel tecnico y la calidad de entrega.',
       },
       {
         imageAtl: 'atl-software',
         company: 'ATL Software',
         imageURL: '/images/atl-software.png',
         title: 'Mid-Senior Full Stack Software Engineer',
-        timeElapsed: 'May 2019 - March 2020',
+        timeElapsed: 'May 2019 - Mar 2020',
         description:
-          'I was working as a Fullstack Developer with the following technologies: PHP, CakePHP, Wordpress, Angular, React.js and Knockout. Clients have a website with Wordpress in which they develop various Gutenberng components so that clients can manage their information in a practical way. On the other hand, there is a portal for students where they can perform different operations such as consulting their classes, registering for them and seeing their grades until they buy class materials.\n' +
-          ' This platform is built with PHP and CakePHP on the backend and the frontend through Angular and Knocout. My last job was to build a model for the management of self-configurable payment platforms with the user, since the company has payment integrations due to its presence in several countries.',
+          'Trabaje en proyectos Full Stack con PHP, CakePHP, Angular, React y WordPress. Participe en la construccion de portales para estudiantes y en soluciones de integracion de pagos configurables para operaciones en varios paises.',
       },
       {
         imageAtl: 'control-diamante',
@@ -84,24 +66,16 @@ const resumeContent: IPropsResume['content'] = {
         title: 'Mid-Senior Full Stack Software Engineer',
         timeElapsed: 'May 2017 - May 2019',
         description:
-          'The project has been developed in two aspects. Web Development and Mobile Development.\n' +
-          '\n' +
-          'The WEB platform has been developed to be a SPA (Single Page Application), capable of adding, deleting and modifying the content that can be viewed in the mobile application through a REST API, in turn the WEB platform is capable of carrying all the analytics to boost sales and carry out the most optimal marketing strategy. This has been developed in the Angular 5 framework due to its robust structure with the MVC pattern accompanied by reactive programming through components.\n' +
-          '\n' +
-          'In the same way, a website was implemented through Wordpress as a CMS to manage the content quickly and efficiently on the client side and reuse Angular components to display plans and events.\n' +
-          '\n' +
-          'On the other hand, the mobile application has been built React Native, which is a technology focused on cross-platform native hybrid applications, also known as Bridge. This technology has been chosen to cover the needs of both most demanded operating systems such as IOS and Android in the same development.\n' +
-          '\n' +
-          'The application has the publications of the plans and events offered by the company Control Diamante, as well as the transmission of a television channel and a radio station. Hotlines have also been implemented through push notification, which sends all users the lottery numbers.',
+          'Desarrolle una plataforma web SPA y una app mobile para publicacion de planes, eventos y servicios digitales. Implemente integraciones de contenido con WordPress y funcionalidades de notificaciones para mejorar el alcance comercial.',
       },
       {
         imageAtl: '4r-fintech.png',
-        company: '4R Prestamos y Finazas',
+        company: '4R Prestamos y Finanzas',
         imageURL: '/images/4r-fintech.png',
         title: 'Junior Full Stack Software Engineer',
         timeElapsed: 'Sep 2017 - Dic 2018',
         description:
-          'An application developed with FullStack MEAN, that is, MongoDB as a NoSQL and documentary database, Express, AngularJs and NodeJs. The objective of the application was aimed at work teams, which could assign tasks, be able to share resources for their corresponding workflow, the application also had a general CHAT where all connected members could talk and a particular CHAT where you could select the person you could talk to. Lastly, it has a timeline where it showed all the task assignments and their completion and when a team member shared a resource so that everyone would be aware of what was happening with the project that is being carried out.',
+          'Construi una aplicacion colaborativa con stack MEAN para gestion de tareas, recursos y comunicacion en equipos de trabajo, incluyendo chat general, chat privado y timeline de actividad.',
       },
       {
         imageAtl: 'ctolenk',
@@ -110,7 +84,7 @@ const resumeContent: IPropsResume['content'] = {
         title: 'Junior Full Stack Software Engineer',
         timeElapsed: 'Nov 2015 - May 2017',
         description:
-          'A time of learning where I began to develop personal projects to prepare myself to face projects for real clients, in which I carry out projects for friends in which I can highlight several websites through Wordpress as CMS, as well as small one-stop single page application the front-end side as well as some REST APIs on the backend side.',
+          'Etapa de consolidacion profesional desarrollando proyectos reales para clientes, principalmente sitios en WordPress, aplicaciones web y APIs REST como base de mi carrera en software.',
       },
     ],
     educationHistory: [
@@ -121,23 +95,287 @@ const resumeContent: IPropsResume['content'] = {
         title: 'AWS Certified Solutions Architect - Associate',
         timeElapsed: '2025 - 2028',
         description:
-          'Professional certification validating cloud architecture skills to design secure, resilient, and cost-optimized solutions on AWS.',
+          'Certificacion profesional que valida competencias en arquitectura cloud para disenar soluciones seguras, resilientes y optimizadas en costos sobre AWS.',
+        subDescriptionTitle: 'Servicios clave',
+        subDescription: [
+          'IAM: control de acceso y seguridad',
+          'Amazon VPC: redes privadas y segmentacion',
+          'EC2 Auto Scaling y Application Load Balancer',
+          'Amazon ECS/EKS para contenedores',
+          'AWS Lambda y arquitecturas serverless',
+          'Amazon S3 y CloudFront para contenido estatico',
+          'Amazon RDS y DynamoDB para persistencia',
+          'CloudWatch + CloudTrail para observabilidad y auditoria',
+        ],
       },
       {
         imageAtl: 'udemy',
-        company: 'CodelyTv',
+        company: 'CodelyTV',
         imageURL: '/images/codelytv.png',
-        title: 'Clean Architectures and good practices',
-        timeElapsed: 'Jan 2022 - Till Now',
+        title: 'Arquitectura de Software y Buenas Practicas',
+        timeElapsed: 'Ene 2022 - Actualidad',
         description:
-          'I focused on learning everything related to clean architectures, refactoring mechanisms and deepening the practice of code testing.',
+          'Programa de estudio continuo orientado a arquitectura limpia, refactorizacion y calidad de codigo con enfoque practico en productos escalables.',
+        subDescriptionTitle: 'Contenido clave',
         subDescription: [
-          'SOLID Principles Applied',
-          'Domain Drive Design',
-          'Event Driven Architecture',
-          'CQRS: Command-Query Responsibility Segregation',
+          'Principios SOLID aplicados',
+          'Domain-Driven Design (DDD)',
+          'Event-Driven Architecture',
+          'CQRS (Command Query Responsibility Segregation)',
+          'Arquitectura Hexagonal',
+          'Refactorizacion y Code Smells',
+          'TypeScript Avanzado',
+        ],
+      },
+      {
+        imageAtl: 'udemy',
+        company: 'Udemy',
+        imageURL: '/images/udemy-logo.png',
+        title: 'Full Stack JavaScript y Mobile Development',
+        timeElapsed: 'Ene 2017 - Actualidad',
+        description:
+          'Formacion enfocada en desarrollo mobile con tecnologias web, cultura DevOps y actualizacion constante para aplicar practicas modernas en proyectos de clientes y productos propios.',
+        subDescriptionTitle: 'Contenido clave',
+        subDescription: [
+          'Angular basico y avanzado',
+          'Ionic (Angular)',
+          'React.js y React Native',
+          'Node.js y MongoDB',
+          'BDD (Behavior-Driven Development)',
+          'Docker y Kubernetes',
+        ],
+      },
+      {
+        imageAtl: 'Platzi',
+        company: 'Platzi',
+        imageURL: '/images/platzi.png',
+        title: 'Especializacion y Refuerzo Profesional',
+        timeElapsed: 'Sep 2017 - Ene 2020',
+        description:
+          'Ruta de aprendizaje para fortalecer fundamentos y ampliar habilidades practicas en desarrollo web, backend y testing orientado a calidad.',
+        subDescriptionTitle: 'Contenido clave',
+        subDescription: [
+          'Ruta profesional de JavaScript',
+          'PHP avanzado y Laravel',
+          'WordPress para desarrolladores',
+          'C# y .NET',
+          'TDD (Test-Driven Development)',
+        ],
+      },
+      {
+        imageAtl: 'NextU',
+        company: 'NextU',
+        imageURL: '/images/nextu.png',
+        title: 'Full Stack Developer',
+        timeElapsed: 'Dic 2016 - Mayo 2017',
+        description:
+          'Proceso de transicion profesional al desarrollo de software, aplicando bases previas de programacion y consolidando competencias para el mercado laboral tech.',
+        subDescriptionTitle: 'Contenido clave',
+        subDescription: [
+          'Desarrollo Web',
+          'JavaScript Profesional',
+          'Testing: fundamentos y buenas practicas',
+          'PHP y WordPress',
+        ],
+      },
+      {
+        imageAtl: 'ITESM',
+        company: 'ITESM',
+        imageURL: '/images/itesm.svg',
+        title: 'Ingenieria en Robotica Digital (cursada)',
+        timeElapsed: 'Ene 2013 - Jun 2016',
+        description:
+          'Formacion universitaria orientada a integrar informatica, matematica, programacion y electronica con enfoque en resolucion de problemas complejos.',
+      },
+      {
+        imageAtl: 'ITLA',
+        company: 'ITLA',
+        imageURL: '/images/itla.png',
+        title: 'Tecnologo en Mecatronica',
+        timeElapsed: 'Ene 2012 - Nov 2012',
+        description:
+          'Formacion tecnica con base en matematica, logica y electronica, que fortalecio el pensamiento analitico aplicado a ingenieria y tecnologia.',
+      },
+      {
+        imageAtl: 'Centenaria',
+        company: 'Centenaria',
+        imageURL: '/images/centenaria.webp',
+        title: 'Certificacion Basica en Informatica',
+        timeElapsed: 'Ene 2009 - Nov 2010',
+        description:
+          'Introduccion formal al mundo tecnologico: programacion orientada a objetos, fundamentos de hardware y mantenimiento de equipos.',
+      },
+      {
+        imageAtl: 'IPISA',
+        company: 'IPISA',
+        imageURL: '/images/ipisa.png',
+        title: 'Bachiller Tecnico en Electronica Industrial',
+        timeElapsed: 'Ago 2006 - Jul 2010',
+        description:
+          'Bachillerato tecnico orientado a electronica industrial, donde inicie mi contacto con la programacion y el trabajo aplicado en tecnologia.',
+      },
+    ],
+    skillSoft: [
+      {
+        name: 'Comunicacion',
+        description: '',
+        ranking: 5,
+      },
+      {
+        name: 'Pensamiento critico y resolucion de problemas',
+        description: '',
+        ranking: 5,
+      },
+      {
+        name: 'Colaboracion y trabajo en equipo',
+        description: '',
+        ranking: 5,
+      },
+      {
+        name: 'Vision de negocio',
+        description: '',
+        ranking: 4,
+      },
+      {
+        name: 'Adaptabilidad',
+        description: '',
+        ranking: 4,
+      },
+    ],
+    skillLanguages: [
+      {
+        name: 'Espanol',
+        description: 'Nativo',
+        ranking: 5,
+      },
+      {
+        name: 'Ingles',
+        description: 'A2/B1 (en progreso)',
+        ranking: 3,
+      },
+    ],
+  },
+  en: {
+    workHistory: [
+      {
+        imageAtl: 'coderio_logo',
+        company: 'Coderio',
+        imageURL: '/images/coderio_logo.jpeg',
+        title: 'Senior Full Stack Software Engineer',
+        timeElapsed: 'Nov 2024 - Present',
+        description:
+          'I am building a B2B mobile application that connects sellers with customers to improve sales workflows. I collaborate on MVP feature delivery and multi-country expansion initiatives focused on product scalability and user value.',
+      },
+      {
+        imageAtl: 'passi',
+        company: 'Passi',
+        imageURL: '/images/ctolenk-c.png',
+        title: 'Software Architect & Consultant (Part-time)',
+        timeElapsed: '2025 - Present',
+        description:
+          'I lead technical hiring and onboarding, translate business requirements into architecture decisions, and define product capabilities. I also coordinate AWS cloud deployments following scalability and reliability best practices.',
+      },
+      {
+        imageAtl: 'acercarseltda_logo',
+        company: 'AcercaRSE at Walmart Chile',
+        imageURL: '/images/acercarseltda_logo.jpeg',
+        title: 'Expert Full Stack Software Engineer / Technical Leader',
+        timeElapsed: 'Jun 2023 - Aug 2024',
+        description:
+          'I worked in Walmart Chile fulfillment, contributing to a large cloud migration across Walmart platforms, enforcing security standards, and leading product evolution with cross-functional teams.',
+      },
+      {
+        imageAtl: 'the-bridge-social',
+        company: 'The Bridge Social at Walmart Chile',
+        imageURL: '/images/the-bridge-social.webp',
+        title: 'Senior Full Stack Software Engineer',
+        timeElapsed: 'Aug 2021 - Jun 2023',
+        description:
+          'I contributed to a fulfillment product for store operations, supporting cloud migration, platform modernization, and iterative feature delivery aligned with business goals.',
+      },
+      {
+        imageAtl: 'unit',
+        company: 'Unit SRL',
+        imageURL: '/images/unit.svg',
+        title: 'Senior Software Engineer',
+        timeElapsed: 'May 2020 - Oct 2021',
+        description:
+          'I built Angular and Angular Elements solutions for the insurance domain, delivered multiple business applications, and mentored Front-end developers to raise technical quality and delivery consistency.',
+      },
+      {
+        imageAtl: 'atl-software',
+        company: 'ATL Software',
+        imageURL: '/images/atl-software.png',
+        title: 'Mid-Senior Full Stack Software Engineer',
+        timeElapsed: 'May 2019 - Mar 2020',
+        description:
+          'I worked on Full Stack projects with PHP, CakePHP, Angular, React, and WordPress, including student portals and configurable payment integration models for multi-country operations.',
+      },
+      {
+        imageAtl: 'control-diamante',
+        company: 'Control Diamante',
+        imageURL: '/images/control-diamante.jpeg',
+        title: 'Mid-Senior Full Stack Software Engineer',
+        timeElapsed: 'May 2017 - May 2019',
+        description:
+          'I developed a SPA web platform and a mobile app to manage plans, events, and digital services, integrating WordPress content workflows and notification features for commercial reach.',
+      },
+      {
+        imageAtl: '4r-fintech.png',
+        company: '4R Prestamos y Finanzas',
+        imageURL: '/images/4r-fintech.png',
+        title: 'Junior Full Stack Software Engineer',
+        timeElapsed: 'Sep 2017 - Dec 2018',
+        description:
+          'I built a collaborative MEAN-stack application for task, resource, and communication management, including team chat, private chat, and activity timeline features.',
+      },
+      {
+        imageAtl: 'ctolenk',
+        company: 'Freelance',
+        imageURL: '/images/ctolenk-c.png',
+        title: 'Junior Full Stack Software Engineer',
+        timeElapsed: 'Nov 2015 - May 2017',
+        description:
+          'A foundational stage where I delivered real projects for clients, mainly WordPress sites, web applications, and REST APIs, shaping my professional software career path.',
+      },
+    ],
+    educationHistory: [
+      {
+        imageAtl: 'aws',
+        company: 'Amazon Web Services',
+        imageURL: '/images/aws.svg',
+        title: 'AWS Certified Solutions Architect - Associate',
+        timeElapsed: '2025 - 2028',
+        description:
+          'Professional certification validating cloud architecture skills to design secure, resilient, and cost-optimized AWS solutions.',
+        subDescriptionTitle: 'Key Services',
+        subDescription: [
+          'IAM for access control and security',
+          'Amazon VPC for private networking and segmentation',
+          'EC2 Auto Scaling and Application Load Balancer',
+          'Amazon ECS/EKS for container orchestration',
+          'AWS Lambda for serverless architectures',
+          'Amazon S3 and CloudFront for static delivery',
+          'Amazon RDS and DynamoDB for data persistence',
+          'CloudWatch + CloudTrail for observability and auditability',
+        ],
+      },
+      {
+        imageAtl: 'udemy',
+        company: 'CodelyTV',
+        imageURL: '/images/codelytv.png',
+        title: 'Software Architecture and Engineering Practices',
+        timeElapsed: 'Jan 2022 - Present',
+        description:
+          'Continuous learning track focused on clean architecture, refactoring, and high-quality software delivery for scalable products.',
+        subDescriptionTitle: 'Key Topics',
+        subDescription: [
+          'Applied SOLID Principles',
+          'Domain-Driven Design (DDD)',
+          'Event-Driven Architecture',
+          'CQRS (Command Query Responsibility Segregation)',
           'Hexagonal Architecture',
-          'Refactoring methodology and Code Smells',
+          'Refactoring and Code Smells',
           'Advanced TypeScript',
         ],
       },
@@ -145,16 +383,16 @@ const resumeContent: IPropsResume['content'] = {
         imageAtl: 'udemy',
         company: 'Udemy',
         imageURL: '/images/udemy-logo.png',
-        title: 'Full Stack JavaScript - Mobile',
-        timeElapsed: 'Jan 2017 - Till Now',
+        title: 'Full Stack JavaScript and Mobile Development',
+        timeElapsed: 'Jan 2017 - Present',
         description:
-          'I focused on learning the necessary knowledge to be able to develop mobile applications reusing my knowledge of web technologies. Also focused on learning the devOps culture to be able to deploy personal and client projects. In the last stage I use the courses to keep my knowledge updated.',
+          'Training focused on mobile development with web technologies, DevOps culture, and continuous upskilling to apply modern practices in client and product projects.',
+        subDescriptionTitle: 'Key Topics',
         subDescription: [
-          'Angular Basic and Advanced',
-          'Ionic (Angular2)',
+          'Angular (Basic and Advanced)',
+          'Ionic (Angular)',
           'React.js and React Native',
-          'Nodejs and MongoDB',
-          'Nodejs and MongoDB',
+          'Node.js and MongoDB',
           'BDD (Behavior-Driven Development)',
           'Docker and Kubernetes',
         ],
@@ -163,16 +401,17 @@ const resumeContent: IPropsResume['content'] = {
         imageAtl: 'Platzi',
         company: 'Platzi',
         imageURL: '/images/platzi.png',
-        title: 'Reinforce knowledge',
+        title: 'Professional Skill Reinforcement',
         timeElapsed: 'Sep 2017 - Jan 2020',
         description:
-          'I focused on strengthening my knowledge and expanding my skills to be able to work as an independent developer and be able to generate quality projects for my clients.',
+          'Learning path to strengthen technical foundations and expand practical capabilities in web development, backend engineering, and software testing.',
+        subDescriptionTitle: 'Key Topics',
         subDescription: [
-          'JavaScript Career',
+          'JavaScript Career Path',
           'Advanced PHP and Laravel',
-          'Wordpress Developer',
+          'WordPress for Developers',
           'C# and .NET',
-          'TDD (Test Driven Development)',
+          'TDD (Test-Driven Development)',
         ],
       },
       {
@@ -182,11 +421,12 @@ const resumeContent: IPropsResume['content'] = {
         title: 'Full Stack Developer',
         timeElapsed: 'Dec 2016 - May 2017',
         description:
-          'I focus on understanding and knowing web technology by applying my previous programming knowledge in my previous career. In this way, I can introduce myself professionally in the professional world of software development.',
+          'Professional transition program into software development, applying prior technical background and consolidating practical web engineering skills.',
+        subDescriptionTitle: 'Key Topics',
         subDescription: [
-          'Web Developer',
-          'JavaScript Developer',
-          'Testing: Introduction and good practices',
+          'Web Development',
+          'Professional JavaScript',
+          'Testing: Fundamentals and Best Practices',
           'PHP and WordPress',
         ],
       },
@@ -194,10 +434,10 @@ const resumeContent: IPropsResume['content'] = {
         imageAtl: 'ITESM',
         company: 'ITESM',
         imageURL: '/images/itesm.svg',
-        title: 'Term Bachelor Digital Robotic Engineer',
+        title: 'Digital Robotics Engineering (Coursework)',
         timeElapsed: 'Jan 2013 - Jun 2016',
         description:
-          'Focus of a degree course to unite my previous knowledge of computer science, mathematics, programming and electronics.',
+          'University coursework integrating computer science, mathematics, programming, and electronics for complex problem-solving.',
       },
       {
         imageAtl: 'ITLA',
@@ -206,25 +446,25 @@ const resumeContent: IPropsResume['content'] = {
         title: 'Mechatronics Technologist',
         timeElapsed: 'Jan 2012 - Nov 2012',
         description:
-          'This was my first contact with the university and critical subjects such as differential and integral mathematics, as well as discrete mathematics that improves my critical and analytical thinking.',
+          'Technical education in mathematics, logic, and electronics that strengthened analytical thinking applied to engineering and technology.',
       },
       {
         imageAtl: 'Centenaria',
         company: 'Centenaria',
         imageURL: '/images/centenaria.webp',
-        title: 'Basic Computer Certificate',
+        title: 'Basic Computer Certification',
         timeElapsed: 'Jan 2009 - Nov 2010',
         description:
-          'Expand my technical knowledge of electronics, focused on the information world from object-oriented programming to PC repair',
+          'Formal introduction to technology, including object-oriented programming fundamentals, hardware concepts, and computer repair basics.',
       },
       {
         imageAtl: 'IPISA',
         company: 'IPISA',
         imageURL: '/images/ipisa.png',
-        title: 'High School Industrial Electronic Mention',
+        title: 'Industrial Electronics Technical High School',
         timeElapsed: 'Aug 2006 - Jul 2010',
         description:
-          'To attend my high school with technical knowledge in electronics so that I could quickly enter the world of work. Where I had my first contact with programming.',
+          'Technical high school training in industrial electronics, where I had my first practical exposure to programming and applied technology.',
       },
     ],
     skillSoft: [
@@ -234,17 +474,17 @@ const resumeContent: IPropsResume['content'] = {
         ranking: 5,
       },
       {
-        name: 'Problem-Solving / Critical Thinking',
+        name: 'Critical Thinking and Problem Solving',
         description: '',
         ranking: 5,
       },
       {
-        name: 'Collaboration / Teamwork',
+        name: 'Collaboration and Teamwork',
         description: '',
         ranking: 5,
       },
       {
-        name: 'Development Business',
+        name: 'Business Mindset',
         description: '',
         ranking: 4,
       },
@@ -266,6 +506,7 @@ const resumeContent: IPropsResume['content'] = {
         ranking: 3,
       },
     ],
+  },
 }
 
 export const getResumeMeta = (locale: SiteLocale): IPropsResume => {
@@ -283,6 +524,6 @@ export const getResumeMeta = (locale: SiteLocale): IPropsResume => {
       title: t.resume.pageTitle,
       slogan: t.resume.pageSlogan,
     },
-    content: resumeContent,
+    content: resumeContentByLocale[locale],
   }
 }

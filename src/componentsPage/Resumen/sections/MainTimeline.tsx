@@ -22,6 +22,7 @@ const MainTimeline = ({ timelines }: IProsMainTimeline) => {
             timeElapsed,
             description,
             company,
+            subDescriptionTitle,
             subDescription,
           }) => (
             <TimelineItem
@@ -32,6 +33,7 @@ const MainTimeline = ({ timelines }: IProsMainTimeline) => {
               timeElapsed={timeElapsed}
               description={description}
               company={company}
+              subDescriptionTitle={subDescriptionTitle}
               subDescription={subDescription}
             />
           ),
