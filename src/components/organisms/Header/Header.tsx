@@ -54,6 +54,20 @@ const Header = () => {
             </div>
           </div>
           <div className="site-title-block">
+            <button
+              type="button"
+              onClick={onHandlerClickNavigation}
+              className="desktop-logo-button"
+              aria-label="Go to home"
+            >
+              <img
+                className="desktop-logo"
+                src="/images/ctolenk-color.png"
+                alt="ctolenk logo"
+                width={130}
+                height={36}
+              />
+            </button>
             <div className="site-title">{name}</div>
             <TypingMessage message={messages} className="type-wrap" />
           </div>

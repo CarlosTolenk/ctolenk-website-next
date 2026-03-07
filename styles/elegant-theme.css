@@ -1,0 +1,405 @@
+:root {
+  --primary-color: #d32e2e;
+  --primary-color-light: #e22d3c;
+  --primary-color-dark: #5b0e14;
+  --secondary-color: #bcbec0;
+  --secondary-color-dark: #8b8f94;
+  --background-current-mode: #111318;
+  --background-current-mode-minus: #1f232a;
+  --font-title-current-color: #ffffff;
+  --font-text-current-color: #d1d5db;
+}
+
+body {
+  color: #334155;
+  background: radial-gradient(circle at 20% 15%, #f8fafc 0%, #eef2f7 55%, #e2e8f0 100%);
+}
+
+.sub-page .sub-page-inner {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+}
+
+.header {
+  background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
+  border-right: 1px solid #dbe3ee;
+}
+
+.header,
+.header * {
+  color: #0f172a;
+}
+
+.profile-picture-block {
+  height: 205px;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 68%, #334155 100%);
+}
+
+.profile-picture-block:before,
+.profile-picture-block:after {
+  display: none;
+}
+
+.my-photo {
+  left: 50%;
+  bottom: -42px;
+  width: 116px;
+  height: 116px;
+  padding: 6px;
+  transform: translateX(-50%);
+  background: #ffffff;
+  border: 1px solid #dbe3ee;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.18);
+}
+
+.site-title-block {
+  margin: 62px 20px 12px;
+}
+
+.desktop-logo-button {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.desktop-logo {
+  width: 132px;
+  height: auto;
+  margin-bottom: 8px;
+}
+
+.site-title {
+  color: #0f172a;
+  font-family: 'Poppins', Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+.site-title-block .type-wrap {
+  color: #475569;
+  font-size: 13px;
+  margin-top: 0.55rem;
+  letter-spacing: 0.04em;
+}
+
+.site-nav {
+  padding: 18px 18px 40px;
+}
+
+.header-main-menu li {
+  padding: 0;
+  margin-bottom: 9px;
+}
+
+.header-main-menu li a {
+  border: 1px solid #dbe3ee;
+  border-radius: 12px;
+  padding: 10px 12px;
+  color: #0f172a !important;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  background: #ffffff;
+}
+
+.header-main-menu li a i {
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  margin-right: 9px;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color-light) 0%,
+    var(--primary-color) 60%,
+    var(--primary-color-dark) 100%
+  );
+}
+
+.header-main-menu li a:hover,
+.header-main-menu li a.active {
+  background: #eaf1fa;
+  border-color: #94a3b8;
+  color: #020617 !important;
+  transform: translateX(2px);
+}
+
+.header .copyrights {
+  color: #475569 !important;
+}
+
+.header .copyrights,
+.header .copyrights * {
+  color: #475569 !important;
+}
+
+[class*='languageSwitcher'] button {
+  border: 1px solid #94a3b8 !important;
+  background: #ffffff !important;
+  color: #0f172a !important;
+}
+
+[class*='languageSwitcher'] button:hover,
+[class*='languageSwitcher'] button[class*='languageActive'] {
+  border-color: #0f172a !important;
+  background: #eaf1fa !important;
+  color: #0f172a !important;
+}
+
+.start-page .sub-page-inner {
+  background: radial-gradient(circle at 20% 30%, #1e293b 0%, #0f172a 45%, #020617 100%) !important;
+}
+
+.start-page .title-block {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 42px 30px;
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  border-radius: 18px;
+  background: linear-gradient(165deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.02));
+  box-shadow: 0 18px 55px rgba(2, 6, 23, 0.36);
+  backdrop-filter: blur(2px);
+}
+
+.hero-kicker {
+  margin: 0 0 14px;
+  font-size: 12px;
+  color: #cbd5e1;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.start-page .title-block h1 {
+  color: #ffffff;
+  font-size: 58px;
+  line-height: 1.12;
+  font-weight: 700;
+  margin: 0;
+}
+
+.title-block .type-wrap {
+  margin-top: 12px;
+  color: #e2e8f0;
+  font-size: 26px;
+  font-weight: 500;
+}
+
+.hero-intro {
+  margin: 20px auto 0;
+  max-width: 710px;
+  color: #cbd5e1;
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+.hero-pillars {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+.hero-pillars span {
+  border: 1px solid rgba(148, 163, 184, 0.38);
+  background: rgba(15, 23, 42, 0.45);
+  color: #f8fafc;
+  border-radius: 999px;
+  padding: 7px 14px;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+}
+
+.home-buttons .bt-submit {
+  margin-top: 34px;
+  margin-right: 10px;
+  min-width: 165px;
+  border-radius: 10px;
+  border: 1px solid #334155;
+  padding: 12px 20px;
+  background: #ffffff;
+  color: #0f172a !important;
+  font-weight: 600;
+  font-size: 15px !important;
+  transition: all 0.22s ease;
+}
+
+.home-buttons .bt-submit i {
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+.home-buttons .bt-submit:last-child {
+  background: transparent;
+  color: #f8fafc !important;
+  border-color: rgba(203, 213, 225, 0.65);
+}
+
+.home-buttons .bt-submit:first-child {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color-light),
+    var(--primary-color),
+    var(--primary-color-dark)
+  );
+  border-color: transparent;
+  color: #ffffff !important;
+}
+
+.home-buttons .bt-submit:hover {
+  transform: translateY(-2px);
+  border-color: #ffffff;
+  box-shadow: 0 12px 30px rgba(2, 6, 23, 0.26);
+}
+
+.home-buttons .bt-submit:last-child:hover {
+  background: rgba(248, 250, 252, 0.08);
+}
+
+@media only screen and (max-width: 991px) {
+  .header {
+    border-right: 0;
+  }
+
+  .profile-picture-block {
+    height: 120px;
+  }
+
+  .my-photo {
+    bottom: -30px;
+    width: 94px;
+    height: 94px;
+  }
+
+  .site-title-block {
+    margin-top: 50px;
+  }
+
+  .responsive-header {
+    background: #0f172a;
+    box-shadow: 0 5px 20px rgba(2, 6, 23, 0.36);
+  }
+
+  .responsive-header [class*='languageSwitcher'] button {
+    background: rgba(255, 255, 255, 0.95) !important;
+    color: #0f172a !important;
+    border-color: #cbd5e1 !important;
+  }
+
+  .start-page .title-block {
+    padding: 28px 18px;
+  }
+
+  .start-page .title-block h1 {
+    font-size: 40px;
+  }
+
+  .title-block .type-wrap {
+    font-size: 22px;
+  }
+
+  .hero-intro {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .start-page .title-block h1 {
+    font-size: 34px;
+  }
+
+  .hero-pillars {
+    gap: 8px;
+  }
+
+  .hero-pillars span {
+    font-size: 12px;
+  }
+
+  .home-buttons .bt-submit {
+    min-width: auto;
+    width: 100%;
+    max-width: 320px;
+    margin: 14px auto 0;
+    display: block;
+  }
+}
+
+/* Brand contrast fixes for active dark mode */
+.dark .header {
+  background: linear-gradient(180deg, #141821 0%, #0e1118 100%) !important;
+  border-right: 1px solid #2a303b !important;
+}
+
+.dark .profile-picture-block {
+  background: linear-gradient(
+    135deg,
+    #2f0c12 0%,
+    var(--primary-color-dark) 45%,
+    var(--primary-color) 100%
+  ) !important;
+}
+
+.dark .site-title,
+.dark .site-title-block .type-wrap,
+.dark .header .copyrights,
+.dark .header .copyrights * {
+  color: #f3f4f6 !important;
+}
+
+.dark .site-title-block .type-wrap {
+  opacity: 0.9;
+}
+
+.dark .site-title-block .type-wrap,
+.dark .site-title-block .type-wrap * {
+  color: #f8fafc !important;
+}
+
+.dark .site-title-block .typed-cursor {
+  color: var(--primary-color-light) !important;
+  opacity: 1 !important;
+}
+
+.dark .header-main-menu li a {
+  background: #171b23 !important;
+  border: 1px solid #2f3744 !important;
+  color: #f3f4f6 !important;
+}
+
+.dark .header-main-menu li a:hover,
+.dark .header-main-menu li a.active {
+  background: rgba(211, 46, 46, 0.16) !important;
+  border-color: rgba(226, 45, 60, 0.62) !important;
+  color: #ffffff !important;
+}
+
+.dark .header-main-menu .containerNavItemIcon {
+  background: var(--primary-color) !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 0 2px rgba(226, 45, 60, 0.22);
+}
+
+.dark .header-main-menu .NavItemText {
+  color: inherit !important;
+  margin-top: 0 !important;
+}
+
+.dark [class*='languageSwitcher'] button {
+  background: #171b23 !important;
+  border: 1px solid #364052 !important;
+  color: #e5e7eb !important;
+}
+
+.dark [class*='languageSwitcher'] button:hover,
+.dark [class*='languageSwitcher'] button[class*='languageActive'] {
+  background: rgba(211, 46, 46, 0.16) !important;
+  border-color: rgba(226, 45, 60, 0.72) !important;
+  color: #ffffff !important;
+}
+
+.dark .responsive-header {
+  background: #111318 !important;
+  color: #ffffff !important;
+}

@@ -18,8 +18,10 @@ interface IPropsHome extends IPropMeta {
   messageTyping: string[]
   texts: {
     greeting: string
+    intro: string
     aboutCta: string
     contactCta: string
+    pillars: string[]
     jobTitle: string
   }
 }
@@ -70,9 +72,16 @@ export default function Home({ metadata, messageTyping, texts }: IPropsHome) {
           <div className="row">
             <div className="col-sm-12 col-md-12 col-lg-12">
               <BgDynamic />
-              <div className="title-block">
+              <div className="title-block home-elevated">
+                <p className="hero-kicker">{texts.jobTitle}</p>
                 <h1>{texts.greeting}</h1>
                 <TypingMessage message={messageTyping} className="type-wrap" />
+                <p className="hero-intro">{texts.intro}</p>
+                <div className="hero-pillars">
+                  {texts.pillars.map((pillar) => (
+                    <span key={pillar}>{pillar}</span>
+                  ))}
+                </div>
                 <div className="home-buttons">
                   <Button
                     text={texts.aboutCta}
@@ -110,8 +119,10 @@ export const getStaticProps = ({ locale }: GetStaticPropsContext) => {
       messageTyping: t.home.roles,
       texts: {
         greeting: t.home.greeting,
+        intro: t.home.intro,
         aboutCta: t.home.aboutCta,
         contactCta: t.home.contactCta,
+        pillars: t.home.pillars,
         jobTitle: t.home.jobTitle,
       },
     },
