@@ -18,6 +18,34 @@ You can start editing the page by modifying `pages/index.tsx`. The page auto-upd
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
+## Contact Email Setup
+
+The contact form API (`/api/contact`) supports two providers:
+
+- `resend` (recommended for quick setup)
+- `smtp` (existing nodemailer flow)
+
+Create `.env.local`:
+
+```bash
+# Shared
+EMAIL_FROM="Portfolio <onboarding@resend.dev>"
+EMAIL_TO="your-email@example.com"
+
+# Provider selection
+EMAIL_PROVIDER="resend"
+
+# Resend
+RESEND_API_KEY="re_xxxxxxxxx"
+
+# SMTP (only if EMAIL_PROVIDER=smtp)
+# SMTP_HOST="smtp.example.com"
+# SMTP_PORT="465"
+# SMTP_SECURE="true"
+# SMTP_USER="user"
+# SMTP_PASS="pass"
+```
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
