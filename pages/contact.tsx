@@ -80,7 +80,20 @@ export default function Contact({ metadata, page }: IPropsContact) {
         'Content-Type': 'application/json',
       },
     })
-    const data = await response.json()
+    const rawBody = await response.text()
+    let data: { status?: string } = {}
+
+    try {
+      data = rawBody ? JSON.parse(rawBody) : {}
+    } catch (parseError) {
+      const shortHtmlPreview = rawBody
+        .replace(/\s+/g, ' ')
+        .slice(0, 120)
+      throw new Error(
+        `Non-JSON response from /api/contact. HTTP ${response.status}. Body starts with: ${shortHtmlPreview}`,
+      )
+    }
+
     if (!response.ok) {
       throw new Error(data?.status || 'Request failed')
     }
@@ -109,8 +122,14 @@ export default function Contact({ metadata, page }: IPropsContact) {
       setFeedbackMessage(copy.sent)
       setFeedbackOpen(true)
     } catch (error) {
+      const errorMessage =
+        error instanceof Error && error.message ? error.message : copy.failed
       setFeedbackType('error')
-      setFeedbackMessage(copy.failed)
+      setFeedbackMessage(
+        selectedLocale === 'es'
+          ? `${copy.failed}\n\nDetalle tecnico: ${errorMessage}`
+          : `${copy.failed}\n\nTechnical detail: ${errorMessage}`,
+      )
       setFeedbackOpen(true)
     } finally {
       setIsSending(false)
@@ -312,14 +331,23 @@ export default function Contact({ metadata, page }: IPropsContact) {
               boxShadow: '0 20px 45px rgba(2, 6, 23, 0.32)',
             }}
           >
-            <h3 style={{ marginTop: 0 }}>
+            <h3 style={{ marginTop: 0, color: '#0f172a' }}>
               {feedbackType === 'success' ? copy.successTitle : copy.errorTitle}
             </h3>
-            <p style={{ marginBottom: '20px' }}>{feedbackMessage}</p>
+            <p
+              style={{
+                marginBottom: '20px',
+                color: '#0f172a',
+                whiteSpace: 'pre-line',
+              }}
+            >
+              {feedbackMessage}
+            </p>
             <button
               type="button"
               className="bt-submit"
               onClick={() => setFeedbackOpen(false)}
+              style={{ color: '#ffffff' }}
             >
               {copy.close}
             </button>
