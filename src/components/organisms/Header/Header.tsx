@@ -1,4 +1,4 @@
-import React, { useState, memo } from 'react'
+import React, { useEffect, useState, memo } from 'react'
 
 import Nav from '../../molecules/Nav/Nav'
 import TypingMessage from '../../molecules/TypingMessage/TypingMessage'
@@ -12,7 +12,6 @@ import { normalizeLocale } from '../../../i18n'
 import { uiTranslations } from '../../../i18n/translations'
 
 const Header = () => {
-  const [classNameToggleMenu, setClassNameToggleMenu] = useState('')
   const [isActiveMenu, setIsActiveMenu] = useState(false)
   const name = 'Carlos Tolentino'
   const currentYear = new Date().getFullYear()
@@ -22,25 +21,44 @@ const Header = () => {
   const messages = t.header.roles
   const copy = `${currentYear} ${t.header.rightsReserved}`
 
+  useEffect(() => {
+    if (!isActiveMenu) {
+      document.body.style.overflow = ''
+      return
+    }
+
+    document.body.style.overflow = 'hidden'
+
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [isActiveMenu])
+
   const onHandleClick = () => {
-    const currentClassName = isActiveMenu
-      ? styles.headerInactiveMobile
-      : styles.headerActiveMobile
-    setClassNameToggleMenu(currentClassName)
-    setIsActiveMenu(!isActiveMenu)
+    setIsActiveMenu((currentValue) => !currentValue)
+  }
+
+  const closeMobileMenu = () => {
+    setIsActiveMenu(false)
   }
 
   const onHandlerClickNavigation = () => {
+    closeMobileMenu()
     router.push('/')
   }
 
   const onChangeLocale = (nextLocale: 'es' | 'en') => {
+    closeMobileMenu()
     router.push(router.asPath, router.asPath, { locale: nextLocale })
   }
 
   return (
     <>
-      <header className={'header ' + classNameToggleMenu}>
+      <header
+        className={`header ${styles.mobileHeaderPanel} ${
+          isActiveMenu ? styles.headerActiveMobile : styles.headerInactiveMobile
+        }`}
+      >
         <div className="header-content">
           <div className="profile-picture-block">
             <div className="my-photo">
@@ -73,7 +91,7 @@ const Header = () => {
           </div>
 
           <div className="site-nav">
-            <Nav />
+            <Nav onNavigate={closeMobileMenu} />
             <div className={styles.languageSwitcher}>
               <button
                 className={locale === 'es' ? styles.languageActive : ''}
@@ -94,6 +112,15 @@ const Header = () => {
           </div>
         </div>
       </header>
+      <button
+        type="button"
+        aria-label="Close mobile navigation"
+        aria-hidden={!isActiveMenu}
+        className={`${styles.mobileOverlay} ${
+          isActiveMenu ? styles.mobileOverlayVisible : ''
+        }`}
+        onClick={closeMobileMenu}
+      />
       <header className="responsive-header">
         <div className="responsive-header-name">
           <img
@@ -105,9 +132,16 @@ const Header = () => {
             height={30}
           />
         </div>
-        <span onClick={onHandleClick} className="responsive-icon">
+        <button
+          type="button"
+          onClick={onHandleClick}
+          className={`responsive-icon ${styles.mobileMenuButton}`}
+          aria-expanded={isActiveMenu}
+          aria-controls="header-main-menu"
+          aria-label={isActiveMenu ? 'Close navigation menu' : 'Open navigation menu'}
+        >
           <FontAwesomeIcon size={'xs'} icon={faBars} />
-        </span>
+        </button>
       </header>
     </>
   )

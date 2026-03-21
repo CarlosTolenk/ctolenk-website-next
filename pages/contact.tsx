@@ -24,6 +24,7 @@ interface FormElements extends HTMLFormControlsCollection {
   nameInput: HTMLInputElement
   emailInput: HTMLInputElement
   messageInput: HTMLInputElement
+  websiteInput: HTMLInputElement
 }
 
 interface UsernameFormElement extends HTMLFormElement {
@@ -34,6 +35,7 @@ interface IPayload {
   name: string
   email: string
   message: string
+  website: string
 }
 
 interface IPropsContact extends IPropPageBase {}
@@ -106,6 +108,7 @@ export default function Contact({ metadata, page }: IPropsContact) {
     mapped.set(elements.nameInput.name, elements.nameInput.value)
     mapped.set(elements.emailInput.name, elements.emailInput.value)
     mapped.set(elements.messageInput.name, elements.messageInput.value)
+    mapped.set(elements.websiteInput.name, elements.websiteInput.value)
     return Object.fromEntries(mapped)
   }
 
@@ -163,6 +166,20 @@ export default function Contact({ metadata, page }: IPropsContact) {
               <div className="form-contact-me">
                 <div id="show_contact_msg" />
                 <form onSubmit={onSubmit} id="contact-form">
+                  <input
+                    name="website"
+                    id="websiteInput"
+                    type="text"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                    style={{
+                      position: 'absolute',
+                      left: '-9999px',
+                      opacity: 0,
+                      pointerEvents: 'none',
+                    }}
+                  />
                   <input
                     name="name"
                     id="nameInput"

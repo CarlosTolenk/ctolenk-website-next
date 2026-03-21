@@ -920,16 +920,20 @@ span.typed {
 
   .header .header-content {
     padding-top: 0;
-    position: absolute;
+    position: relative;
     top: 0;
     right: 0;
     left: 0;
-    overflow-y: clip;
+    min-height: 100%;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
   }
 
   .header .copyrights {
     bottom: 10px;
     position: relative;
+    margin-top: auto;
   }
 
   .responsive-header {
@@ -957,12 +961,14 @@ span.typed {
   .header {
     display: block;
     position: fixed;
-    left: -285px;
+    left: 0;
     top: 55px;
     width: 285px;
-    height: 100%;
+    height: calc(100vh - 55px);
     z-index: 9999;
     box-shadow: 5px 0 5px -5px rgba(35, 34, 34, 0.19);
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 
   .responsive-header .responsive-icon {
@@ -970,6 +976,7 @@ span.typed {
     right: 15px;
     top: 13px;
     font-size: 30px;
+    cursor: pointer;
   }
 }
 
