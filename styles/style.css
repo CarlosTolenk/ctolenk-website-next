@@ -845,6 +845,8 @@ span.typed {
   }
 
   .site-nav {
+    position: relative;
+    width: auto;
     padding: 10px 0 40px;
   }
 
@@ -856,6 +858,10 @@ span.typed {
 
   .site-title {
     font-size: 20px;
+  }
+
+  .site-title-block {
+    margin-bottom: 0;
   }
 
   .sub-page,

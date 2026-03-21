@@ -40,6 +40,8 @@ interface IPayload {
 
 interface IPropsContact extends IPropPageBase {}
 
+const MIN_MESSAGE_LENGTH = 10
+
 export default function Contact({ metadata, page }: IPropsContact) {
   const { locale } = useRouter()
   const selectedLocale = normalizeLocale(locale)
@@ -102,6 +104,26 @@ export default function Contact({ metadata, page }: IPropsContact) {
     return data
   }
 
+  const validatePayload = (payload: IPayload) => {
+    const safeName = payload.name.trim()
+    const safeEmail = payload.email.trim()
+    const safeMessage = payload.message.trim()
+
+    if (!safeName || !safeEmail || !safeMessage) {
+      return selectedLocale === 'es'
+        ? 'Completa todos los campos requeridos.'
+        : 'Complete all required fields.'
+    }
+
+    if (safeMessage.length < MIN_MESSAGE_LENGTH) {
+      return selectedLocale === 'es'
+        ? `El mensaje debe tener al menos ${MIN_MESSAGE_LENGTH} caracteres.`
+        : `The message must be at least ${MIN_MESSAGE_LENGTH} characters long.`
+    }
+
+    return null
+  }
+
   const generatePayload = (event: React.FormEvent<UsernameFormElement>) => {
     const { elements } = event.currentTarget
     const mapped = new Map()
@@ -116,6 +138,14 @@ export default function Contact({ metadata, page }: IPropsContact) {
     event.preventDefault()
     const formElement = event.currentTarget
     const payload = generatePayload(event)
+    const validationError = validatePayload(payload)
+
+    if (validationError) {
+      setFeedbackType('error')
+      setFeedbackMessage(validationError)
+      setFeedbackOpen(true)
+      return
+    }
 
     setIsSending(true)
     try {
@@ -201,6 +231,7 @@ export default function Contact({ metadata, page }: IPropsContact) {
                     id="messageInput"
                     placeholder={t.contact.message}
                     required
+                    minLength={MIN_MESSAGE_LENGTH}
                     rows={6}
                   />
                   <input
