@@ -1,14 +1,58 @@
 @media only screen and (max-width: 991px) {
+  .mobileHeaderPanel {
+    top: 55px;
+    height: calc(100dvh - 55px);
+    max-height: calc(100dvh - 55px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    transition:
+      transform 0.28s ease,
+      box-shadow 0.28s ease;
+    will-change: transform;
+  }
+
   .headerActiveMobile {
-    animation-duration: 0.5s;
-    animation-name: openMenu;
-    animation-fill-mode: forwards;
+    left: 0;
+    transform: translateX(0);
+    box-shadow: 14px 0 40px rgba(15, 23, 42, 0.24);
   }
 
   .headerInactiveMobile {
-    animation-duration: 0.5s;
-    animation-name: closeMenu;
-    animation-fill-mode: forwards;
+    left: 0;
+    transform: translateX(calc(-100% - 12px));
+    box-shadow: none;
+  }
+
+  .mobileOverlay {
+    position: fixed;
+    inset: 55px 0 0;
+    background: rgba(15, 23, 42, 0.42);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.22s ease;
+    z-index: 9998;
+    border: 0;
+    padding: 0;
+  }
+
+  .mobileOverlayVisible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .mobileMenuButton {
+    border: 0;
+    background: transparent;
+    color: inherit;
+    line-height: 1;
+    padding: 6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
   }
 }
 
@@ -48,24 +92,4 @@
 .languageActive {
   border-color: #13b4ca;
   color: #13b4ca;
-}
-
-@keyframes openMenu {
-  from {
-    left: -285px;
-  }
-
-  to {
-    left: 0;
-  }
-}
-
-@keyframes closeMenu {
-  from {
-    left: 0;
-  }
-
-  to {
-    left: -285px;
-  }
 }
