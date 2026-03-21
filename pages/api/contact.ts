@@ -5,6 +5,8 @@ type Data = {
   status: string
 }
 
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
 const escapeHtml = (value: string) =>
   value
     .replace(/&/g, '&amp;')
@@ -72,18 +74,36 @@ export default async function handler(
     return res.status(405).json({ status: 'Method Not Allowed' })
   }
 
-  const { name, email, message } = req.body as {
+  const { name, email, message, website } = req.body as {
     name?: string
     email?: string
     message?: string
+    website?: string
   }
 
   const safeName = name?.trim()
   const safeEmail = email?.trim()
   const safeMessage = message?.trim()
+  const safeWebsite = website?.trim()
+
+  if (safeWebsite) {
+    return res.status(400).json({ status: 'Spam detected' })
+  }
 
   if (!safeName || !safeEmail || !safeMessage) {
     return res.status(400).json({ status: 'Bad Request' })
+  }
+
+  if (safeName.length < 2 || safeName.length > 120) {
+    return res.status(400).json({ status: 'Invalid name' })
+  }
+
+  if (!EMAIL_REGEX.test(safeEmail) || safeEmail.length > 254) {
+    return res.status(400).json({ status: 'Invalid email' })
+  }
+
+  if (safeMessage.length < 10 || safeMessage.length > 5000) {
+    return res.status(400).json({ status: 'Invalid message' })
   }
 
   const emailProvider = (

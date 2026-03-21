@@ -31,6 +31,7 @@ Create `.env.local`:
 # Shared
 EMAIL_FROM="Portfolio <onboarding@resend.dev>"
 EMAIL_TO="your-email@example.com"
+NEXT_PUBLIC_SITE_URL="https://ctolenk.com"
 
 # Provider selection
 EMAIL_PROVIDER="resend"
@@ -45,6 +46,13 @@ RESEND_API_KEY="re_xxxxxxxxx"
 # SMTP_USER="user"
 # SMTP_PASS="pass"
 ```
+
+## Contact Form Bot Protection
+
+The contact form now includes:
+
+- A hidden honeypot field to catch simple bots.
+- Backend validation that rejects the request if that hidden field is filled.
 
 ## Learn More
 
